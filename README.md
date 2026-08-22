@@ -47,13 +47,12 @@ Both READMEs carry their own detail. The items that block a public launch:
   brief is flagged `needsSource: true` in `src/content/site.ts`. They render as
   written and carry no citation. For a business whose pitch is "we show you the
   math", these need sources or removal.
-- **Image licensing is unverified.** `apps/growth/public/photos` contains
-  imagery lifted from the live nebriix.com, which came bundled with the Mokko
-  WordPress theme. Theme demo assets are frequently *not* licensed for reuse
-  outside the theme. This repository is public, so confirm the licence or
-  replace them.
 - **Placeholder contact details** — the phone number, WhatsApp link and some
   social handles are carried over from the live site and were never confirmed.
+
+Image licensing is settled: `apps/growth/public/photos` is Unsplash-licensed
+(free for commercial use, no permission needed), with sources recorded in
+`apps/growth/public/photos/CREDITS.md`.
 
 ## History
 

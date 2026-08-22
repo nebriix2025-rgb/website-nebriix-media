@@ -1,0 +1,23 @@
+# Photography credits
+
+All images here are from [Unsplash](https://unsplash.com) under the
+[Unsplash License](https://unsplash.com/license): free for commercial and
+non-commercial use, no permission needed. Attribution is not required, but the
+sources are recorded here so provenance is never in question.
+
+None are Unsplash+ / Premium.
+
+| File | Source | Description |
+| --- | --- | --- |
+| `hero.jpg` | [unsplash.com/photos/sUWF9JHC1xA](https://unsplash.com/photos/sUWF9JHC1xA) | Empty street lined with illuminated shops at dusk |
+| `storefront.jpg` | [unsplash.com/photos/460dhMlWKp8](https://unsplash.com/photos/460dhMlWKp8) | A small shop glows at night with its lights on |
+
+Both are rendered monochrome in the UI via the `.photo-plate` grade in
+`globals.css`, and resized/recompressed from the originals.
+
+## History
+
+An earlier revision used imagery copied from the live nebriix.com, which shipped
+with the Mokko WordPress theme. Theme demo assets are frequently licensed only
+for use within the theme, so they were replaced rather than published in a
+public repository.
