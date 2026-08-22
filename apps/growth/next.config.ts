@@ -1,10 +1,12 @@
+import path from "node:path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Pin the workspace root: there's an unrelated package-lock.json in the parent
-  // directory (~/), which Turbopack would otherwise infer as the root.
+  // Pin the workspace root to the monorepo root. Dependencies are hoisted there
+  // by npm workspaces, so pointing this at the app directory makes Turbopack
+  // fail to resolve next/package.json.
   turbopack: {
-    root: __dirname,
+    root: path.join(__dirname, "..", ".."),
   },
 };
 
