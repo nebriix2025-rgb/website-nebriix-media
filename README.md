@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nebriix — marketing site
 
-## Getting Started
-
-First, run the development server:
+A rebuild of [nebriix.com](https://nebriix.com), replacing the WordPress /
+Elementor / Mokko stack with a static Next.js site.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev     # http://localhost:3000
+npm run build   # production build (27 static routes)
+npm run lint
+npx tsc --noEmit
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Concern      | Choice                                            |
+| ------------ | ------------------------------------------------- |
+| Framework    | Next.js 16 (App Router, Turbopack)                |
+| UI           | React 19, Tailwind v4, shadcn/ui (on Base UI)     |
+| Motion       | `motion` v13, GSAP + ScrollTrigger, Lenis         |
+| Analytics    | Vercel Analytics + Speed Insights                 |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Everything renders statically — there is no database and no CMS.
 
-## Learn More
+## Layout
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/            routes; [slug] pages are prerendered via generateStaticParams
+  components/
+    fx/           decorative backgrounds (aurora, dot grid)
+    layout/       header, footer, page header
+    motion/       reveal + marquee + ticker primitives (hand-written)
+    sections/     page sections
+    ui/           shadcn components
+  content/
+    site.ts       all copy — single source of truth
+    stories-body.json  article bodies extracted from the live site
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Editing copy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`src/content/site.ts` holds every string. Two things are flagged in there:
 
-## Deploy on Vercel
+- **`process` and `faqs` are new copy** — they have no equivalent on the live
+  site and need sign-off before launch.
+- **`site.phone`** (`+971 4 000 0000`) is the live site's placeholder. Confirm
+  or remove it.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+All case-study metrics are quoted verbatim from the existing case studies;
+`proofStats` links each headline figure back to its source study.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Design notes
+
+The site is **dark-only**. The wordmark is a white script lockup with no
+dark-ink variant, so a light theme would need a second logo asset.
+
+Brand tokens carry over from the live theme's customizer output — accent
+`#97ea90` on a `hsl(150 4% 11%)` background. The live site's *Elementor*
+palette (`#6EC1E4` etc.) is untouched framework default and was ignored.
+
+Headings use **Inter Tight**; the original **Neue Montreal** is a licensed
+Pangram Pangram face. Swap it in via `next/font/local` if you hold a licence.
+
+## Contact form
+
+Posts to `CONTACT_WEBHOOK_URL` (see `.env.example`) — an n8n / Make / Zapier
+catch hook. With no webhook set the form refuses to submit and points the
+visitor at `Hello@nebriix.com` rather than dropping the lead silently.
+
+## Deploying
+
+```bash
+npx vercel        # preview
+npx vercel --prod
+```
+
+Set `CONTACT_WEBHOOK_URL` in the Vercel project's environment variables.
+
+## Not carried over
+
+The live site has several leftovers from the Mokko theme demo that were
+deliberately not rebuilt:
+
+- WooCommerce shop/cart/checkout/account pages
+- ~20 demo portfolio and blog layout pages
+- The "A fashionable element for your site" marquee on the About page
+- The default WordPress privacy policy, including its "Suggested text:"
+  scaffolding — replaced with a real policy at `/privacy` that still needs
+  legal review
+- A Russian-language default WordPress comment and unrelated demo tags
+  (`BookReview`, `TravelTips`, …) in the Stories sidebar
+
+The live About page also pairs founder names with the wrong roles; `team` in
+`site.ts` keeps the roles and drops the mismatched names pending real ones.
