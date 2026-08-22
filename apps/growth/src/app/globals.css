@@ -1,0 +1,296 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Neue Montreal (the live site's heading face) is a licensed Pangram Pangram
+     font. Inter Tight is the closest free neo-grotesque and pairs with Inter. */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-inter-tight);
+  --font-mono: var(--font-jetbrains);
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* Brand signature */
+  --color-brand: var(--brand);
+  --color-brand-deep: var(--brand-deep);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --animate-marquee: marquee var(--marquee-duration, 40s) linear infinite;
+  --animate-marquee-vertical: marquee-vertical var(--marquee-duration, 40s) linear
+    infinite;
+  --animate-aurora: aurora 22s ease-in-out infinite alternate;
+  --animate-beam: beam 6s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--marquee-gap, 2rem)));
+    }
+  }
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--marquee-gap, 2rem)));
+    }
+  }
+  @keyframes aurora {
+    0% {
+      transform: translate3d(-8%, -4%, 0) scale(1);
+    }
+    100% {
+      transform: translate3d(8%, 6%, 0) scale(1.18);
+    }
+  }
+  @keyframes beam {
+    to {
+      offset-distance: 100%;
+    }
+  }
+}
+
+/*
+  Light is the default here (matching nebriix.com, which opens light and offers a
+  toggle). The wordmark is a white script lockup with no dark-ink variant, so on
+  light backgrounds it is inverted in CSS — see `.logo-mark` below.
+*/
+:root {
+  --background: oklch(0.985 0.002 155);
+  --foreground: oklch(0.19 0.01 155);
+
+  --surface: oklch(0.955 0.003 155);
+  --surface-2: oklch(0.92 0.004 155);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.19 0.01 155);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.19 0.01 155);
+
+  /* On light, the mint is too pale to carry text — darken it for contrast. */
+  --primary: oklch(0.58 0.135 152);
+  --primary-foreground: oklch(0.99 0.002 155);
+  --secondary: oklch(0.93 0.005 155);
+  --secondary-foreground: oklch(0.19 0.01 155);
+
+  --muted: oklch(0.93 0.005 155);
+  --muted-foreground: oklch(0.46 0.012 155);
+  --accent: oklch(0.93 0.005 155);
+  --accent-foreground: oklch(0.19 0.01 155);
+  --destructive: oklch(0.52 0.2 25);
+
+  --border: oklch(0 0 0 / 11%);
+  --input: oklch(0 0 0 / 16%);
+  --ring: oklch(0.58 0.135 152);
+
+  --brand: oklch(0.58 0.135 152);
+  --brand-deep: oklch(0.48 0.11 168);
+
+  --radius: 0.75rem;
+}
+
+.dark {
+  /* Carried over from the live theme: #97ea90 accent on hsl(150 4% 11%). */
+  --background: oklch(0.163 0.008 155);
+  --foreground: oklch(0.975 0.003 155);
+
+  --surface: oklch(0.205 0.01 155);
+  --surface-2: oklch(0.248 0.012 155);
+
+  --card: oklch(0.205 0.01 155);
+  --card-foreground: oklch(0.975 0.003 155);
+  --popover: oklch(0.205 0.01 155);
+  --popover-foreground: oklch(0.975 0.003 155);
+
+  /* The accent is a light mint, so anything sitting on it needs dark ink. */
+  --primary: oklch(0.862 0.148 145);
+  --primary-foreground: oklch(0.163 0.012 155);
+  --secondary: oklch(0.248 0.012 155);
+  --secondary-foreground: oklch(0.975 0.003 155);
+
+  --muted: oklch(0.248 0.012 155);
+  --muted-foreground: oklch(0.7 0.011 155);
+  --accent: oklch(0.272 0.014 155);
+  --accent-foreground: oklch(0.975 0.003 155);
+  --destructive: oklch(0.62 0.21 25);
+
+  --border: oklch(1 0 0 / 9%);
+  --input: oklch(1 0 0 / 13%);
+  --ring: oklch(0.862 0.148 145);
+
+  --brand: oklch(0.862 0.148 145);
+  --brand-deep: oklch(0.7 0.13 168);
+
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    /* Lenis drives scrolling; native smooth would fight it. */
+    scroll-behavior: auto;
+  }
+
+  ::selection {
+    background: color-mix(in oklch, var(--brand) 55%, transparent);
+    color: var(--background);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer utilities {
+  /*
+    The wordmark ships as white artwork on transparency. There is no dark-ink
+    variant, so on light backgrounds it is inverted in CSS rather than shipping
+    a second asset. It's a flat monochrome mark, so inversion is lossless.
+  */
+  .logo-mark {
+    filter: invert(1);
+  }
+  .dark .logo-mark {
+    filter: none;
+  }
+
+  /*
+    Photography runs monochrome by default. The source images are theme stock;
+    a hard black-and-white grade strips the "stock photo" read and holds the
+    palette to a single accent. Colour returns on hover where it's interactive.
+  */
+  .photo-mono {
+    filter: grayscale(1) contrast(1.08) brightness(0.95);
+    transition:
+      filter 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .group:hover .photo-mono-hover {
+    filter: grayscale(0) contrast(1) brightness(1);
+  }
+
+  /*
+    Full-bleed backdrops carry text, so the grade is theme-dependent: on light
+    the photo is lifted to a pale wash so dark type reads over it; on dark it is
+    pushed down so light type does. A single grade can't serve both.
+  */
+  .photo-plate {
+    filter: grayscale(1) brightness(1.42) contrast(0.82);
+  }
+  .dark .photo-plate {
+    filter: grayscale(1) brightness(0.62) contrast(1.15);
+  }
+
+  /* Slow drift for full-bleed backdrops — the Ken Burns move. */
+  .animate-kenburns {
+    animation: kenburns 26s ease-in-out infinite alternate;
+  }
+
+  @keyframes kenburns {
+    from {
+      transform: scale(1.06) translate3d(0, 0, 0);
+    }
+    to {
+      transform: scale(1.16) translate3d(-1.5%, -1.5%, 0);
+    }
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(
+      100deg,
+      var(--foreground) 0%,
+      var(--foreground) 35%,
+      var(--brand) 68%,
+      var(--brand-deep) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+  }
+
+  /* Edge-fade for marquees and long scroll rails. */
+  .mask-fade-x {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+  }
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
