@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Check } from "lucide-react";
 
 import { audit, auditStats, site } from "@/content/site";
-import { Aurora } from "@/components/fx/aurora";
 import { BlurFade } from "@/components/motion/blur-fade";
 import { TextReveal } from "@/components/motion/text-reveal";
 import { AuditForm } from "@/components/forms/audit-form";
@@ -18,7 +17,6 @@ export default function FreeAuditPage() {
   return (
     <>
       <section className="relative overflow-hidden pb-16 pt-36 sm:pt-44">
-        <Aurora className="opacity-70" />
 
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
           <TextReveal

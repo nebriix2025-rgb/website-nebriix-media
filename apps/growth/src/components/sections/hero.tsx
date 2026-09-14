@@ -3,13 +3,21 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
 
-import { hero, industries } from "@/content/site";
-import { NetworkField } from "@/components/fx/network-field";
-import { AiAnswerMock } from "@/components/sections/ai-answer-mock";
-import { Magnetic } from "@/components/motion/magnetic";
-import { ButtonLink } from "@/components/ui/button-link";
+import { hero } from "@/content/site";
+import { PillLink } from "@/components/ui/pill-link";
+
+/**
+ * Hero after paires.ai: full-bleed cinematic media with the headline anchored
+ * low, one line of support copy, one action. Nothing else competes.
+ *
+ * `HERO_VIDEO` is optional. When set, the video plays muted on loop over the
+ * still, which stays as the poster and the reduced-motion fallback. When empty,
+ * the still runs a slow Ken Burns drift on its own.
+ */
+const HERO_VIDEO = "/media/hero.mp4";
+
+const LINES = [hero.headline, hero.headlineAccent];
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -18,18 +26,13 @@ export function Hero() {
     offset: ["start start", "end start"],
   });
 
-  // Backdrop drifts slower than the content, so the layers separate on scroll.
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "42%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const mediaY = useTransform(scrollYProgress, [0, 1], ["0%", "16%"]);
+  const copyY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   return (
-    <section
-      ref={ref}
-      className="relative flex min-h-dvh items-center overflow-hidden pt-24"
-    >
-      {/* Full-bleed backdrop */}
-      <motion.div style={{ y: bgY }} className="absolute inset-0 -z-10">
+    <section ref={ref} className="relative flex min-h-dvh items-end overflow-hidden">
+      <motion.div style={{ y: mediaY }} className="absolute inset-0 -z-10">
         <div className="absolute inset-0 animate-kenburns">
           <Image
             src="/photos/hero.jpg"
@@ -42,113 +45,59 @@ export function Hero() {
           />
         </div>
 
-        {/* Scrim: enough to hold the headline, light enough to keep the photo. */}
-        <div className="absolute inset-0 bg-background/35 dark:bg-background/45" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-background" />
-        <div className="absolute inset-0 bg-grain opacity-[0.05] mix-blend-overlay" />
+        {HERO_VIDEO && (
+          <video
+            className="photo-plate absolute inset-0 size-full object-cover motion-reduce:hidden"
+            src={HERO_VIDEO}
+            poster="/photos/hero.jpg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden
+          />
+        )}
+
+        {/* Bottom-weighted scrim so the headline sits on something solid. */}
+        <div className="absolute inset-x-0 bottom-0 h-[70%] bg-gradient-to-t from-background via-background/55 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background/60 to-transparent" />
       </motion.div>
 
-      <NetworkField className="opacity-40 dark:opacity-70" />
-
       <motion.div
-        style={{ y: contentY, opacity }}
-        className="relative mx-auto grid w-full max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-[1.05fr_minmax(0,26rem)] lg:gap-16"
+        style={{ y: copyY, opacity }}
+        className="relative mx-auto w-full max-w-7xl px-5 pb-20 pt-40 sm:px-8 sm:pb-24"
       >
-        <div>
-          <h1 className="font-display text-[9vw] leading-[1] tracking-tight sm:text-[6.5vw] lg:text-[4.4vw]">
-            <span className="block overflow-hidden py-[0.06em]">
+        <h1 className="max-w-4xl font-display text-[11vw] font-light leading-[0.98] sm:text-[7vw] lg:text-[4.5rem] lg:leading-[1.08]">
+          {LINES.map((line, i) => (
+            <span key={line} className="block overflow-hidden py-[0.05em]">
               <motion.span
                 className="block"
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
-                transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+                transition={{
+                  duration: 1.1,
+                  delay: 0.2 + i * 0.14,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
               >
-                {hero.headline}
+                {line}
               </motion.span>
             </span>
-            <span className="block overflow-hidden py-[0.06em]">
-              <motion.span
-                className="block text-primary"
-                initial={{ y: "110%" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 1, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
-              >
-                {hero.headlineAccent}
-              </motion.span>
-            </span>
-          </h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.55 }}
-            className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg"
-          >
-            {hero.sub}
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.68 }}
-            className="mt-10 flex flex-wrap items-center gap-4"
-          >
-            <Magnetic>
-              <ButtonLink
-                href="/free-audit"
-                className="h-13 rounded-full px-8 text-base"
-              >
-                {hero.cta}
-                <ArrowUpRight className="size-4" />
-              </ButtonLink>
-            </Magnetic>
-
-            <ButtonLink
-              href="/services"
-              variant="ghost"
-              className="h-13 rounded-full px-6 text-base text-muted-foreground hover:text-foreground"
-            >
-              See what we do
-            </ButtonLink>
-          </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="mt-14 max-w-3xl text-xs leading-relaxed text-muted-foreground"
-          >
-            <span className="font-mono uppercase tracking-widest text-primary">
-              We work with
-            </span>{" "}
-            {industries.join(" · ")}
-          </motion.p>
-        </div>
+          ))}
+        </h1>
 
         <motion.div
-          initial={{ opacity: 0, y: 28 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.9, delay: 0.7 }}
+          className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4"
         >
-          <AiAnswerMock />
+          <p className="max-w-md text-[15px] leading-relaxed text-muted-foreground">
+            {hero.sub}
+          </p>
+          <PillLink href="/free-audit">{hero.cta}</PillLink>
         </motion.div>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 0.8 }}
-        className="absolute inset-x-0 bottom-8 flex justify-center"
-      >
-        <motion.span
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground"
-        >
-          <ArrowDown className="size-3" />
-          Scroll
-        </motion.span>
       </motion.div>
     </section>
   );

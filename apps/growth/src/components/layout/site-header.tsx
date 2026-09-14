@@ -5,13 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
-import { Menu, ArrowUpRight, ChevronDown, Phone } from "lucide-react";
+import { Menu, ChevronDown, Phone } from "lucide-react";
 
 import { nav, services, site } from "@/content/site";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ButtonLink } from "@/components/ui/button-link";
-import { ThemeToggle } from "@/components/layout/theme-toggle";
+import { PillLink } from "@/components/ui/pill-link";
 import {
   Sheet,
   SheetContent,
@@ -43,19 +42,8 @@ export function SiteHeader() {
           : "border-b border-transparent",
       )}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-6 px-5 sm:px-8">
-        <Link href="/" className="relative z-10 shrink-0" aria-label={site.name}>
-          <Image
-            src="/nebriix-logo.png"
-            alt={site.name}
-            width={110}
-            height={47}
-            loading="eager"
-            fetchPriority="high"
-            className="logo-mark h-9 w-auto"
-          />
-        </Link>
-
+      <div className="mx-auto grid h-20 max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-5 sm:px-8">
+        {/* Left: nav (paires puts the links here, small and quiet). */}
         <nav className="hidden items-center gap-1 lg:flex">
           {nav.map((item) =>
             item.href === "/services" ? (
@@ -68,19 +56,12 @@ export function SiteHeader() {
                 <Link
                   href="/services"
                   className={cn(
-                    "relative flex items-center gap-1 rounded-full px-4 py-2 text-sm transition-colors",
+                    "relative flex items-center gap-1 px-3 py-2 text-sm transition-colors",
                     isActive(item.href)
                       ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground",
+                      : "text-foreground/70 hover:text-foreground",
                   )}
                 >
-                  {isActive(item.href) && (
-                    <motion.span
-                      layoutId="nav-pill"
-                      className="absolute inset-0 rounded-full bg-secondary"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
                   <span className="relative">{item.label}</span>
                   <ChevronDown
                     className={cn(
@@ -122,28 +103,37 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "relative rounded-full px-4 py-2 text-sm transition-colors",
+                  "relative px-3 py-2 text-sm transition-colors",
                   isActive(item.href)
                     ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground",
+                    : "text-foreground/70 hover:text-foreground",
                 )}
               >
-                {isActive(item.href) && (
-                  <motion.span
-                    layoutId="nav-pill"
-                    className="absolute inset-0 rounded-full bg-secondary"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
                 <span className="relative">{item.label}</span>
               </Link>
             ),
           )}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
+        {/* Centre: wordmark. */}
+        <Link
+          href="/"
+          className="relative z-10 justify-self-center lg:col-start-2"
+          aria-label={site.name}
+        >
+          <Image
+            src="/nebriix-logo.png"
+            alt={site.name}
+            width={110}
+            height={47}
+            loading="eager"
+            fetchPriority="high"
+            className="logo-mark h-8 w-auto"
+          />
+        </Link>
 
+        {/* Right: one CTA. */}
+        <div className="flex items-center justify-end gap-2 lg:col-start-3">
           {/* Click-to-call on every page — 70%+ of local searches are mobile. */}
           <a
             href={site.phoneHref}
@@ -153,13 +143,9 @@ export function SiteHeader() {
             <Phone className="size-4" />
           </a>
 
-          <ButtonLink
-            href="/free-audit"
-            className="hidden h-10 rounded-full px-5 sm:inline-flex"
-          >
+          <PillLink href="/free-audit" size="sm" className="hidden sm:inline-flex">
             Free Audit
-            <ArrowUpRight className="size-4" />
-          </ButtonLink>
+          </PillLink>
 
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
@@ -207,13 +193,9 @@ export function SiteHeader() {
                   </Link>
                 ))}
 
-                <ButtonLink
-                  href="/free-audit"
-                  onClick={() => setOpen(false)}
-                  className="mt-8 h-12 rounded-full text-base"
-                >
+                <PillLink href="/free-audit" className="mt-8 w-full justify-between">
                   Get Your Free Audit
-                </ButtonLink>
+                </PillLink>
               </nav>
             </SheetContent>
           </Sheet>

@@ -28,7 +28,7 @@ export function SectionHeading({
         text={title}
         as={as}
         className={cn(
-          "font-display text-3xl leading-[1.06] tracking-tight sm:text-4xl lg:text-5xl",
+          "font-display text-4xl leading-[1.12] sm:text-5xl sm:leading-[1.15]",
           align === "center" && "justify-center",
         )}
       />

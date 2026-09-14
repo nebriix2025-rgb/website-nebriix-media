@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { ArrowUpRight } from "lucide-react";
 
 import { site } from "@/content/site";
 import { PageHeader } from "@/components/layout/page-header";
 import { ServiceCards } from "@/components/sections/service-cards";
 import { BlurFade } from "@/components/motion/blur-fade";
-import { ButtonLink } from "@/components/ui/button-link";
+import { PillLink } from "@/components/ui/pill-link";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -31,13 +30,10 @@ export default function ServicesPage() {
               <p className="max-w-xl font-display text-2xl leading-snug tracking-tight sm:text-3xl">
                 Not sure which you need? Start with the audit. It tells you.
               </p>
-              <ButtonLink
+              <PillLink
                 href="/free-audit"
-                className="h-13 rounded-full px-8 text-base"
               >
-                Get Your Free Audit
-                <ArrowUpRight className="size-4" />
-              </ButtonLink>
+                Get Your Free Audit</PillLink>
             </div>
           </BlurFade>
         </div>

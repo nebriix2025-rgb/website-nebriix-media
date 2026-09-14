@@ -1,7 +1,8 @@
-import { ArrowUpRight } from "lucide-react";
+
 
 import { finalCta } from "@/content/site";
 import { Hero } from "@/components/sections/hero";
+import { AiAnswerSection } from "@/components/sections/ai-answer-section";
 import { Problem } from "@/components/sections/problem";
 import { InvisibleBand } from "@/components/sections/invisible-band";
 import { ServiceCards } from "@/components/sections/service-cards";
@@ -12,12 +13,13 @@ import { BeforeAfter } from "@/components/sections/before-after";
 import { VisibilityCheck } from "@/components/sections/visibility-check";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { BlurFade } from "@/components/motion/blur-fade";
-import { ButtonLink } from "@/components/ui/button-link";
+import { PillLink } from "@/components/ui/pill-link";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
+      <AiAnswerSection />
       <Problem />
       <InvisibleBand />
 
@@ -28,14 +30,10 @@ export default function HomePage() {
               title="What we do."
               description="Seven services. One outcome: more clients calling, booking, and paying."
             />
-            <ButtonLink
-              href="/services"
-              variant="outline"
-              className="h-11 rounded-full px-5"
+            <PillLink
+              href="/services" variant="ghost"
             >
-              All services
-              <ArrowUpRight className="size-4" />
-            </ButtonLink>
+              All services</PillLink>
           </div>
 
           <div className="mt-14">
@@ -60,13 +58,10 @@ export default function HomePage() {
               {finalCta.sub}
             </p>
             <div className="mt-10 flex justify-center">
-              <ButtonLink
+              <PillLink
                 href="/free-audit"
-                className="h-13 rounded-full px-8 text-base"
               >
-                {finalCta.cta}
-                <ArrowUpRight className="size-4" />
-              </ButtonLink>
+                {finalCta.cta}</PillLink>
             </div>
           </BlurFade>
         </div>

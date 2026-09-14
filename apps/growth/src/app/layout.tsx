@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Inter_Tight, JetBrains_Mono } from "next/font/google";
+import { Figtree, Source_Serif_4, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -12,10 +12,12 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { StickyAuditCta } from "@/components/layout/sticky-audit-cta";
 import { Toaster } from "@/components/ui/sonner";
 
-const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
-const interTight = Inter_Tight({
-  variable: "--font-inter-tight",
+const figtree = Figtree({ variable: "--font-figtree", subsets: ["latin"] });
+const sourceSerif = Source_Serif_4({
+  variable: "--font-source-serif",
   subsets: ["latin"],
+  // Variable axis; 400 is the display weight, 300 for the largest sizes.
+  weight: ["300", "400"],
 });
 const jetbrains = JetBrains_Mono({
   variable: "--font-jetbrains",
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1b1e1c",
+  themeColor: "#0a0d14",
   colorScheme: "dark",
 };
 
@@ -72,7 +74,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${interTight.variable} ${jetbrains.variable}`}
+      className={`dark ${figtree.variable} ${sourceSerif.variable} ${jetbrains.variable}`}
       suppressHydrationWarning
     >
       <head>

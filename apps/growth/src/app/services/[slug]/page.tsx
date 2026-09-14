@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
+import { ArrowLeft, Check } from "lucide-react";
 
 import { services, site } from "@/content/site";
-import { Aurora } from "@/components/fx/aurora";
 import { ServiceArt } from "@/components/fx/service-art";
 import { BlurFade } from "@/components/motion/blur-fade";
 import { TextReveal } from "@/components/motion/text-reveal";
-import { ButtonLink } from "@/components/ui/button-link";
+import { PillLink } from "@/components/ui/pill-link";
 
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
@@ -59,7 +58,6 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
       />
 
       <section className="relative overflow-hidden pb-14 pt-36 sm:pt-44">
-        <Aurora className="opacity-70" />
 
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
           <BlurFade>
@@ -186,13 +184,10 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
               <p className="max-w-xl font-display text-2xl leading-snug tracking-tight sm:text-3xl">
                 {service.cta}
               </p>
-              <ButtonLink
+              <PillLink
                 href="/free-audit"
-                className="h-13 rounded-full px-8 text-base"
               >
-                Get Your Free Audit
-                <ArrowUpRight className="size-4" />
-              </ButtonLink>
+                Get Your Free Audit</PillLink>
             </div>
           </BlurFade>
 

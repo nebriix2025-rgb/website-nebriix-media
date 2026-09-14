@@ -1,12 +1,10 @@
-import { ArrowUpRight } from "lucide-react";
 
-import { Aurora } from "@/components/fx/aurora";
-import { ButtonLink } from "@/components/ui/button-link";
+
+import { PillLink } from "@/components/ui/pill-link";
 
 export default function NotFound() {
   return (
     <section className="relative flex min-h-dvh items-center overflow-hidden">
-      <Aurora />
 
       <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8">
         <p className="font-mono text-xs uppercase tracking-[0.25em] text-primary">
@@ -20,20 +18,15 @@ export default function NotFound() {
         </p>
 
         <div className="mt-10 flex flex-wrap gap-4">
-          <ButtonLink
+          <PillLink
             href="/free-audit"
-            className="h-13 rounded-full px-8 text-base"
           >
-            Get Your Free Audit
-            <ArrowUpRight className="size-4" />
-          </ButtonLink>
-          <ButtonLink
-            href="/services"
-            variant="outline"
-            className="h-13 rounded-full px-8 text-base"
+            Get Your Free Audit</PillLink>
+          <PillLink
+            href="/services" variant="ghost"
           >
             See our services
-          </ButtonLink>
+          </PillLink>
         </div>
       </div>
     </section>

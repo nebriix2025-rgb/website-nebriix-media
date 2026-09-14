@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
-import { ArrowUpRight, X } from "lucide-react";
+import { X } from "lucide-react";
 
-import { ButtonLink } from "@/components/ui/button-link";
+import { PillLink } from "@/components/ui/pill-link";
 
 /**
  * Sticky audit prompt that surfaces once the visitor scrolls past the hero.
@@ -46,13 +46,11 @@ export function StickyAuditCta() {
               </span>
             </p>
 
-            <ButtonLink
+            <PillLink
               href="/free-audit"
               className="h-10 shrink-0 rounded-full px-5 text-sm"
             >
-              Get it
-              <ArrowUpRight className="size-4" />
-            </ButtonLink>
+              Get it</PillLink>
 
             <button
               type="button"

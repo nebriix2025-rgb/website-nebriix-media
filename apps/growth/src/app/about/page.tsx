@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { ArrowUpRight } from "lucide-react";
 
 import { about, industries, keyPhrases, site } from "@/content/site";
 import { PageHeader } from "@/components/layout/page-header";
 import { BlurFade } from "@/components/motion/blur-fade";
 import { Marquee } from "@/components/motion/marquee";
 import { SectionHeading } from "@/components/sections/section-heading";
-import { ButtonLink } from "@/components/ui/button-link";
+import { PillLink } from "@/components/ui/pill-link";
 
 export const metadata: Metadata = {
   title: "About",
@@ -100,13 +99,10 @@ export default function AboutPage() {
               <p className="max-w-xl font-display text-2xl leading-snug tracking-tight sm:text-3xl">
                 We show you the math before we ask for a dollar.
               </p>
-              <ButtonLink
+              <PillLink
                 href="/free-audit"
-                className="h-13 rounded-full px-8 text-base"
               >
-                Get Your Free Audit
-                <ArrowUpRight className="size-4" />
-              </ButtonLink>
+                Get Your Free Audit</PillLink>
             </div>
           </BlurFade>
         </div>

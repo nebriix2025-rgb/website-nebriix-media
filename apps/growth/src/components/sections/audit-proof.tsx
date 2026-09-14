@@ -19,7 +19,7 @@ export function AuditProof() {
                     value={stat.value}
                     suffix={stat.suffix}
                     delay={i * 0.08}
-                    className="font-display text-5xl tracking-tight text-primary sm:text-6xl"
+                    className="font-display text-6xl font-light leading-none sm:text-[4.5rem]"
                   />
                   <span className="mt-3 block max-w-[15rem] text-sm leading-relaxed text-muted-foreground">
                     {stat.label}

@@ -2,12 +2,12 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
-import { ArrowUpRight, TrendingDown } from "lucide-react";
+import { TrendingDown } from "lucide-react";
 
 import { NumberTicker } from "@/components/motion/number-ticker";
 import { BlurFade } from "@/components/motion/blur-fade";
 import { SectionHeading } from "@/components/sections/section-heading";
-import { ButtonLink } from "@/components/ui/button-link";
+import { PillLink } from "@/components/ui/pill-link";
 import { cn } from "@/lib/utils";
 
 /**
@@ -174,13 +174,10 @@ export function AuditReportMock() {
                 </div>
               </div>
 
-              <ButtonLink
+              <PillLink
                 href="/free-audit"
-                className="h-12 rounded-full px-7 text-base"
               >
-                Run mine
-                <ArrowUpRight className="size-4" />
-              </ButtonLink>
+                Run mine</PillLink>
             </div>
 
             <p className="mt-8 text-xs leading-relaxed text-muted-foreground">

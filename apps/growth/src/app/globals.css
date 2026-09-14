@@ -10,8 +10,9 @@
 
   /* Neue Montreal (the live site's heading face) is a licensed Pangram Pangram
      font. Inter Tight is the closest free neo-grotesque and pairs with Inter. */
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-inter-tight);
+  /* After paires.ai: Source Serif 4 for display, Figtree for everything else. */
+  --font-sans: var(--font-figtree);
+  --font-display: var(--font-source-serif);
   --font-mono: var(--font-jetbrains);
 
   --color-ring: var(--ring);
@@ -81,79 +82,52 @@
     }
   }
 }
-
 /*
-  Light is the default here (matching nebriix.com, which opens light and offers a
-  toggle). The wordmark is a white script lockup with no dark-ink variant, so on
-  light backgrounds it is inverted in CSS — see `.logo-mark` below.
+  Dark only, after paires.ai: deep navy ground, warm cream ink, and no accent
+  hue at all — the cream itself is the accent (buttons are cream on navy). The
+  white script wordmark sits on this natively, so no logo inversion is needed.
+
+  Navy  #0a0d14  →  oklch(0.15 0.018 265)
+  Cream #faf8f3  →  oklch(0.978 0.006 90)
 */
 :root {
-  --background: oklch(0.985 0.002 155);
-  --foreground: oklch(0.19 0.01 155);
+  --background: oklch(0.15 0.018 265);
+  --foreground: oklch(0.978 0.006 90);
 
-  --surface: oklch(0.955 0.003 155);
-  --surface-2: oklch(0.92 0.004 155);
+  --surface: oklch(0.185 0.02 265);
+  --surface-2: oklch(0.22 0.022 265);
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.19 0.01 155);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.19 0.01 155);
+  --card: oklch(0.175 0.02 265);
+  --card-foreground: oklch(0.978 0.006 90);
+  --popover: oklch(0.185 0.02 265);
+  --popover-foreground: oklch(0.978 0.006 90);
 
-  /* On light, the mint is too pale to carry text — darken it for contrast. */
-  --primary: oklch(0.58 0.135 152);
-  --primary-foreground: oklch(0.99 0.002 155);
-  --secondary: oklch(0.93 0.005 155);
-  --secondary-foreground: oklch(0.19 0.01 155);
+  /* Cream is the action colour; navy ink on it. */
+  --primary: oklch(0.978 0.006 90);
+  --primary-foreground: oklch(0.15 0.018 265);
+  --secondary: oklch(0.22 0.022 265);
+  --secondary-foreground: oklch(0.978 0.006 90);
 
-  --muted: oklch(0.93 0.005 155);
-  --muted-foreground: oklch(0.46 0.012 155);
-  --accent: oklch(0.93 0.005 155);
-  --accent-foreground: oklch(0.19 0.01 155);
-  --destructive: oklch(0.52 0.2 25);
+  --muted: oklch(0.22 0.022 265);
+  /* Body copy runs at 60% cream, exactly as paires does. */
+  --muted-foreground: oklch(0.978 0.006 90 / 60%);
+  --accent: oklch(0.24 0.024 265);
+  --accent-foreground: oklch(0.978 0.006 90);
+  --destructive: oklch(0.68 0.19 25);
 
-  --border: oklch(0 0 0 / 11%);
-  --input: oklch(0 0 0 / 16%);
-  --ring: oklch(0.58 0.135 152);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.978 0.006 90);
 
-  --brand: oklch(0.58 0.135 152);
-  --brand-deep: oklch(0.48 0.11 168);
+  --brand: oklch(0.978 0.006 90);
+  --brand-deep: oklch(0.86 0.02 90);
 
   --radius: 0.75rem;
 }
 
+/* Kept so `.dark` selectors elsewhere keep working; the values are identical. */
 .dark {
-  /* Carried over from the live theme: #97ea90 accent on hsl(150 4% 11%). */
-  --background: oklch(0.163 0.008 155);
-  --foreground: oklch(0.975 0.003 155);
-
-  --surface: oklch(0.205 0.01 155);
-  --surface-2: oklch(0.248 0.012 155);
-
-  --card: oklch(0.205 0.01 155);
-  --card-foreground: oklch(0.975 0.003 155);
-  --popover: oklch(0.205 0.01 155);
-  --popover-foreground: oklch(0.975 0.003 155);
-
-  /* The accent is a light mint, so anything sitting on it needs dark ink. */
-  --primary: oklch(0.862 0.148 145);
-  --primary-foreground: oklch(0.163 0.012 155);
-  --secondary: oklch(0.248 0.012 155);
-  --secondary-foreground: oklch(0.975 0.003 155);
-
-  --muted: oklch(0.248 0.012 155);
-  --muted-foreground: oklch(0.7 0.011 155);
-  --accent: oklch(0.272 0.014 155);
-  --accent-foreground: oklch(0.975 0.003 155);
-  --destructive: oklch(0.62 0.21 25);
-
-  --border: oklch(1 0 0 / 9%);
-  --input: oklch(1 0 0 / 13%);
-  --ring: oklch(0.862 0.148 145);
-
-  --brand: oklch(0.862 0.148 145);
-  --brand-deep: oklch(0.7 0.13 168);
-
-  --radius: 0.75rem;
+  color-scheme: dark;
 }
 
 @layer base {
@@ -181,8 +155,15 @@
   h2,
   h3,
   h4 {
-    @apply font-display tracking-tight;
+    @apply font-display font-normal;
+    letter-spacing: -0.03em;
     text-wrap: balance;
+  }
+
+  /* Figtree runs slightly tight at body sizes, as on paires (16px → -0.32px). */
+  p,
+  li {
+    letter-spacing: -0.02em;
   }
 
   p {
@@ -191,15 +172,9 @@
 }
 
 @layer utilities {
-  /*
-    The wordmark ships as white artwork on transparency. There is no dark-ink
-    variant, so on light backgrounds it is inverted in CSS rather than shipping
-    a second asset. It's a flat monochrome mark, so inversion is lossless.
-  */
+  /* Dark-only site; the white wordmark needs no treatment. Kept as a no-op so
+     existing markup stays valid. */
   .logo-mark {
-    filter: invert(1);
-  }
-  .dark .logo-mark {
     filter: none;
   }
 
@@ -223,11 +198,10 @@
     the photo is lifted to a pale wash so dark type reads over it; on dark it is
     pushed down so light type does. A single grade can't serve both.
   */
+  /* Cinematic plate: keep the colour (paires' video is warm, not mono), push
+     it down so cream type holds, lift contrast a touch. */
   .photo-plate {
-    filter: grayscale(1) brightness(1.42) contrast(0.82);
-  }
-  .dark .photo-plate {
-    filter: grayscale(1) brightness(0.62) contrast(1.15);
+    filter: brightness(0.55) contrast(1.12) saturate(0.85);
   }
 
   /* Slow drift for full-bleed backdrops — the Ken Burns move. */

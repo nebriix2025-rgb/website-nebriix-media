@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Phone, Mail, MessageCircle } from "lucide-react";
+import { Phone, Mail, MessageCircle } from "lucide-react";
 
 import { site, services } from "@/content/site";
-import { DotGrid } from "@/components/fx/dot-grid";
 import { BlurFade } from "@/components/motion/blur-fade";
-import { ButtonLink } from "@/components/ui/button-link";
+import { PillLink } from "@/components/ui/pill-link";
 
 const socials = [
   { label: "Instagram", href: site.socials.instagram },
@@ -17,7 +16,6 @@ const socials = [
 export function SiteFooter() {
   return (
     <footer className="relative overflow-hidden border-t border-border bg-surface/30">
-      <DotGrid className="opacity-40" />
 
       <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
         <BlurFade>
@@ -28,13 +26,10 @@ export function SiteFooter() {
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <ButtonLink
+            <PillLink
               href="/free-audit"
-              className="h-13 rounded-full px-8 text-base"
             >
-              Get Your Free Audit
-              <ArrowUpRight className="size-4" />
-            </ButtonLink>
+              Get Your Free Audit</PillLink>
             <a
               href={site.phoneHref}
               className="inline-flex h-13 items-center gap-2 rounded-full border border-border px-7 text-base text-muted-foreground transition-colors hover:border-primary hover:text-primary"

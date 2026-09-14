@@ -21,3 +21,12 @@ An earlier revision used imagery copied from the live nebriix.com, which shipped
 with the Mokko WordPress theme. Theme demo assets are frequently licensed only
 for use within the theme, so they were replaced rather than published in a
 public repository.
+
+## Video
+
+| File | Source | Description |
+| --- | --- | --- |
+| `media/hero.mp4` | [mixkit.co/free-stock-video/a-calm-street-in-paris-4348](https://mixkit.co/free-stock-video/a-calm-street-in-paris-4348/) | A calm street in Paris — 1280×720, 22s loop |
+
+[Mixkit Stock Video Free License](https://mixkit.co/license/#videoFree): free
+for commercial and non-commercial use, no attribution required.

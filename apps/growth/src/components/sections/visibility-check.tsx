@@ -7,7 +7,6 @@ import { submitVisibilityCheck, type LeadState } from "@/app/actions/leads";
 import { Field, Honeypot } from "@/components/forms/field";
 import { BlurFade } from "@/components/motion/blur-fade";
 import { Button } from "@/components/ui/button";
-import { DotGrid } from "@/components/fx/dot-grid";
 
 const initial: LeadState = { status: "idle" };
 
@@ -29,7 +28,6 @@ export function VisibilityCheck() {
 
   return (
     <section className="relative overflow-hidden border-y border-border py-24 sm:py-32">
-      <DotGrid className="opacity-30" />
 
       <div className="relative mx-auto max-w-3xl px-5 text-center sm:px-8">
         <BlurFade>
