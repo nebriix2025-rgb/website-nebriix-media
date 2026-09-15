@@ -82,7 +82,9 @@ export function SiteHeader() {
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.18 }}
-                    className="absolute left-1/2 top-full w-[40rem] -translate-x-1/2 pt-3"
+                    // Anchored to the trigger's left edge, not centred on it: the trigger sits
+                    // in the header's left column, so a centred 40rem panel hangs off-screen.
+                    className="absolute left-0 top-full w-[40rem] max-w-[calc(100vw-2.5rem)] pt-3"
                   >
                     <div className="grid grid-cols-2 gap-1 overflow-hidden rounded-xl border border-border bg-popover p-2 shadow-2xl">
                       {services.map((service) => (

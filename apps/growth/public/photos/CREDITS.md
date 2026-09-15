@@ -22,6 +22,7 @@ None are Unsplash+ / Premium.
 | `insights/schema.jpg` | [unsplash.com/photos/oXlXu2qukGE](https://unsplash.com/photos/oXlXu2qukGE) | Computer screen displaying HTML for web development |
 | `insights/reviews.jpg` | [unsplash.com/photos/aAEmWhQd2oU](https://unsplash.com/photos/aAEmWhQd2oU) | Woman looking at phone inside a cafe with cars outside |
 | `insights/aeo.jpg` | [unsplash.com/photos/tklI4EHE2Aw](https://unsplash.com/photos/tklI4EHE2Aw) | Woman working at a desk through a window |
+| `insights/muse.jpg` | [unsplash.com/photos/mw6Onwg4frY](https://unsplash.com/photos/mw6Onwg4frY) | Person typing into a form on a smartphone |
 
 Both are rendered monochrome in the UI via the `.photo-plate` grade in
 `globals.css`, and resized/recompressed from the originals.

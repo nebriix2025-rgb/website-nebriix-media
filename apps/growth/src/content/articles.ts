@@ -36,6 +36,104 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "meta-muse-whatsapp-agent-can-it-book-your-business",
+    title:
+      "Meta Just Put a Buying Agent Inside WhatsApp. Can It Book Your Business?",
+    description:
+      "Meta's Muse, launched 8 September, is a personal AI agent that lives in WhatsApp and books, fills forms, negotiates and buys on a person's behalf — and keeps working after they close the chat. The next customer who asks it for a plumber will never see a search results page.",
+    date: "2026-09-15",
+    readTime: "6 min read",
+    category: "AI News",
+    keywords: [
+      "Meta Muse WhatsApp",
+      "AI agent books appointments",
+      "AI agents local business",
+    ],
+    relatedService: "ai-automation-agents",
+    image: "/photos/insights/muse.jpg",
+    imageAlt: "Person typing into a form on a smartphone",
+    sources: [
+      {
+        label: "Meta — Introducing Muse: The World's First Personal AI Agent Built for Everyone",
+        url: "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+      },
+      {
+        label: "TechCrunch — Meta debuts its Muse AI agent. Will consumers trust it?",
+        url: "https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/",
+      },
+      {
+        label: "The National — What is Meta's Muse AI agent?",
+        url: "https://www.thenationalnews.com/future/technology/2026/09/08/meta-muse-ai-agent/",
+      },
+      {
+        label: "Axios — Meta debuts Muse, its long-planned personal AI agent",
+        url: "https://www.axios.com/2026/09/08/meta-debuts-muse-personal-ai-agent",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is Meta Muse?",
+        a: "Muse is a personal AI agent Meta launched on 8 September 2026. It lives inside WhatsApp and a standalone app, and it can send emails, book travel, fill out web forms, negotiate prices and complete purchases on a person's behalf. Give it an open-ended goal and it builds a plan and keeps working on it after the chat is closed.",
+      },
+      {
+        q: "Is Muse available for businesses?",
+        a: "At launch Muse is a consumer product, rolling out in the United States to users aged 18 and over, with a free tier and paid plans at $20 and $100 a month. There is no business-side product yet. What matters for a business is the other direction: whether an agent acting for a customer can find you, verify you and complete a booking on your site.",
+      },
+      {
+        q: "How does a local business get chosen by an AI agent?",
+        a: "The same way it gets recommended by ChatGPT or Google's AI: consistent name, address, phone and hours everywhere; substantive recent reviews; structured data that states plainly what you offer and where; and mentions on third-party sites. Plus one more thing an agent specifically needs — a website it can actually act on, with a booking or enquiry form it can complete.",
+      },
+    ],
+    body: [
+      {
+        type: "p",
+        text: "On 8 September Meta launched Muse, which it calls the world's first personal AI agent built for everyone. It lives inside WhatsApp. You tell it what you want — book a table, find a plumber, get three quotes for a bathroom — and it goes and does it: fills in the forms, sends the emails, negotiates the price, completes the purchase, and carries on working after you have closed the chat. For a local business, the important word in that sentence is not \"agent\". It is \"WhatsApp\".",
+      },
+      {
+        type: "p",
+        text: "WhatsApp is where a large share of local commerce already happens, especially outside the United States. Meta has just put an assistant in the same window that can act on a customer's behalf. Muse is US-only at launch, for adults, with a free tier and $20 and $100 monthly plans for heavier use. But the direction is not in doubt, and Meta is not the only one building this.",
+      },
+      { type: "h2", text: "What changes when the customer stops searching" },
+      {
+        type: "p",
+        text: "Until now, a person looking for a dentist typed a query, looked at a list, opened a few websites, and picked one. Every step in that process was a place where a business could be seen. An agent collapses it. The person says \"book me a dental cleaning this week\", and the agent decides who to call, checks availability, and books. The customer sees one confirmation. They never see the list, the map pack, or your competitor's website — or yours.",
+      },
+      {
+        type: "p",
+        text: "So the question is no longer \"do we rank\" but \"would an agent pick us, and could it complete the job if it did\". Those are two different tests, and most local businesses currently fail both.",
+      },
+      { type: "h2", text: "Test one: would an agent choose you?" },
+      {
+        type: "p",
+        text: "Agents choose the way AI assistants already recommend: on evidence they can verify. Name, address, phone and hours that match across every listing. Reviews with enough substance to say what you are actually good at. A website with real content and structured data that states plainly what you do and where. Mentions on sites you do not control. This is the same work that gets a business into ChatGPT's answers, and the same 1.2% of businesses currently pass it.",
+      },
+      { type: "h2", text: "Test two: could an agent complete the booking?" },
+      {
+        type: "p",
+        text: "This is the new part. An agent that has picked you still has to act. If your website has an online booking form, it books. If it has a quote request form, it submits one. If it has a phone number and nothing else, the agent either calls — and reaches voicemail at 9pm — or moves to the competitor whose site it can operate. A business that cannot be booked by a machine will, increasingly, not be booked.",
+      },
+      {
+        type: "list",
+        items: [
+          "Online booking on the website, wired to a real calendar, not a form that emails someone to call back.",
+          "Forms that are plain HTML, clearly labelled, and work without a human interpreting them. Agents fill forms; they do not decode them.",
+          "Structured data — LocalBusiness, Service, FAQPage — so the agent can confirm what it is booking before it books.",
+          "An answer on the other end. If the agent calls, something should pick up. An AI receptionist that books directly is, for the first time, talking to a peer.",
+          "Consistent details everywhere. An agent that finds two different phone numbers for you will not guess. It will pick the business with one.",
+        ],
+      },
+      { type: "h2", text: "The part worth being sceptical about" },
+      {
+        type: "p",
+        text: "TechCrunch's launch coverage asked the right question: will consumers trust an agent with their card and their inbox? Early adoption will be slower than the announcement suggests, and Muse is one product in one country. But every major platform is building the same thing, WhatsApp already has the audience, and the businesses that are bookable by an agent today are the ones that will be default choices when the behaviour becomes normal. Being early to this is cheap. Being late is not.",
+      },
+      {
+        type: "takeaway",
+        text: "For a decade, local marketing was about being seen by a person. It is becoming about being chosen by an agent and bookable by a machine. The evidence that gets you chosen is the same. The booking flow is the new requirement.",
+      },
+    ],
+  },
+  {
     slug: "only-1-percent-of-local-businesses-get-recommended-by-chatgpt",
     image: "/photos/insights/chatgpt.jpg",
     imageAlt: "Silhouette of a person holding a smartphone against the light",
