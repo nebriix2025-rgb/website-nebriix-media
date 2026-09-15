@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, MessageCircle } from "lucide-react";
+import { Mail } from "lucide-react";
 
 import { site, services } from "@/content/site";
 import { BlurFade } from "@/components/motion/blur-fade";
@@ -30,13 +30,6 @@ export function SiteFooter() {
               href="/free-audit"
             >
               Get Your Free Audit</PillLink>
-            <a
-              href={site.phoneHref}
-              className="inline-flex h-13 items-center gap-2 rounded-full border border-border px-7 text-base text-muted-foreground transition-colors hover:border-primary hover:text-primary"
-            >
-              <Phone className="size-4" />
-              Call us
-            </a>
           </div>
         </BlurFade>
 
@@ -89,26 +82,6 @@ export function SiteFooter() {
                   {site.email}
                 </a>
               </li>
-              <li>
-                <a
-                  href={site.phoneHref}
-                  className="inline-flex items-center gap-2 py-2 text-muted-foreground transition-colors hover:text-primary"
-                >
-                  <Phone className="size-4" />
-                  {site.phone}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={site.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 py-2 text-muted-foreground transition-colors hover:text-primary"
-                >
-                  <MessageCircle className="size-4" />
-                  WhatsApp
-                </a>
-              </li>
             </ul>
 
             <ul className="mt-4">
@@ -135,6 +108,9 @@ export function SiteFooter() {
           <div className="flex gap-6">
             <Link href="/insights" className="py-2 transition-colors hover:text-primary">
               Insights
+            </Link>
+            <Link href="/free-tools" className="py-2 transition-colors hover:text-primary">
+              Free Tools
             </Link>
             <Link href="/about" className="py-2 transition-colors hover:text-primary">
               About

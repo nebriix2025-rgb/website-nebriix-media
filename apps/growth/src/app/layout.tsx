@@ -65,7 +65,6 @@ const orgSchema = {
   name: site.name,
   url: site.url,
   email: site.email,
-  telephone: site.phone,
   description: site.description,
   sameAs: Object.values(site.socials),
 };

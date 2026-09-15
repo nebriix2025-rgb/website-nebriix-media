@@ -12,6 +12,7 @@ import { HowItWorks } from "@/components/sections/how-it-works";
 import { BeforeAfter } from "@/components/sections/before-after";
 import { VisibilityCheck } from "@/components/sections/visibility-check";
 import { InsightsPreview } from "@/components/sections/insights-preview";
+import { PromptPackTeaser } from "@/components/sections/prompt-pack-teaser";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { BlurFade } from "@/components/motion/blur-fade";
 import { PillLink } from "@/components/ui/pill-link";
@@ -48,6 +49,7 @@ export default function HomePage() {
       <BeforeAfter />
       <HowItWorks />
       <VisibilityCheck />
+      <PromptPackTeaser />
       <InsightsPreview />
 
       <section className="py-24 sm:py-32">

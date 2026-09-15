@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${site.url}/free-audit`, priority: 0.9 },
     { url: `${site.url}/services`, priority: 0.8 },
     { url: `${site.url}/insights`, priority: 0.8 },
+    { url: `${site.url}/free-tools`, priority: 0.8 },
     { url: `${site.url}/about`, priority: 0.6 },
     { url: `${site.url}/contact`, priority: 0.6 },
     ...services.map((service) => ({

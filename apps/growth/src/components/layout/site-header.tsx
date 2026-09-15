@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
-import { Menu, ChevronDown, Phone } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 
 import { nav, services, site } from "@/content/site";
 import { cn } from "@/lib/utils";
@@ -143,15 +143,6 @@ export function SiteHeader() {
         {/* Right: one CTA. */}
         <div className="flex items-center justify-end gap-2 lg:col-start-3">
           <ThemeToggle />
-
-          {/* Click-to-call on every page — 70%+ of local searches are mobile. */}
-          <a
-            href={site.phoneHref}
-            aria-label="Call us"
-            className="flex size-11 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary sm:hidden"
-          >
-            <Phone className="size-4" />
-          </a>
 
           <PillLink href="/free-audit" size="sm" className="hidden sm:inline-flex">
             Free Audit

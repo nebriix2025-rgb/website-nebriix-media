@@ -30,10 +30,6 @@ export const site = {
   description:
     "Your competitors show up when someone searches. You don't. We build the visibility systems that get local businesses recommended by Google, ChatGPT and AI assistants.",
   email: "Hello@nebriix.com",
-  /** PLACEHOLDER — confirm before launch. */
-  phone: "+971 4 000 0000",
-  phoneHref: "tel:+97140000000",
-  whatsapp: "https://wa.me/97140000000",
   responseCommitment: "We respond to every inquiry within 24 hours.",
   socials: {
     instagram: "https://www.instagram.com/nebriix",
@@ -47,6 +43,7 @@ export const nav = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "Insights", href: "/insights" },
+  { label: "Free Tools", href: "/free-tools" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;

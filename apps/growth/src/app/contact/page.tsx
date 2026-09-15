@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, Phone, MessageCircle, ArrowUpRight } from "lucide-react";
+import { Mail, ArrowUpRight } from "lucide-react";
 
 import { site } from "@/content/site";
 import { PageHeader } from "@/components/layout/page-header";
@@ -38,24 +38,6 @@ export default function ContactPage() {
 
             <BlurFade delay={0.1}>
               <div className="space-y-10">
-                <div className="flex flex-col gap-3">
-                  <a
-                    href={site.phoneHref}
-                    className="flex h-13 items-center justify-center gap-2 rounded-full bg-primary px-6 font-medium text-primary-foreground transition-opacity hover:opacity-90"
-                  >
-                    <Phone className="size-4" />
-                    Call now
-                  </a>
-                  <a
-                    href={site.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex h-13 items-center justify-center gap-2 rounded-full border border-border px-6 transition-colors hover:border-primary hover:text-primary"
-                  >
-                    <MessageCircle className="size-4" />
-                    WhatsApp us
-                  </a>
-                </div>
 
                 <div>
                   <h2 className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
@@ -67,18 +49,6 @@ export default function ContactPage() {
                   >
                     <Mail className="size-5" />
                     {site.email}
-                  </a>
-                </div>
-
-                <div>
-                  <h2 className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
-                    Phone
-                  </h2>
-                  <a
-                    href={site.phoneHref}
-                    className="mt-4 block font-display text-xl tracking-tight transition-colors hover:text-primary"
-                  >
-                    {site.phone}
                   </a>
                 </div>
 
