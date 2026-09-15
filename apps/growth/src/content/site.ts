@@ -8,6 +8,9 @@ import {
   Target,
   Star,
   Users,
+  Layers,
+  Code2,
+  Workflow,
 } from "lucide-react";
 
 /**
@@ -696,6 +699,183 @@ export const services: Service[] = [
       {
         q: "How is this different from social media management?",
         a: "Social media management grows your own channels. Community presence builds mentions of your business on other people's platforms \u2014 the third-party evidence AI systems trust precisely because you do not control it.",
+      },
+    ],
+  },
+  {
+    slug: "web-app-development",
+    name: "Web & App Development",
+    oneLiner: "Booking, portals and custom web apps that actually convert",
+    icon: Code2,
+    headline:
+      "Your website is a brochure. Your competitors' is a booking engine.",
+    metaDescription:
+      "Custom web and app development for local businesses: online booking, client portals, quote calculators and lead-capture systems that turn visitors into customers.",
+    sections: [
+      {
+        heading: "The Problem",
+        items: [
+          "Most local business websites can show a phone number and nothing else. A visitor who wants to book at 11pm leaves.",
+          "Template builders cannot add the things that convert: online booking, instant quotes, client login, automated follow-up.",
+          "Every manual step between a visitor and a confirmed job is a place where the lead falls out.",
+          "Custom development has historically been priced for enterprises, so small businesses have gone without.",
+        ],
+      },
+      {
+        heading: "What We Do",
+        items: [
+          "Online booking and scheduling wired to your calendar, with reminders that cut no-shows",
+          "Quote calculators and instant-estimate tools for trades, clinics and studios",
+          "Client portals: project status, documents, invoices, messaging in one place",
+          "Lead-capture flows with call tracking and CRM sync, so every enquiry is attributed",
+          "Fast, mobile-first builds on modern frameworks, hosted and monitored",
+          "AI-assisted development throughout, which is why a build that used to take months takes weeks",
+        ],
+      },
+      {
+        heading: "Why It Matters",
+        items: [
+          "A booking button on every page is the single largest conversion lift most local businesses ever see.",
+          "Speed and mobile performance are ranking factors for Google and trust signals for visitors.",
+          "Software you own beats a subscription you rent: no per-seat fees, no platform lock-in.",
+        ],
+      },
+    ],
+    cta: "Tell us what your customers wish they could do on your site. We will scope it for free.",
+    faqs: [
+      {
+        q: "How much does a custom web app cost for a small business?",
+        a: "Far less than it did two years ago. AI-assisted development means a booking system, client portal or quote tool that once took a team months is scoped and built in weeks. We price fixed-scope, agreed up front, and the audit tells you what the build is worth before you commit.",
+      },
+      {
+        q: "Can you add booking to my existing website?",
+        a: "Usually, yes. If the site is on a modern platform we integrate booking, quoting or a portal into it. If it is on an old builder that cannot support it, we rebuild the site around the new functionality and migrate the content.",
+      },
+      {
+        q: "Do I own the code?",
+        a: "Yes. Everything we build is delivered into your own accounts and repositories. There is no platform fee and nothing stops working if you stop working with us.",
+      },
+      {
+        q: "How is this different from Local SEO and Website?",
+        a: "That service makes a site rank and read well. This one makes it do things: take bookings, produce quotes, log clients in. Most businesses need the first before the second; the audit tells you which.",
+      },
+    ],
+  },
+  {
+    slug: "saas-software-development",
+    name: "SaaS & Custom Software",
+    oneLiner: "MVPs, internal tools and integrations, built in weeks not quarters",
+    icon: Layers,
+    headline:
+      "You have a process. It should be software.",
+    metaDescription:
+      "SaaS and custom software development: MVPs, internal tools, dashboards and integrations for growing businesses, built with AI-assisted development.",
+    sections: [
+      {
+        heading: "The Problem",
+        items: [
+          "The spreadsheet that runs the business has become the bottleneck that limits it.",
+          "Off-the-shelf software forces your process to fit the tool instead of the other way round.",
+          "Traditional agencies quote six figures and six months for what is often a focused, well-scoped tool.",
+          "Ideas for a product sit unbuilt because the first step looked too expensive.",
+        ],
+      },
+      {
+        heading: "What We Do",
+        items: [
+          "MVPs for new products: the smallest version that real customers can pay for, shipped fast",
+          "Internal tools that replace the spreadsheet: job tracking, scheduling, inventory, reporting",
+          "Dashboards that pull from the systems you already use and show the numbers that matter",
+          "Integrations between the tools you have \u2014 CRM, accounting, booking, messaging \u2014 so data stops being re-typed",
+          "Multi-tenant SaaS foundations: auth, billing, roles, admin, ready to scale",
+          "AI-assisted development end to end, with senior engineers directing it and reviewing every line",
+        ],
+      },
+      {
+        heading: "Why It Matters",
+        items: [
+          "A tool built around your process compounds: every hour it saves is saved every week.",
+          "An MVP in the market in six weeks learns more than a perfect product in a year.",
+          "Software you own is an asset on the balance sheet. A subscription is a cost on the P&L.",
+        ],
+      },
+    ],
+    cta: "Describe the process, the spreadsheet or the idea. We will tell you what it would take.",
+    faqs: [
+      {
+        q: "What is an MVP and do I need one?",
+        a: "A minimum viable product is the smallest version of a product that real customers can use and pay for. If you have a product idea, an MVP is almost always the right first step: it tests demand with real money before you build the full thing, and it is what investors expect to see.",
+      },
+      {
+        q: "How can you build software so much faster than a traditional agency?",
+        a: "AI-assisted development. Senior engineers direct AI tooling that produces, tests and documents code far faster than typing it by hand, then review everything before it ships. The result is the same quality of software in a fraction of the calendar time, which is why the pricing works for businesses that could never afford a traditional build.",
+      },
+      {
+        q: "Will it scale if the business grows?",
+        a: "Yes. We build on modern, mainstream frameworks and cloud infrastructure that scale from ten users to ten thousand without a rewrite. Multi-tenant SaaS foundations \u2014 auth, billing, roles \u2014 are designed in from the start when a product is the goal.",
+      },
+      {
+        q: "Who maintains it after launch?",
+        a: "Your choice. We hand over full documentation and a walkthrough so an in-house or freelance developer can maintain it, or we run an optional monthly retainer for iteration, monitoring and support. There is no lock-in either way.",
+      },
+    ],
+  },
+  {
+    slug: "ai-automation-agents",
+    name: "AI Automation & Agents",
+    oneLiner: "Voice receptionists, chatbots and workflows that run without you",
+    icon: Workflow,
+    headline:
+      "Never let a hot lead go cold. An AI agent answers every hour you don't.",
+    metaDescription:
+      "AI automation for local businesses: 24/7 voice receptionists, website chatbots trained on your business, and workflow automation that removes the manual work eating your team's week.",
+    sections: [
+      {
+        heading: "The Problem",
+        items: [
+          "Every missed call is a missed job. Most local businesses miss a third of their calls, and after-hours enquiries go straight to whoever answers first.",
+          "Staff spend hours a week on intake, scheduling, follow-ups and status updates that follow the same script every time.",
+          "Website visitors with a question leave when nobody answers it in the moment.",
+          "Generic chatbots frustrate customers because they know nothing about the actual business.",
+        ],
+      },
+      {
+        heading: "What We Do",
+        items: [
+          "AI voice receptionists that answer, qualify, book and reschedule around the clock, and hand complex calls to a human",
+          "Website chatbots trained on your services, pricing and FAQs, live on the site and inside the booking flow",
+          "Automated intake, reminders, review requests and follow-up sequences wired into your CRM",
+          "Workflow automation across the tools you already use \u2014 n8n, Make, Zapier, HubSpot \u2014 mapped from how your team actually works",
+          "Multilingual where it matters, with data privacy and compliance designed in",
+          "Monthly reporting on calls handled, conversations resolved and hours reclaimed",
+        ],
+      },
+      {
+        heading: "Why It Matters",
+        items: [
+          "A medical practice we built for now handles 73% of inbound calls with no human involvement; no-shows fell 31% from automated reminders.",
+          "A SaaS chatbot lifted demo bookings 41% in its first month and now resolves 94% of 800+ monthly conversations.",
+          "A law firm reclaimed an estimated 320 billable hours a month \u2014 the capacity of two associates \u2014 without hiring.",
+        ],
+      },
+    ],
+    cta: "Find out which of your calls and tasks an agent could take today.",
+    faqs: [
+      {
+        q: "What can an AI receptionist actually do?",
+        a: "Answer every inbound call instantly, at any hour, in a natural voice; qualify the caller; book, reschedule or cancel appointments against your live calendar; answer routine questions; and transfer anything complex to a human with context. In a medical practice we built for, it now handles 73% of all inbound calls without staff involvement.",
+      },
+      {
+        q: "Will customers know they are talking to an AI?",
+        a: "It is disclosed where regulation or good practice requires, and the conversation is natural enough that most callers simply get what they needed. What customers notice is that the phone is answered immediately, every time, including at 9pm on a Sunday.",
+      },
+      {
+        q: "Which tools does workflow automation connect?",
+        a: "Whatever you already run. We build on n8n, Make and Zapier and connect CRMs such as HubSpot, calendars, booking systems, messaging, accounting and email, so data moves between them without anyone re-typing it. The audit maps your process first and identifies the handoffs worth automating.",
+      },
+      {
+        q: "What does it cost compared with hiring?",
+        a: "A fraction. An agent runs 24/7 for less than a part-time salary, and a law firm we worked with reclaimed roughly 320 billable hours a month \u2014 about two full-time associates' capacity \u2014 without adding headcount. We scope each automation against the hours it will save so the return is clear before you commit.",
       },
     ],
   },

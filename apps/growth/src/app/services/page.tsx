@@ -18,7 +18,7 @@ export default function ServicesPage() {
     <>
       <PageHeader
         title="What We Do"
-        description="Seven services. One outcome: more clients calling, booking, and paying."
+        description="From being found, to being chosen, to the systems that run the work. One outcome: more clients."
         image="/photos/services.jpg"
       />
 

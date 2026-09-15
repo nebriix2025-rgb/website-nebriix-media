@@ -82,9 +82,9 @@ export function SiteHeader() {
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.18 }}
-                    className="absolute left-1/2 top-full w-80 -translate-x-1/2 pt-3"
+                    className="absolute left-1/2 top-full w-[40rem] -translate-x-1/2 pt-3"
                   >
-                    <div className="overflow-hidden rounded-xl border border-border bg-popover p-2 shadow-2xl">
+                    <div className="grid grid-cols-2 gap-1 overflow-hidden rounded-xl border border-border bg-popover p-2 shadow-2xl">
                       {services.map((service) => (
                         <Link
                           key={service.slug}

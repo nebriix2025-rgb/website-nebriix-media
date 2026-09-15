@@ -29,7 +29,7 @@ export default function HomePage() {
           <div className="flex flex-wrap items-end justify-between gap-8">
             <SectionHeading
               title="What we do."
-              description="Seven services. One outcome: more clients calling, booking, and paying."
+              description="Visibility, conversion and the software behind it. One outcome: more clients calling, booking, and paying."
             />
             <PillLink
               href="/services" variant="ghost"

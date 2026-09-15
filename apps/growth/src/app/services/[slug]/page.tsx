@@ -19,6 +19,9 @@ const HERO_IMAGE: Record<string, string> = {
   "lead-generation-system": "/photos/about.jpg",
   "review-reputation-management": "/photos/contact.jpg",
   "community-presence": "/photos/cafe.jpg",
+  "web-app-development": "/photos/insights/schema.jpg",
+  "saas-software-development": "/photos/audit.jpg",
+  "ai-automation-agents": "/photos/insights/aeo.jpg",
 };
 
 export function generateStaticParams() {
