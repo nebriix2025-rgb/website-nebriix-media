@@ -133,6 +133,9 @@ export function SiteFooter() {
             {new Date().getFullYear()} &copy; {site.name}. All Rights Reserved.
           </p>
           <div className="flex gap-6">
+            <Link href="/insights" className="transition-colors hover:text-primary">
+              Insights
+            </Link>
             <Link href="/about" className="transition-colors hover:text-primary">
               About
             </Link>

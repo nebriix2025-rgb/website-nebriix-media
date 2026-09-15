@@ -18,6 +18,7 @@ const HERO_IMAGE: Record<string, string> = {
   "social-media-management": "/photos/cafe.jpg",
   "lead-generation-system": "/photos/about.jpg",
   "review-reputation-management": "/photos/contact.jpg",
+  "community-presence": "/photos/cafe.jpg",
 };
 
 export function generateStaticParams() {
@@ -61,11 +62,32 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
     url: `${site.url}/services/${service.slug}`,
   };
 
+  // Answer engines lift FAQPage entries verbatim; this is the AEO payload.
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: service.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+      { "@type": "ListItem", position: 2, name: "Services", item: `${site.url}/services` },
+      { "@type": "ListItem", position: 3, name: service.name, item: `${site.url}/services/${service.slug}` },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([serviceSchema, faqSchema, breadcrumbSchema]) }}
       />
 
       <PageHeader
@@ -175,6 +197,20 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
               </div>
             </BlurFade>
           )}
+
+          <BlurFade>
+            <div className="grid gap-8 border-t border-border py-12 lg:grid-cols-[minmax(0,18rem)_1fr] lg:gap-16">
+              <h2 className="font-display text-2xl">Questions</h2>
+              <dl className="max-w-3xl divide-y divide-border">
+                {service.faqs.map((f) => (
+                  <div key={f.q} className="py-6">
+                    <dt className="font-display text-lg leading-snug sm:text-xl">{f.q}</dt>
+                    <dd className="mt-3 text-[15px] leading-relaxed text-muted-foreground">{f.a}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </BlurFade>
 
           <BlurFade>
             <div className="mt-10 flex flex-wrap items-center justify-between gap-8 rounded-2xl border border-primary/25 bg-primary/5 p-10 sm:p-14">

@@ -11,6 +11,7 @@ import { AuditReportMock } from "@/components/sections/audit-report-mock";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { BeforeAfter } from "@/components/sections/before-after";
 import { VisibilityCheck } from "@/components/sections/visibility-check";
+import { InsightsPreview } from "@/components/sections/insights-preview";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { BlurFade } from "@/components/motion/blur-fade";
 import { PillLink } from "@/components/ui/pill-link";
@@ -47,6 +48,7 @@ export default function HomePage() {
       <BeforeAfter />
       <HowItWorks />
       <VisibilityCheck />
+      <InsightsPreview />
 
       <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">

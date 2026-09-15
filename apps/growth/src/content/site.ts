@@ -7,6 +7,7 @@ import {
   Share2,
   Target,
   Star,
+  Users,
 } from "lucide-react";
 
 /**
@@ -42,6 +43,7 @@ export const site = {
 export const nav = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
+  { label: "Insights", href: "/insights" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
@@ -153,11 +155,34 @@ export type Service = {
   /** Numbered explainer, used where the brief lists ranking factors. */
   factors?: { title: string; body: string }[];
   cta: string;
+  /**
+   * Answer-first Q&A. Each answer stands alone in two or three sentences so an
+   * answer engine can quote it verbatim. Also emitted as FAQPage schema.
+   */
+  faqs: { q: string; a: string }[];
 };
 
 export const services: Service[] = [
   {
     slug: "ai-search-optimization",
+    faqs: [
+      {
+        q: "What is AI search optimization?",
+        a: "AI search optimization is the work of making a business the one ChatGPT, Google AI Overviews, Perplexity and voice assistants recommend when someone asks for a service in a specific place. It focuses on the evidence AI systems verify before recommending anyone: reviews, consistent directory listings, structured website content and mentions on third-party sites.",
+      },
+      {
+        q: "How does ChatGPT decide which local businesses to recommend?",
+        a: "ChatGPT and similar assistants retrieve live web results and then favour businesses with strong, recent, detailed reviews, identical name-address-phone details across listings, substantive website content and mentions on trusted third-party sites such as Yelp, Reddit and industry directories. Only about 1.2% of business locations currently get recommended, so the bar is evidence, not luck.",
+      },
+      {
+        q: "Does ranking on Google mean AI will recommend me?",
+        a: "No. Research in 2026 found only a 45% overlap between businesses in Google's map pack and businesses AI assistants recommend, so more than half of map-pack winners are absent from AI answers. AI weighs review substance and third-party mentions far more heavily than Google's local ranking does.",
+      },
+      {
+        q: "How long does it take to show up in AI recommendations?",
+        a: "Most businesses see first appearances within 60 to 90 days once the missing signals are in place \u2014 usually reviews on the right platforms, corrected listings and structured content. We check ChatGPT, Google AI and Perplexity monthly and report which queries you appear for.",
+      },
+    ],
     name: "AI Search Optimization",
     oneLiner: "Get recommended by ChatGPT, Google AI, and Siri",
     icon: Bot,
@@ -224,6 +249,24 @@ export const services: Service[] = [
   },
   {
     slug: "google-business-profile",
+    faqs: [
+      {
+        q: "What is a Google Business Profile?",
+        a: "A Google Business Profile is the free listing that appears in Google Maps and in the map pack at the top of local search results. It holds your categories, hours, photos, reviews and posts, and it is the single most important local discovery channel \u2014 most local searches never reach a website.",
+      },
+      {
+        q: "How many reviews do I need to rank in the map pack?",
+        a: "Businesses with fewer than 20 Google reviews rarely appear in the map pack for competitive terms, and those with 40 or more are roughly three times more likely to appear than those with fewer than 10. Volume matters, but so do recency and detail: a steady flow of specific, recent reviews outperforms a large but stale total.",
+      },
+      {
+        q: "Should I respond to negative reviews?",
+        a: "Yes, every time, promptly and professionally. Responding to reviews raises consumer trust by around 45%, and an unanswered negative review damages both trust and ranking. A calm, specific reply often does more for you than the review does against you.",
+      },
+      {
+        q: "How often should I post on my Google Business Profile?",
+        a: "Weekly. Businesses that post weekly see about 70% more profile views than those that do not, and regular posts keep the profile active in Google's eyes. We write and schedule them so it happens without you thinking about it.",
+      },
+    ],
     name: "Google Business Profile Optimization",
     oneLiner: "Own the map pack where 90% of local searches happen",
     icon: MapPin,
@@ -269,6 +312,24 @@ export const services: Service[] = [
   },
   {
     slug: "local-seo-website",
+    faqs: [
+      {
+        q: "Why doesn't my website rank on Google?",
+        a: "Most local business websites are digital business cards: a logo, a phone number and a few hundred characters of text. Google cannot rank a page with nothing to rank. Dedicated pages for each service and each location, proper title tags and headings, and answers to the questions people actually search are what earn page-one positions.",
+      },
+      {
+        q: "Do I need a separate page for every service?",
+        a: "Yes. A page titled \"Emergency Plumbing in Denver\" can rank for that search; a generic \"Services\" page cannot. Each service and each city or neighbourhood you serve should have its own page with real content, because that is what both Google and AI assistants use to match you to a query.",
+      },
+      {
+        q: "What is schema markup and does it matter?",
+        a: "Schema markup is structured data added to a page that tells search engines and AI systems exactly what a business is, where it operates and what it offers. Pages with proper LocalBusiness and FAQ schema are cited in AI responses about 3.2 times more often than pages without it.",
+      },
+      {
+        q: "I only have an Instagram page. Is that enough?",
+        a: "No. Social media profiles are not indexable in the way a website is, so a business that exists only on Instagram is invisible to Google search and to AI assistants for non-branded queries. A fast, mobile-first website with real content is the foundation everything else stands on.",
+      },
+    ],
     name: "Local SEO and Website",
     oneLiner: "Rank on page 1 for the searches that bring clients",
     icon: Globe,
@@ -325,6 +386,24 @@ export const services: Service[] = [
   },
   {
     slug: "video-production",
+    faqs: [
+      {
+        q: "Why does video matter for a local business?",
+        a: "Instagram, TikTok and YouTube all rank video above static images, and YouTube is now the second most-cited source in Google AI Overviews at nearly 19% of citations. A local business posting only photos gets a fraction of the reach it could, and no presence at all in the video results AI increasingly draws from.",
+      },
+      {
+        q: "How many videos should a local business post?",
+        a: "The businesses winning on social media post three to five short videos per week. Most local businesses post three per month. The gap is production capacity, which is exactly what a done-for-you pipeline removes.",
+      },
+      {
+        q: "Do I need to be on camera?",
+        a: "Not necessarily. We produce property walkthroughs, before-and-after transformations, product showcases and educational clips using your footage, licensed stock and AI voiceover. If you are comfortable on camera, that footage performs best; if not, there is still plenty to work with.",
+      },
+      {
+        q: "Who owns the videos?",
+        a: "You do. Every finished file is delivered to you for approval before anything is posted, and the assets are yours to reuse on your website, in ads or anywhere else.",
+      },
+    ],
     name: "Video Production",
     oneLiner: "Content that stops the scroll and starts conversations",
     icon: Video,
@@ -371,6 +450,24 @@ export const services: Service[] = [
   },
   {
     slug: "social-media-management",
+    faqs: [
+      {
+        q: "What does social media management include?",
+        a: "Posting across TikTok, Instagram, YouTube and Facebook at the right times, captions written to drive engagement, hashtag and YouTube SEO research, custom thumbnails, a monthly content calendar sent for approval, comment engagement and a monthly analytics report showing reach, growth and what to adjust.",
+      },
+      {
+        q: "Why do my posts get so few likes despite my follower count?",
+        a: "When an account posts inconsistently or relies on static graphics, the algorithm stops showing its content, so a business can have thousands of followers and single-digit engagement. Consistent video, strong hooks and community interaction are what restore reach.",
+      },
+      {
+        q: "Do you buy followers?",
+        a: "Never. Purchased followers destroy engagement rate, which is the metric platforms use to decide whether to show your content at all. We grow accounts with real audiences or not at all.",
+      },
+      {
+        q: "How do I know what is being posted?",
+        a: "You receive a full content calendar in advance for approval and a monthly report afterwards. You always know what went out, when, and how it performed.",
+      },
+    ],
     name: "Social Media Management",
     oneLiner: "Consistent presence that builds trust and drives discovery",
     icon: Share2,
@@ -414,6 +511,24 @@ export const services: Service[] = [
   },
   {
     slug: "lead-generation-system",
+    faqs: [
+      {
+        q: "What is a local lead generation system?",
+        a: "A connected set of assets that turns local search demand into enquiries you can track: an optimised Google Business Profile, a website that ranks and converts, an automated review engine, video content that reaches new audiences, the signals AI assistants need to recommend you, and call and form tracking so every lead is attributable.",
+      },
+      {
+        q: "How do you know how many clients I am losing?",
+        a: "We measure monthly search volume for your service in your city, check where you rank for those terms, identify your top three competitors and what they do online, and apply your average client value. That produces a revenue figure for the demand currently going to competitors \u2014 and we show it to you before asking for anything.",
+      },
+      {
+        q: "How are leads tracked?",
+        a: "Call tracking numbers, form tracking and UTM-tagged links attribute every enquiry to its source. Your monthly report shows how many leads came in, from where, and what to adjust next.",
+      },
+      {
+        q: "What if I already get leads from referrals?",
+        a: "Referrals are valuable, but they are not a system: they cannot be scaled, forecast or replaced if a referrer stops sending work. A lead generation system runs alongside referrals and captures the demand that is already searching for you.",
+      },
+    ],
     name: "Lead Generation System",
     oneLiner: "Stop hoping for clients. Start capturing them.",
     icon: Target,
@@ -465,6 +580,24 @@ export const services: Service[] = [
   },
   {
     slug: "review-reputation-management",
+    faqs: [
+      {
+        q: "Why do reviews matter so much for AI recommendations?",
+        a: "Nearly half of ChatGPT's local business citations come from third-party review sites, and AI systems weigh review volume, recency and sentiment heavily when deciding whom to recommend. Businesses with 40 or more reviews across several platforms are exponentially more likely to be recommended than those with a handful.",
+      },
+      {
+        q: "Is it better to have more reviews or better reviews?",
+        a: "Better. Review substance is about six times more important for AI visibility than review count. A detailed review that names the specific service and outcome tells an AI far more than a dozen generic five-star ratings, so we help clients ask for reviews in a way that produces detail.",
+      },
+      {
+        q: "How do you get customers to leave reviews?",
+        a: "An automated request by text or email after every job or appointment, with a one-tap link straight to the review form. Most businesses that do this consistently move from single digits to dozens of reviews within a few months.",
+      },
+      {
+        q: "Which review platforms matter for my industry?",
+        a: "Google first, always. Beyond that it depends on the industry: Zillow and Realtor.com for real estate, Healthgrades for medical practices, Avvo for law firms, Houzz for contractors, Yelp for restaurants and salons. We build presence on the platforms AI actually cites for your category.",
+      },
+    ],
     name: "Review and Reputation Management",
     oneLiner: "Turn happy clients into your most powerful marketing",
     icon: Star,
@@ -506,6 +639,65 @@ export const services: Service[] = [
       },
     ],
     cta: "Find out how your reviews compare to your competitors.",
+  },
+  {
+    slug: "community-presence",
+    name: "Community & Third-Party Presence",
+    oneLiner: "Be mentioned where AI actually looks: Reddit, YouTube, directories",
+    icon: Users,
+    headline:
+      "60% of AI citations go to sites you don't own. Are you on any of them?",
+    metaDescription:
+      "Reddit, Quora, YouTube and directory presence for local businesses. Build the third-party mentions that Google AI Overviews and ChatGPT cite most.",
+    sections: [
+      {
+        heading: "The Problem",
+        items: [
+          "Reddit is the most-cited source in Google AI Overviews, at 21% of all citations. YouTube is second at nearly 19%.",
+          "60% of AI Overview citations point to third-party publishers such as Reddit, Quora, Yelp, Thumbtack and HomeGuide, not to business websites.",
+          "Google now surfaces Reddit threads as Community Perspectives inside local results.",
+          "Most local businesses have no presence on any of these platforms, so AI has no independent evidence they exist.",
+        ],
+      },
+      {
+        heading: "What We Do",
+        items: [
+          "Audit where your business is mentioned, where competitors are, and where you are absent",
+          "Genuine participation in relevant local and industry subreddits — answers, not adverts",
+          "Quora and community Q&A contributions targeting the questions people actually search",
+          "Accurate, complete listings on the directories AI cites for your category",
+          "YouTube presence built from your video content, optimised so it is citable",
+          "Monthly tracking of third-party mentions and which AI answers they feed",
+        ],
+      },
+      {
+        heading: "Why It Matters",
+        items: [
+          "AI systems trust third-party mentions precisely because the business does not control them.",
+          "A single accurate thread recommending you can be cited across thousands of AI answers.",
+          "This is the fastest-growing gap between businesses that get recommended and businesses that do not.",
+        ],
+      },
+    ],
+    cta: "Find out where AI is looking for you — and not finding you.",
+    faqs: [
+      {
+        q: "Why does Reddit affect whether AI recommends my business?",
+        a: "Reddit is the most-cited source in Google AI Overviews, at about 21% of all citations, and Google now surfaces Reddit threads as Community Perspectives inside local results. When someone asks an AI for a recommendation, a genuine mention of your business in a relevant local thread is one of the strongest signals it can find.",
+      },
+      {
+        q: "Isn't this just posting ads on Reddit?",
+        a: "No, and doing that gets a business banned. Community presence means genuinely useful participation: answering questions in local and industry subreddits, contributing to Quora threads people actually search, and ensuring your business is accurately listed on the directories AI cites, such as Yelp, Thumbtack, HomeGuide and Nextdoor.",
+      },
+      {
+        q: "Which third-party sites matter most?",
+        a: "In 2026, 60% of AI Overview citations point to third-party publishers rather than business websites. The ones that matter most are Reddit, YouTube, Quora, Yelp and the leading directory for your industry. We audit where you are absent and build presence there first.",
+      },
+      {
+        q: "How is this different from social media management?",
+        a: "Social media management grows your own channels. Community presence builds mentions of your business on other people's platforms \u2014 the third-party evidence AI systems trust precisely because you do not control it.",
+      },
+    ],
   },
 ];
 
