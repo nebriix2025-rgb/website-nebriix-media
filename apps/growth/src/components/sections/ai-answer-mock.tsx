@@ -134,7 +134,7 @@ export function AiAnswerMock({ className }: { className?: string }) {
         </span>
       </motion.div>
 
-      <p className="mt-5 text-[11px] leading-relaxed text-muted-foreground">
+      <p className="mt-5 text-xs leading-relaxed text-muted-foreground">
         Illustrative. Real answers vary by query, city and platform — which is
         exactly what we measure in the audit.
       </p>

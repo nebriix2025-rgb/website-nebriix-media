@@ -32,7 +32,7 @@ export function PillLink({
       href={href}
       className={cn(
         "group inline-flex items-center rounded-full font-sans font-medium tracking-[-0.02em] transition-colors",
-        size === "sm" ? "h-9 pl-4 pr-1 text-sm" : "h-12 pl-6 pr-1.5 text-[15px]",
+        size === "sm" ? "h-11 pl-4 pr-1 text-sm sm:h-9" : "h-12 pl-6 pr-1.5 text-[15px]",
         solid
           ? "bg-primary text-primary-foreground hover:bg-primary/92"
           : "border border-foreground/20 text-foreground hover:border-foreground/50",
@@ -43,7 +43,7 @@ export function PillLink({
       <span
         className={cn(
           "ml-3 flex items-center justify-center rounded-full transition-transform group-hover:translate-x-0.5",
-          size === "sm" ? "size-7" : "size-9",
+          size === "sm" ? "size-9 sm:size-7" : "size-9",
           solid
             ? "bg-primary-foreground text-primary"
             : "bg-foreground text-background",

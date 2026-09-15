@@ -50,8 +50,10 @@ export function Field({
         aria-invalid={Boolean(error)}
         aria-describedby={describedBy}
         className={cn(
-          "bg-surface/40",
-          multiline && "resize-none",
+          // 48px and 16px on phones: under 44px is a missed tap, and iOS zooms
+          // the page on any input below 16px.
+          "h-12 bg-surface/40 text-base sm:h-10 sm:text-sm",
+          multiline && "h-auto min-h-40 resize-none",
           error && "border-destructive",
         )}
       />

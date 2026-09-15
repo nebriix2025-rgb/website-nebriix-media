@@ -61,12 +61,12 @@ export function SiteFooter() {
             <h2 className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
               Services
             </h2>
-            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+            <ul className="mt-3 grid gap-x-3 sm:grid-cols-2">
               {services.map((service) => (
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="inline-block py-2 text-sm text-muted-foreground transition-colors hover:text-primary"
                   >
                     {service.name}
                   </Link>
@@ -79,11 +79,11 @@ export function SiteFooter() {
             <h2 className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
               Get in touch
             </h2>
-            <ul className="mt-5 space-y-3 text-sm">
+            <ul className="mt-3 text-sm">
               <li>
                 <a
                   href={`mailto:${site.email}`}
-                  className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
+                  className="inline-flex items-center gap-2 py-2 text-muted-foreground transition-colors hover:text-primary"
                 >
                   <Mail className="size-4" />
                   {site.email}
@@ -92,7 +92,7 @@ export function SiteFooter() {
               <li>
                 <a
                   href={site.phoneHref}
-                  className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
+                  className="inline-flex items-center gap-2 py-2 text-muted-foreground transition-colors hover:text-primary"
                 >
                   <Phone className="size-4" />
                   {site.phone}
@@ -103,7 +103,7 @@ export function SiteFooter() {
                   href={site.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
+                  className="inline-flex items-center gap-2 py-2 text-muted-foreground transition-colors hover:text-primary"
                 >
                   <MessageCircle className="size-4" />
                   WhatsApp
@@ -111,14 +111,14 @@ export function SiteFooter() {
               </li>
             </ul>
 
-            <ul className="mt-6 space-y-3">
+            <ul className="mt-4">
               {socials.map((s) => (
                 <li key={s.label}>
                   <a
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="inline-block py-2 text-sm text-muted-foreground transition-colors hover:text-primary"
                   >
                     {s.label}
                   </a>
@@ -133,13 +133,13 @@ export function SiteFooter() {
             {new Date().getFullYear()} &copy; {site.name}. All Rights Reserved.
           </p>
           <div className="flex gap-6">
-            <Link href="/insights" className="transition-colors hover:text-primary">
+            <Link href="/insights" className="py-2 transition-colors hover:text-primary">
               Insights
             </Link>
-            <Link href="/about" className="transition-colors hover:text-primary">
+            <Link href="/about" className="py-2 transition-colors hover:text-primary">
               About
             </Link>
-            <Link href="/contact" className="transition-colors hover:text-primary">
+            <Link href="/contact" className="py-2 transition-colors hover:text-primary">
               Contact
             </Link>
           </div>

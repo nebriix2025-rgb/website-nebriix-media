@@ -43,7 +43,12 @@ export function SiteHeader() {
           : "border-b border-transparent",
       )}
     >
-      <div className="mx-auto grid h-20 max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-5 sm:px-8">
+      {/*
+        Mobile: flex, logo left / controls right. Desktop: the paires three-column
+        grid with the wordmark centred. Grid can't be used at every size — a
+        display:none nav vacates its cell and the logo slides into column one.
+      */}
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8 lg:grid lg:grid-cols-[1fr_auto_1fr]">
         {/* Left: nav (paires puts the links here, small and quiet). */}
         <nav className="hidden items-center gap-1 lg:flex">
           {nav.map((item) =>
@@ -119,7 +124,7 @@ export function SiteHeader() {
         {/* Centre: wordmark. */}
         <Link
           href="/"
-          className="relative z-10 justify-self-center lg:col-start-2"
+          className="relative z-10 lg:col-start-2 lg:justify-self-center"
           aria-label={site.name}
         >
           <Image
@@ -141,7 +146,7 @@ export function SiteHeader() {
           <a
             href={site.phoneHref}
             aria-label="Call us"
-            className="flex size-10 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary sm:hidden"
+            className="flex size-11 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary sm:hidden"
           >
             <Phone className="size-4" />
           </a>
@@ -152,7 +157,7 @@ export function SiteHeader() {
 
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
-              render={<Button variant="ghost" size="icon-lg" />}
+              render={<Button variant="ghost" size="icon-lg" className="size-11" />}
               className="lg:hidden"
               aria-label="Toggle menu"
             >

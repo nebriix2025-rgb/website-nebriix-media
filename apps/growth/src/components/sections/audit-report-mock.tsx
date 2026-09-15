@@ -55,7 +55,7 @@ export function AuditReportMock() {
                 <h3 className="font-display text-xl tracking-tight">
                   Where you rank
                 </h3>
-                <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
                   Sample
                 </span>
               </div>

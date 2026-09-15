@@ -75,7 +75,7 @@ export function BeforeAfter() {
                 onClick={() => setMobileView(key)}
                 aria-pressed={mobileView === key}
                 className={cn(
-                  "flex-1 rounded-full px-4 py-2 text-sm transition-colors",
+                  "flex-1 rounded-full px-4 py-3 text-sm transition-colors",
                   mobileView === key
                     ? "bg-primary text-primary-foreground"
                     : "text-muted-foreground",
