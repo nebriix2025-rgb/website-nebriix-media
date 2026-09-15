@@ -23,8 +23,10 @@ export default function ContactPage() {
   return (
     <>
       <PageHeader
-        title="Let's talk."
+        title="Let's Talk"
         description={site.responseCommitment}
+        image="/photos/contact.jpg"
+        cta={{ label: "Get Your Free Audit", href: "/free-audit" }}
       />
 
       <section className="pb-28">

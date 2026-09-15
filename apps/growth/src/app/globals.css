@@ -83,14 +83,50 @@
   }
 }
 /*
-  Dark only, after paires.ai: deep navy ground, warm cream ink, and no accent
-  hue at all — the cream itself is the accent (buttons are cream on navy). The
-  white script wordmark sits on this natively, so no logo inversion is needed.
+  Two themes, both in the paires.ai language. Dark is the reference: deep navy
+  ground, warm cream ink. Bright is its exact inverse: cream ground, navy ink,
+  navy pills. There is still no accent hue in either — the contrast colour is
+  the action colour.
 
   Navy  #0a0d14  →  oklch(0.15 0.018 265)
   Cream #faf8f3  →  oklch(0.978 0.006 90)
 */
 :root {
+  --background: oklch(0.978 0.006 90);
+  --foreground: oklch(0.15 0.018 265);
+
+  --surface: oklch(0.955 0.007 90);
+  --surface-2: oklch(0.93 0.008 90);
+
+  --card: oklch(0.99 0.004 90);
+  --card-foreground: oklch(0.15 0.018 265);
+  --popover: oklch(0.99 0.004 90);
+  --popover-foreground: oklch(0.15 0.018 265);
+
+  --primary: oklch(0.15 0.018 265);
+  --primary-foreground: oklch(0.978 0.006 90);
+  --secondary: oklch(0.93 0.008 90);
+  --secondary-foreground: oklch(0.15 0.018 265);
+
+  --muted: oklch(0.93 0.008 90);
+  --muted-foreground: oklch(0.15 0.018 265 / 62%);
+  --accent: oklch(0.91 0.009 90);
+  --accent-foreground: oklch(0.15 0.018 265);
+  --destructive: oklch(0.55 0.2 25);
+
+  --border: oklch(0 0 0 / 10%);
+  --input: oklch(0 0 0 / 14%);
+  --ring: oklch(0.15 0.018 265);
+
+  --brand: oklch(0.15 0.018 265);
+  --brand-deep: oklch(0.3 0.02 265);
+
+  --radius: 0.75rem;
+}
+
+.dark {
+  color-scheme: dark;
+
   --background: oklch(0.15 0.018 265);
   --foreground: oklch(0.978 0.006 90);
 
@@ -102,14 +138,12 @@
   --popover: oklch(0.185 0.02 265);
   --popover-foreground: oklch(0.978 0.006 90);
 
-  /* Cream is the action colour; navy ink on it. */
   --primary: oklch(0.978 0.006 90);
   --primary-foreground: oklch(0.15 0.018 265);
   --secondary: oklch(0.22 0.022 265);
   --secondary-foreground: oklch(0.978 0.006 90);
 
   --muted: oklch(0.22 0.022 265);
-  /* Body copy runs at 60% cream, exactly as paires does. */
   --muted-foreground: oklch(0.978 0.006 90 / 60%);
   --accent: oklch(0.24 0.024 265);
   --accent-foreground: oklch(0.978 0.006 90);
@@ -121,13 +155,6 @@
 
   --brand: oklch(0.978 0.006 90);
   --brand-deep: oklch(0.86 0.02 90);
-
-  --radius: 0.75rem;
-}
-
-/* Kept so `.dark` selectors elsewhere keep working; the values are identical. */
-.dark {
-  color-scheme: dark;
 }
 
 @layer base {
@@ -172,9 +199,12 @@
 }
 
 @layer utilities {
-  /* Dark-only site; the white wordmark needs no treatment. Kept as a no-op so
-     existing markup stays valid. */
+  /* The wordmark is white artwork on transparency with no dark-ink variant, so
+     on the bright theme it is inverted in CSS. Lossless — it's a flat mark. */
   .logo-mark {
+    filter: invert(1);
+  }
+  .dark .logo-mark {
     filter: none;
   }
 
@@ -198,9 +228,13 @@
     the photo is lifted to a pale wash so dark type reads over it; on dark it is
     pushed down so light type does. A single grade can't serve both.
   */
-  /* Cinematic plate: keep the colour (paires' video is warm, not mono), push
-     it down so cream type holds, lift contrast a touch. */
+  /* Cinematic plate. Colour is kept (paires' video is warm, not mono). On dark
+     the image is pushed down so cream type holds; on bright it is lifted and
+     softened so navy type holds. */
   .photo-plate {
+    filter: brightness(1.18) contrast(0.9) saturate(0.7);
+  }
+  .dark .photo-plate {
     filter: brightness(0.55) contrast(1.12) saturate(0.85);
   }
 

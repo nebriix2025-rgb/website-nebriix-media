@@ -18,8 +18,9 @@ export default function AboutPage() {
   return (
     <>
       <PageHeader
-        title={about.headline}
+        title="Not Another Social Media Agency"
         description={keyPhrases.leads}
+        image="/photos/about.jpg"
       />
 
       <section className="border-y border-border bg-surface/20 py-16">

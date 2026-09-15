@@ -1,13 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Check } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 import { services, site } from "@/content/site";
 import { ServiceArt } from "@/components/fx/service-art";
+import { PageHeader } from "@/components/layout/page-header";
 import { BlurFade } from "@/components/motion/blur-fade";
-import { TextReveal } from "@/components/motion/text-reveal";
 import { PillLink } from "@/components/ui/pill-link";
+
+/** Hero plate per service, drawn from the licensed pool in public/photos. */
+const HERO_IMAGE: Record<string, string> = {
+  "ai-search-optimization": "/photos/audit.jpg",
+  "google-business-profile": "/photos/storefront.jpg",
+  "local-seo-website": "/photos/services.jpg",
+  "video-production": "/photos/hero.jpg",
+  "social-media-management": "/photos/cafe.jpg",
+  "lead-generation-system": "/photos/about.jpg",
+  "review-reputation-management": "/photos/contact.jpg",
+};
 
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
@@ -57,51 +68,34 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
-      <section className="relative overflow-hidden pb-14 pt-36 sm:pt-44">
-
-        <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
-          <BlurFade>
-            <Link
-              href="/services"
-              className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-primary"
-            >
-              <ArrowLeft className="size-3.5 transition-transform group-hover:-translate-x-1" />
-              All Services
-            </Link>
-          </BlurFade>
-
-          <div className="grid items-center gap-12 lg:grid-cols-[1.25fr_minmax(0,20rem)]">
-            <div>
-              <BlurFade delay={0.08}>
-                <Icon className="mt-10 size-8 text-primary" />
-              </BlurFade>
-
-              <TextReveal
-                text={service.headline}
-                as="h1"
-                className="mt-6 font-display text-3xl leading-[1.08] tracking-tight sm:text-5xl"
-              />
-
-              <BlurFade delay={0.2}>
-                <p className="mt-7 max-w-2xl text-lg text-muted-foreground">
-                  {service.oneLiner}
-                </p>
-              </BlurFade>
-            </div>
-
-            <BlurFade delay={0.25}>
-              <ServiceArt slug={service.slug} className="opacity-70" />
-            </BlurFade>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        title={service.name}
+        description={service.headline}
+        image={HERO_IMAGE[service.slug] ?? "/photos/hero.jpg"}
+      />
 
       <section className="pb-24">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <BlurFade>
+            <div className="flex items-center justify-between gap-6 py-8">
+              <Link
+                href="/services"
+                className="group inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                <ArrowLeft className="size-3.5 transition-transform group-hover:-translate-x-1" />
+                All services
+              </Link>
+              <span className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Icon className="size-4" />
+                {service.oneLiner}
+              </span>
+            </div>
+          </BlurFade>
+
           {service.sections.map((section, i) => (
             <BlurFade key={section.heading} delay={i * 0.05}>
               <div className="grid gap-8 border-t border-border py-12 lg:grid-cols-[minmax(0,18rem)_1fr] lg:gap-16">
-                <h2 className="font-display text-2xl tracking-tight text-primary">
+                <h2 className="font-display text-2xl">
                   {section.heading}
                 </h2>
 
@@ -113,13 +107,13 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
                   )}
 
                   {section.items && (
-                    <ul className="grid max-w-4xl gap-4">
+                    <ul className="max-w-3xl divide-y divide-border">
                       {section.items.map((item) => (
-                        <li key={item} className="flex gap-3">
-                          <Check className="mt-1 size-4 shrink-0 text-primary" />
-                          <span className="leading-relaxed text-muted-foreground">
-                            {item}
-                          </span>
+                        <li
+                          key={item}
+                          className="py-5 font-display text-lg leading-relaxed text-foreground/85 sm:text-xl"
+                        >
+                          {item}
                         </li>
                       ))}
                     </ul>
@@ -132,13 +126,13 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
                           <h3 className="font-display text-lg tracking-tight">
                             {group.label}
                           </h3>
-                          <ul className="mt-4 grid max-w-3xl gap-3">
+                          <ul className="mt-3 max-w-3xl divide-y divide-border">
                             {group.items.map((item) => (
-                              <li key={item} className="flex gap-3">
-                                <Check className="mt-1 size-4 shrink-0 text-primary" />
-                                <span className="text-sm leading-relaxed text-muted-foreground">
-                                  {item}
-                                </span>
+                              <li
+                                key={item}
+                                className="py-4 font-display text-base leading-relaxed text-foreground/80 sm:text-lg"
+                              >
+                                {item}
                               </li>
                             ))}
                           </ul>
@@ -154,11 +148,14 @@ export default async function ServicePage(props: PageProps<"/services/[slug]">) 
           {service.factors && (
             <BlurFade>
               <div className="grid gap-8 border-t border-border py-12 lg:grid-cols-[minmax(0,18rem)_1fr] lg:gap-16">
-                <h2 className="font-display text-2xl tracking-tight text-primary">
-                  {service.slug === "lead-generation-system"
-                    ? "The full system"
-                    : "How AI chooses"}
-                </h2>
+                <div>
+                  <h2 className="font-display text-2xl">
+                    {service.slug === "lead-generation-system"
+                      ? "The full system"
+                      : "How AI chooses"}
+                  </h2>
+                  <ServiceArt slug={service.slug} className="mt-8 hidden max-w-xs opacity-60 lg:block" />
+                </div>
 
                 <ol className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2">
                   {service.factors.map((factor, i) => (

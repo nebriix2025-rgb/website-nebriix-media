@@ -11,6 +11,7 @@ import { nav, services, site } from "@/content/site";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { PillLink } from "@/components/ui/pill-link";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 import {
   Sheet,
   SheetContent,
@@ -134,6 +135,8 @@ export function SiteHeader() {
 
         {/* Right: one CTA. */}
         <div className="flex items-center justify-end gap-2 lg:col-start-3">
+          <ThemeToggle />
+
           {/* Click-to-call on every page — 70%+ of local searches are mobile. */}
           <a
             href={site.phoneHref}

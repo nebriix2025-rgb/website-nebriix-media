@@ -74,7 +74,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`dark ${figtree.variable} ${sourceSerif.variable} ${jetbrains.variable}`}
+      className={`${figtree.variable} ${sourceSerif.variable} ${jetbrains.variable}`}
       suppressHydrationWarning
     >
       <head>

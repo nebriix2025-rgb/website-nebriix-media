@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Check } from "lucide-react";
 
 import { audit, auditStats, site } from "@/content/site";
+import { PageHeader } from "@/components/layout/page-header";
 import { BlurFade } from "@/components/motion/blur-fade";
-import { TextReveal } from "@/components/motion/text-reveal";
 import { AuditForm } from "@/components/forms/audit-form";
 
 export const metadata: Metadata = {
@@ -16,22 +16,13 @@ export const metadata: Metadata = {
 export default function FreeAuditPage() {
   return (
     <>
-      <section className="relative overflow-hidden pb-16 pt-36 sm:pt-44">
-
-        <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
-          <TextReveal
-            text={audit.headline}
-            as="h1"
-            className="max-w-4xl font-display text-3xl leading-[1.06] tracking-tight sm:text-5xl lg:text-6xl"
-          />
-
-          <BlurFade delay={0.15}>
-            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-              {audit.sub}
-            </p>
-          </BlurFade>
-        </div>
-      </section>
+      {/* The form is the CTA on this page, so the pill scrolls to it. */}
+      <PageHeader
+        title="Your Free Visibility Audit"
+        description={audit.sub}
+        image="/photos/audit.jpg"
+        cta={{ label: "Start the audit", href: "#audit-form" }}
+      />
 
       <section className="pb-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
@@ -69,7 +60,9 @@ export default function FreeAuditPage() {
             </div>
 
             <BlurFade delay={0.1}>
-              <AuditForm />
+              <div id="audit-form" className="scroll-mt-28">
+                <AuditForm />
+              </div>
             </BlurFade>
           </div>
         </div>

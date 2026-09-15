@@ -6,10 +6,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   return (
     <NextThemesProvider
       attribute="class"
-      // Dark only, after paires.ai. Forced so a stale localStorage value from
-      // the earlier light/dark build can't flip it.
+      // Dark is the reference (paires.ai is dark); bright is its inverse and a
+      // deliberate choice, so the OS preference is not consulted.
       defaultTheme="dark"
-      forcedTheme="dark"
       enableSystem={false}
       disableTransitionOnChange
     >

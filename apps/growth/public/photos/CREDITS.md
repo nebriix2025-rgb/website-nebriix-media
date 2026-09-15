@@ -11,6 +11,11 @@ None are Unsplash+ / Premium.
 | --- | --- | --- |
 | `hero.jpg` | [unsplash.com/photos/sUWF9JHC1xA](https://unsplash.com/photos/sUWF9JHC1xA) | Empty street lined with illuminated shops at dusk |
 | `storefront.jpg` | [unsplash.com/photos/460dhMlWKp8](https://unsplash.com/photos/460dhMlWKp8) | A small shop glows at night with its lights on |
+| `services.jpg` | [unsplash.com/photos/oQkdVPZq9UI](https://unsplash.com/photos/oQkdVPZq9UI) | City skyline with illuminated buildings at night |
+| `about.jpg` | [unsplash.com/photos/y5zF0NwnJ7M](https://unsplash.com/photos/y5zF0NwnJ7M) | A view of a city at night from across the water |
+| `contact.jpg` | [unsplash.com/photos/LNrxxfK2zjk](https://unsplash.com/photos/LNrxxfK2zjk) | Warmly lit cafe window at night with people inside |
+| `audit.jpg` | [unsplash.com/photos/g_ra59rIXDk](https://unsplash.com/photos/g_ra59rIXDk) | Person working on laptop at night with city view |
+| `cafe.jpg` | [unsplash.com/photos/elL6pWK27es](https://unsplash.com/photos/elL6pWK27es) | A food truck illuminated at night with a person nearby |
 
 Both are rendered monochrome in the UI via the `.photo-plate` grade in
 `globals.css`, and resized/recompressed from the originals.

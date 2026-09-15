@@ -17,8 +17,9 @@ export default function ServicesPage() {
   return (
     <>
       <PageHeader
-        title="Every service ties back to one outcome."
-        description="More clients calling, booking, and paying. We do not sell posts. We build the systems that make you findable and then capture the demand."
+        title="What We Do"
+        description="Seven services. One outcome: more clients calling, booking, and paying."
+        image="/photos/services.jpg"
       />
 
       <section className="pb-24 sm:pb-32">
