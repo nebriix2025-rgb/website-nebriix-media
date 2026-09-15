@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
@@ -31,6 +32,7 @@ export async function generateMetadata(
       description: a.description,
       publishedTime: a.date,
       url: `${site.url}/insights/${a.slug}`,
+      images: [{ url: `${site.url}${a.image}`, alt: a.imageAlt }],
     },
   };
 }
@@ -56,6 +58,7 @@ export default async function ArticlePage(props: PageProps<"/insights/[slug]">) 
       author: { "@type": "Organization", name: site.name, url: site.url },
       publisher: { "@type": "Organization", name: site.name, url: site.url },
       mainEntityOfPage: url,
+      image: `${site.url}${a.image}`,
       keywords: a.keywords.join(", "),
       // Sources are surfaced to the model as citations, not just to readers.
       citation: a.sources.map((s) => s.url),
@@ -87,7 +90,24 @@ export default async function ArticlePage(props: PageProps<"/insights/[slug]">) 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      <section className="pb-10 pt-36 sm:pt-44">
+      {/* Plate: full-bleed, graded like every other hero, fading into the page. */}
+      <div className="relative h-[58vh] min-h-[22rem] w-full overflow-hidden">
+        <div className="absolute inset-0 animate-kenburns">
+          <Image
+            src={a.image}
+            alt={a.imageAlt}
+            fill
+            loading="eager"
+            fetchPriority="high"
+            sizes="100vw"
+            className="photo-plate object-cover"
+          />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-background/70 to-transparent" />
+      </div>
+
+      <section className="pb-10 pt-6">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <BlurFade>
             <Link

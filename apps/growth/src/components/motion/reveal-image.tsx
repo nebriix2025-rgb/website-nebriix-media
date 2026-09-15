@@ -12,8 +12,7 @@ type RevealImageProps = {
   className?: string;
   /** Vertical drift, as a percentage of the frame, across the scroll range. */
   parallax?: number;
-  /** Recolour on hover. Off for decorative images. */
-  colorOnHover?: boolean;
+
   priority?: boolean;
   sizes?: string;
 };
@@ -30,7 +29,6 @@ export function RevealImage({
   alt,
   className,
   parallax = 12,
-  colorOnHover = false,
   priority = false,
   sizes = "(max-width: 768px) 100vw, 50vw",
 }: RevealImageProps) {
@@ -76,10 +74,8 @@ export function RevealImage({
           // the replacement for above-the-fold images.
           loading={priority ? "eager" : "lazy"}
           fetchPriority={priority ? "high" : "auto"}
-          className={cn(
-            "photo-mono object-cover",
-            colorOnHover && "photo-mono-hover",
-          )}
+          // Same per-theme grade as every hero plate, so thumbnails match.
+          className="photo-plate object-cover transition-transform duration-700 group-hover:scale-[1.03]"
         />
       </motion.div>
     </div>

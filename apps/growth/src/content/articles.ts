@@ -29,11 +29,16 @@ export type Article = {
   sources: { label: string; url: string }[];
   faqs: { q: string; a: string }[];
   body: Block[];
+  /** Under /public. Used as the article plate, the index thumbnail and the social card. */
+  image: string;
+  imageAlt: string;
 };
 
 export const articles: Article[] = [
   {
     slug: "only-1-percent-of-local-businesses-get-recommended-by-chatgpt",
+    image: "/photos/insights/chatgpt.jpg",
+    imageAlt: "Silhouette of a person holding a smartphone against the light",
     title:
       "Only 1.2% of Local Businesses Get Recommended by ChatGPT. Here Is What They Do Differently.",
     description:
@@ -113,6 +118,8 @@ export const articles: Article[] = [
   },
   {
     slug: "ai-overviews-answer-68-percent-of-local-searches",
+    image: "/photos/insights/overviews.jpg",
+    imageAlt: "Aerial view of a city at night with illuminated streets",
     title:
       "AI Overviews Now Answer 68% of Local Searches. The Map Pack Shows for 39%. Mind the Gap.",
     description:
@@ -183,6 +190,8 @@ export const articles: Article[] = [
   },
   {
     slug: "reddit-is-the-top-source-google-ai-cites",
+    image: "/photos/insights/reddit.jpg",
+    imageAlt: "Neighbours sitting on stools outside a local shop, talking",
     title:
       "Reddit Is Now the #1 Source Google's AI Cites. Here Is What a Local Business Should Do About It.",
     description:
@@ -249,6 +258,8 @@ export const articles: Article[] = [
   },
   {
     slug: "schema-markup-3x-more-ai-citations-local-business",
+    image: "/photos/insights/schema.jpg",
+    imageAlt: "Computer screen displaying HTML for web development",
     title:
       "The Schema Markup That Makes a Local Business 3.2x More Likely to Be Cited by AI",
     description:
@@ -315,6 +326,8 @@ export const articles: Article[] = [
   },
   {
     slug: "review-substance-beats-review-count-for-ai",
+    image: "/photos/insights/reviews.jpg",
+    imageAlt: "Customer looking at her phone inside a cafe, street visible outside",
     title:
       "Review Substance Beats Review Count 6-to-1 in AI Recommendations",
     description:
@@ -385,6 +398,8 @@ export const articles: Article[] = [
   },
   {
     slug: "what-is-answer-engine-optimization-for-local-business",
+    image: "/photos/insights/aeo.jpg",
+    imageAlt: "Person working at a desk, seen through a window",
     title:
       "What Is Answer Engine Optimization? A Plain-English Guide for Local Business Owners",
     description:

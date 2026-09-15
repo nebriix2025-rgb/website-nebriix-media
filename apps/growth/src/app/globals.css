@@ -208,20 +208,6 @@
     filter: none;
   }
 
-  /*
-    Photography runs monochrome by default. The source images are theme stock;
-    a hard black-and-white grade strips the "stock photo" read and holds the
-    palette to a single accent. Colour returns on hover where it's interactive.
-  */
-  .photo-mono {
-    filter: grayscale(1) contrast(1.08) brightness(0.95);
-    transition:
-      filter 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .group:hover .photo-mono-hover {
-    filter: grayscale(0) contrast(1) brightness(1);
-  }
 
   /*
     Full-bleed backdrops carry text, so the grade is theme-dependent: on light

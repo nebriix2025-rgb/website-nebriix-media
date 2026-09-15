@@ -3,6 +3,7 @@ import Link from "next/link";
 import { articles } from "@/content/articles";
 import { formatDate } from "@/lib/utils";
 import { BlurFade } from "@/components/motion/blur-fade";
+import { RevealImage } from "@/components/motion/reveal-image";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { PillLink } from "@/components/ui/pill-link";
 
@@ -23,18 +24,22 @@ export function InsightsPreview() {
           </PillLink>
         </div>
 
-        <ul className="mt-14 divide-y divide-border border-t border-border">
+        <ul className="mt-14 grid gap-8 md:grid-cols-3">
           {latest.map((a, i) => (
             <li key={a.slug}>
-              <BlurFade delay={i * 0.06}>
-                <Link
-                  href={`/insights/${a.slug}`}
-                  className="group grid gap-3 py-8 lg:grid-cols-[minmax(0,12rem)_1fr] lg:gap-12"
-                >
-                  <p className="text-sm text-muted-foreground">
+              <BlurFade delay={i * 0.08} className="h-full">
+                <Link href={`/insights/${a.slug}`} className="group block h-full">
+                  <RevealImage
+                    src={a.image}
+                    alt={a.imageAlt}
+                    className="aspect-[4/3]"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    parallax={6}
+                  />
+                  <p className="mt-5 text-sm text-muted-foreground">
                     {a.category} · {formatDate(a.date)}
                   </p>
-                  <h3 className="max-w-3xl font-display text-xl leading-snug transition-opacity group-hover:opacity-80 sm:text-2xl">
+                  <h3 className="mt-2 font-display text-xl leading-snug transition-opacity group-hover:opacity-80 sm:text-2xl">
                     {a.title}
                   </h3>
                 </Link>
