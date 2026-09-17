@@ -36,6 +36,108 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "siri-runs-on-gemini-voice-search-local-business",
+    title:
+      "Siri Now Runs on Google Gemini. When Customers Ask Out Loud, Only One Business Gets Named.",
+    description:
+      "In one week: iOS 27 shipped a rebuilt Siri that routes hard questions to Google's Gemini, Google released Gemini 3.8 Live for real-time voice, and OpenAI's GPT-Live reached its API. Voice answers don't give a list. They give a name. Here is what that means for a local business, and what it costs to be on the other end of the call.",
+    date: "2026-09-17",
+    readTime: "7 min read",
+    category: "AI News",
+    keywords: [
+      "Siri Gemini local business",
+      "voice search local business 2026",
+      "AI voice assistant recommendations",
+    ],
+    relatedService: "ai-search-optimization",
+    image: "/photos/insights/voice.jpg",
+    imageAlt: "Woman talking on an iPhone",
+    sources: [
+      {
+        label: "AI News — Siri AI arrives with Google inside, and much of the world is locked out",
+        url: "https://www.artificialintelligence-news.com/news/siri-ai-google-gemini-rollout/",
+      },
+      {
+        label: "The Eastern Herald — iOS 27 arrives Monday: Apple's rebuilt Siri runs on Google Gemini",
+        url: "https://easternherald.com/2026/09/13/ios-27-siri-google-gemini-apple-launch/",
+      },
+      {
+        label: "CNBC — Apple picks Google's Gemini to run AI-powered Siri",
+        url: "https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html",
+      },
+      {
+        label: "AI Weekly — AI News for September 16, 2026 (Gemini 3.8 Live)",
+        url: "https://aiweekly.co/ai-news-today/edition/2026-09-16",
+      },
+      {
+        label: "Build Fast with AI — AI News Today, September 16, 2026 (GPT-Live, Gemini 3.8 Live pricing)",
+        url: "https://blog.buildfastwithai.com/ai-news-today-september-16-2026",
+      },
+    ],
+    faqs: [
+      {
+        q: "Does Siri use Google Gemini now?",
+        a: "Yes. iOS 27, released 14 September 2026, ships a rebuilt Siri that handles simple requests on the device and routes anything more complex to a custom version of Google's Gemini, under a deal reported at around $1 billion a year. ChatGPT remains available as a separate opt-in fallback. The advanced features need an iPhone 15 Pro or newer and a paid iCloud+ plan, and the rollout excludes the EU for now.",
+      },
+      {
+        q: "How is a voice recommendation different from a search result?",
+        a: "A search result is a list; a voice answer is a sentence. When someone asks a phone out loud for a plumber, the assistant names one or two businesses, not ten. Voice is therefore the most selective discovery channel that has ever existed, and the evidence that gets a business chosen — consistent details, substantive reviews, structured content, third-party mentions — matters more, not less.",
+      },
+      {
+        q: "What does an AI voice agent for a business cost now?",
+        a: "Google's Gemini 3.8 Live, released 15 September, is priced at $0.005 per minute of audio in and $0.018 per minute out — roughly $1.38 an hour of continuous conversation. That is the raw model cost; a working receptionist adds telephony and integration on top. It is still a fraction of a part-time salary, and it answers at 3am.",
+      },
+    ],
+    body: [
+      {
+        type: "p",
+        text: "Since Monday, when an iPhone owner asks Siri a question it cannot answer on the device, the question goes to Google's Gemini. iOS 27 shipped on 14 September with a rebuilt Siri that holds a real conversation, reads the user's mail and messages for context, pulls live answers from the web and carries out tasks across apps — with Gemini doing the heavy reasoning under a deal reported at about $1 billion a year. The next day Google released Gemini 3.8 Live, a real-time voice model that can talk while it reasons and calls tools. OpenAI's GPT-Live had reached its API the week before. In seven days, talking to a machine stopped being a novelty and became the default interface on the most widely used phone in the United States.",
+      },
+      {
+        type: "p",
+        text: "For a local business the implication is narrower and sharper than \"AI is coming\". It is this: a growing share of the people looking for you will ask a question out loud and get a spoken answer. And a spoken answer does not contain a list.",
+      },
+      { type: "h2", text: "Why voice is the most selective channel yet" },
+      {
+        type: "p",
+        text: "Type \"dentist near me\" and you get a map with three pins, ten blue links and an AI Overview citing a few more. Say \"find me a dentist\" to a phone and you get something like: \"Cherry Creek Dental has a 4.9 rating and openings tomorrow — want me to book it?\" One name. Perhaps two. Nobody reads a list aloud. Every channel that already existed — Google's map pack, ChatGPT's recommendations, AI Overviews — was already narrowing the field. Voice narrows it to one, and the person asking never sees who came second.",
+      },
+      {
+        type: "p",
+        text: "The assistant picks that one name the same way ChatGPT and Google's AI already pick theirs: from evidence it can verify. Business details that match across every listing. Reviews with enough substance to say what the business is actually good at. A website with real content and structured data that states what it does and where. Mentions on sites the business does not control. Nothing about that list is new. What is new is that the penalty for failing it just went from \"lower on the page\" to \"not mentioned at all\".",
+      },
+      { type: "h2", text: "The details that decide a spoken answer" },
+      {
+        type: "list",
+        items: [
+          "A rating and a review count the assistant can read out. Voice answers lean on the numbers because they are easy to say. A business with no rating has nothing to be said about it.",
+          "Hours and availability that are correct right now. \"Are they open?\" is the first follow-up, and an assistant that finds three different sets of hours will pick the business whose hours it trusts.",
+          "A name that is unambiguous when spoken. If your business shares a name with a chain or a different trade in the same city, the assistant needs a location and category signal to disambiguate — and if it cannot, it will not risk the wrong answer.",
+          "Something bookable. iOS 27's Siri carries out tasks across apps. \"Book it\" only works if there is a booking flow to complete. A phone-number-only website ends the conversation with \"you'll need to call them\".",
+          "Consistent structured data. LocalBusiness and Service schema is the closest thing to a spec sheet an assistant gets. It is how the model confirms the category, the area and the offer before it says your name.",
+        ],
+      },
+      { type: "h2", text: "The other end of the call" },
+      {
+        type: "p",
+        text: "There is a second half to this week's news, and it is the part most coverage skipped. Gemini 3.8 Live is priced at $0.005 a minute of audio in and $0.018 a minute out — about $1.38 an hour of continuous conversation. GPT-Live shipped to OpenAI's API without a published price and, at least on Artificial Analysis's speech-to-speech leaderboard, ranks below Gemini's Extended Thinking variant at 82.6. Those are the raw costs of a voice that can answer a phone, understand what is being asked, check a calendar and book. Telephony and integration sit on top, but the model itself is now cheaper per hour than a cup of coffee.",
+      },
+      {
+        type: "p",
+        text: "Put the two halves together. A customer's phone will increasingly ask for a business by voice and try to book it. A business can now, for the first time at small-business prices, have a voice on the other end that picks up every time, at any hour, and completes the booking. The businesses that get named will be the ones with the evidence; the ones that convert the naming into a job will be the ones that answer.",
+      },
+      { type: "h2", text: "What to be sceptical about" },
+      {
+        type: "p",
+        text: "Three things. The new Siri's advanced features require an iPhone 15 Pro or newer and a paid iCloud+ subscription, so the installed base is smaller than \"every iPhone\" suggests. The rollout skips the EU entirely for now. And people have been promised a useful Siri before. Adoption of voice for local discovery will be gradual, and the early numbers will be small. But the direction has been set by the two companies that control the phone and the search engine, on the same week, and the evidence a business needs in order to be named by voice is identical to what it needs for ChatGPT, Perplexity and AI Overviews today. There is no separate preparation. There is just doing the work sooner.",
+      },
+      {
+        type: "takeaway",
+        text: "A search result gives ten businesses a chance. A spoken answer gives one. This week the phone in most customers' pockets started giving spoken answers, and the model behind them costs a business less than $1.40 an hour to talk back.",
+      },
+    ],
+  },
+  {
     slug: "meta-muse-whatsapp-agent-can-it-book-your-business",
     title:
       "Meta Just Put a Buying Agent Inside WhatsApp. Can It Book Your Business?",
