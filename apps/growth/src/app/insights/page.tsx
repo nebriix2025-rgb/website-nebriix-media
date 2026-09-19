@@ -6,6 +6,7 @@ import { site } from "@/content/site";
 import { formatDate } from "@/lib/utils";
 import { PageHeader } from "@/components/layout/page-header";
 import { BlurFade } from "@/components/motion/blur-fade";
+import { UpcomingEvents } from "@/components/sections/upcoming-events";
 import { RevealImage } from "@/components/motion/reveal-image";
 
 export const metadata: Metadata = {
@@ -87,6 +88,8 @@ export default function InsightsPage() {
           </ul>
         </div>
       </section>
+
+      <UpcomingEvents />
     </>
   );
 }

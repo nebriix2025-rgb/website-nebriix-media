@@ -24,6 +24,7 @@ None are Unsplash+ / Premium.
 | `insights/aeo.jpg` | [unsplash.com/photos/tklI4EHE2Aw](https://unsplash.com/photos/tklI4EHE2Aw) | Woman working at a desk through a window |
 | `insights/muse.jpg` | [unsplash.com/photos/mw6Onwg4frY](https://unsplash.com/photos/mw6Onwg4frY) | Person typing into a form on a smartphone |
 | `insights/voice.jpg` | [unsplash.com/photos/L3qUP8MpExc](https://unsplash.com/photos/L3qUP8MpExc) | Woman talking on an iPhone |
+| `insights/invest.jpg` | [unsplash.com/photos/ncPKby8GvCw](https://unsplash.com/photos/ncPKby8GvCw) | City with high-rise buildings during night time |
 
 All are graded per theme via `.photo-plate` in
 `globals.css`, and resized/recompressed from the originals.

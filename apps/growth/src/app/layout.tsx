@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Figtree, Source_Serif_4, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "./globals.css";
@@ -10,6 +11,7 @@ import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { StickyAuditCta } from "@/components/layout/sticky-audit-cta";
+import { AiReferralTracker } from "@/components/providers/ai-referral-tracker";
 import { Toaster } from "@/components/ui/sonner";
 
 const figtree = Figtree({ variable: "--font-figtree", subsets: ["latin"] });
@@ -108,6 +110,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Toaster position="bottom-right" />
         <Analytics />
         <SpeedInsights />
+        <AiReferralTracker />
+        {/* Optional GA4. Off until NEXT_PUBLIC_GA_MEASUREMENT_ID is set. */}
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        )}
       </body>
     </html>
   );

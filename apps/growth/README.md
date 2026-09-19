@@ -75,6 +75,35 @@ Every mock carries a visible "illustrative"/"sample" caption. The businesses and
 figures in them are invented — presenting invented numbers as real client
 results would undercut the "we show you the math" positioning.
 
+## Measuring visits and AI visibility
+
+Three layers, cheapest first.
+
+**Page views and referrers** — Vercel Analytics (`@vercel/analytics`, already in
+the layout) records every page view and its referrer once the site is on
+Vercel. Optional GA4 loads when `NEXT_PUBLIC_GA_MEASUREMENT_ID` is set.
+
+**Visits that came from an AI assistant** — `AiReferralTracker` fires a
+Vercel Analytics custom event `ai_referral` with `{source, path}` whenever a
+visit arrives from ChatGPT (`utm_source=chatgpt.com`, which ChatGPT appends to
+every link), Perplexity, Gemini, Claude, Copilot, Meta AI or DuckAssist (via
+referrer). Filter the Vercel Analytics dashboard on that event to see how many
+people found the site through an assistant, and which pages they landed on.
+
+**Whether the assistants name us** — no free API exists. Run the five queries
+in the Prompt Pack's "Find out where you stand" group across ChatGPT, Gemini
+and Perplexity on the first Monday of each month and log them in the tracking
+sheet described in the Profound article (`/insights/sequoia-kleiner-bet-180m…`).
+Paid tools (Profound, Peec, Otterly) automate this at enterprise scale.
+
+**Crawler access** — `robots.txt` names the AI crawlers (GPTBot, OAI-SearchBot,
+ClaudeBot, PerplexityBot, Google-Extended, Applebot-Extended, meta-externalagent
+and others) explicitly, and `/llms.txt` describes the site to them.
+
+**Google** — connect Search Console and submit `/sitemap.xml`. Its Performance
+report includes impressions and clicks from AI Overviews. Nothing above
+substitutes for this; without it Google has not been told the pages exist.
+
 ## Two deliberate deviations from the brief
 
 **1. The AI-visibility mini-tool does not print an instant verdict.**

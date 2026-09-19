@@ -36,6 +36,117 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "sequoia-kleiner-bet-180m-on-ai-visibility-free-tracking-sheet",
+    title:
+      "Sequoia and Kleiner Just Paid $1.8 Billion for \"Showing Up in AI Answers\". Here Is the Free Version.",
+    description:
+      "Profound, which helps brands appear in ChatGPT and other AI answers, raised $180M on 15 September at a $1.8B valuation. Its customers are Walmart, Comcast and Estée Lauder. The signals it tracks for them are the same ones a local business can track for itself in a spreadsheet — this article gives you the sheet.",
+    date: "2026-09-20",
+    readTime: "8 min read",
+    category: "Investors",
+    keywords: [
+      "Profound AI visibility funding",
+      "track AI visibility local business",
+      "AI search visibility spreadsheet",
+    ],
+    relatedService: "ai-search-optimization",
+    image: "/photos/insights/invest.jpg",
+    imageAlt: "City with high-rise buildings at night",
+    sources: [
+      {
+        label: "TechCrunch — AEO startup Profound hits unicorn valuation, raises $180M Series D",
+        url: "https://techcrunch.com/2026/09/15/aeo-startup-profound-hits-unicorn-valuation-raises-180m-series-d-7-months-after-last-round/",
+      },
+      {
+        label: "Bloomberg — Profound Hits $1.8 Billion Value to Boost Brands in AI Search",
+        url: "https://www.bloomberg.com/news/articles/2026-09-15/profound-hits-1-8-billion-value-to-boost-brands-in-ai-search",
+      },
+      {
+        label: "SiliconANGLE — Profound raises $180M to boost brands' visibility in AI services",
+        url: "https://siliconangle.com/2026/09/15/profound-raises-180m-to-boost-brands-visibility-in-ai-services/",
+      },
+      {
+        label: "Crunchbase News — The Week's 10 Biggest Funding Rounds (18 September 2026)",
+        url: "https://news.crunchbase.com/venture/biggest-funding-rounds-ai-space-fintech-temporal/",
+      },
+    ],
+    faqs: [
+      {
+        q: "What does Profound do?",
+        a: "Profound is marketing software that helps brands appear more often in AI answers. It identifies the prompts a brand's buyers type into ChatGPT and similar assistants, measures how often the brand is mentioned in the responses, and helps the brand change what it publishes to be mentioned more. It raised $180 million on 15 September 2026 at a $1.8 billion valuation, led by Sequoia Capital and Kleiner Perkins, and has more than 1,000 enterprise customers.",
+      },
+      {
+        q: "Can a small business track its AI visibility without paying for software?",
+        a: "Yes. The core of what enterprise tools do is: pick the questions your customers ask, run them in ChatGPT, Gemini and Perplexity on a schedule, and record which businesses are named. A spreadsheet with five queries, three assistants and a monthly row does the job for a local business. The article includes the exact columns.",
+      },
+      {
+        q: "Why does it matter that investors funded this?",
+        a: "Because Sequoia and Kleiner Perkins do not fund categories they think are temporary. A $1.8 billion valuation for software that does nothing except get brands mentioned by AI is a statement that being named in AI answers is now a permanent, measurable part of marketing — and the enterprise side of the market has already started paying for it.",
+      },
+    ],
+    body: [
+      {
+        type: "p",
+        text: "On 15 September, a company called Profound raised $180 million at a $1.8 billion valuation, led by Sequoia Capital and Kleiner Perkins. Profound does one thing: it helps brands show up in AI answers. It finds the prompts a brand's customers type into ChatGPT, measures how often the brand is mentioned in the replies, and helps the brand change what it publishes so it gets mentioned more. It has more than 1,000 enterprise customers, including Walmart, Comcast and Estée Lauder, and tripled its revenue in the last six months. This round came less than seven months after its last one.",
+      },
+      {
+        type: "p",
+        text: "Two of the most disciplined investors in the world just priced \"being named by AI\" as a category. That is the news. The thing worth acting on is what it means for everyone who is not Walmart.",
+      },
+      { type: "h2", text: "What the money is actually saying" },
+      {
+        type: "p",
+        text: "Venture firms do not write $180 million cheques for a tactic. They write them for a shift they believe is permanent. Profound's round says that a meaningful share of buying decisions now start with a question to an AI assistant rather than a search, that the brands named in the answer win those decisions, and that the largest companies have noticed and are paying to be named. The week's ten largest rounds, per Crunchbase, were dominated by AI infrastructure and enterprise tooling. Profound was the only one aimed squarely at the question this site exists for.",
+      },
+      {
+        type: "p",
+        text: "Here is the uncomfortable part for a local business. Walmart can afford to hire a unicorn to be recommended by ChatGPT. The dentist competing with a chain, the independent plumber competing with a franchise — they are up against businesses that now have a dedicated budget for exactly the thing most local owners have never heard of. The gap between the 1.2% of businesses AI recommends and everyone else is about to be widened by money.",
+      },
+      { type: "h2", text: "What the software measures, and why you can do it yourself" },
+      {
+        type: "p",
+        text: "Strip away the dashboards and enterprise tooling like Profound does three things. It decides which questions matter — the prompts a customer would actually type. It runs those questions against the assistants, repeatedly, and records who is named. And it changes what the brand publishes to move those numbers. At enterprise scale, across thousands of prompts and dozens of markets, that needs software. For one local business in one city, it needs about five questions, three assistants, and twenty minutes a month.",
+      },
+      { type: "h2", text: "The free version: an AI visibility tracking sheet" },
+      {
+        type: "p",
+        text: "Open a spreadsheet. Make these columns, in this order, and fill in one row per query per assistant, once a month.",
+      },
+      {
+        type: "list",
+        items: [
+          "Date — the day you ran it. Consistency matters more than the day itself; pick the first Monday of the month.",
+          "Query — the exact wording. Use five: \"best [your service] in [city]\", \"[your service] near me\" (with location on), \"who should I use for [your service] in [city]\", \"[your service] [city] reviews\", and one specific to your speciality, e.g. \"emergency [your service] [city]\".",
+          "Assistant — ChatGPT, Gemini, Perplexity. Run each query in all three. Add Google's AI Mode if you want a fourth.",
+          "Named? — Yes or No. Were you mentioned at all, anywhere in the answer.",
+          "Position — if named, were you first, second, third. If not named, leave blank. Voice assistants tend to read only the first.",
+          "Who was named — the businesses that appeared, in order. This column is your real competitor list, and it will not match your Google map pack.",
+          "Cited sources — what the assistant linked to or referenced: Yelp, Google, Reddit, a directory, a competitor's site. This tells you where the evidence lives and where yours is missing.",
+          "Notes — anything the answer got wrong about you (hours, phone, services). Every error here is a listing inconsistency somewhere on the web.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Fifteen rows a month. After three months you have a trend line no agency can argue with: the share of queries where you are named, the share where you are first, and the exact competitors and sources that keep beating you. That trend line is what Profound sells to Walmart. Yours costs a spreadsheet.",
+      },
+      { type: "h2", text: "What to do when the sheet says No" },
+      {
+        type: "list",
+        items: [
+          "If the assistant named competitors and cited Yelp or a directory you are not on — get on it, with details identical to your Google profile.",
+          "If it cited Reddit — find the thread. Someone in your city is recommending businesses to your customers, and you are not in the conversation.",
+          "If it got your hours or phone wrong — that is a listing somewhere disagreeing with your website. Fix the listing, not the AI.",
+          "If it named nobody with a rating below 4.3 — reviews are the gate. Fix the ask, not the number.",
+          "If it named you but low — you have the evidence, and it is thin. More substantive reviews and a real service page usually move position within a quarter.",
+        ],
+      },
+      {
+        type: "takeaway",
+        text: "Sequoia and Kleiner just confirmed that being named by AI is a market worth $1.8 billion. The enterprise version needs software. The local version needs five questions, three assistants, and the honesty to write down who got named instead of you.",
+      },
+    ],
+  },
+  {
     slug: "siri-runs-on-gemini-voice-search-local-business",
     title:
       "Siri Now Runs on Google Gemini. When Customers Ask Out Loud, Only One Business Gets Named.",
