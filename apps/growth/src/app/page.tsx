@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 
 
 import { finalCta } from "@/content/site";
@@ -16,6 +17,12 @@ import { PromptPackTeaser } from "@/components/sections/prompt-pack-teaser";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { BlurFade } from "@/components/motion/blur-fade";
 import { PillLink } from "@/components/ui/pill-link";
+
+/** Inner pages set their own canonical; the home page needs one too, now that
+ *  www redirects to the apex and both hosts have been live. */
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (
