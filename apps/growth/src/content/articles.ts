@@ -36,6 +36,118 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "google-business-profile-panel-is-now-an-ai-overview",
+    title:
+      "Google Is Replacing Your Business Profile Panel With an AI Overview. Here Is What It Will Say About You.",
+    description:
+      "Since 17 September, searching a business by name on mobile can return an \"AI Overview\" instead of the familiar profile card — a few sentences a model wrote about the shop, with a \"Show more\" that opens an AI Mode chat. Google is now describing businesses in its own words. Here is where those words come from, and how to make sure they are right.",
+    date: "2026-09-21",
+    readTime: "7 min read",
+    category: "Google",
+    keywords: [
+      "Google Business Profile AI Overview",
+      "local knowledge panel AI Overview",
+      "AI Overview describing my business",
+    ],
+    relatedService: "google-business-profile",
+    image: "/photos/insights/panel.jpg",
+    imageAlt: "Neon sign in a shop window reading Yes, we are open",
+    sources: [
+      {
+        label: "Search Engine Roundtable — Google Local Knowledge Panel Now An AI Overview (17 September 2026)",
+        url: "https://www.seroundtable.com/google-local-knowledge-panel-ai-overview-42105.html",
+      },
+      {
+        label: "Search Engine Roundtable — Google AI Summaries Now In Local Knowledge Panels (April 2025)",
+        url: "https://www.seroundtable.com/google-ai-review-summaries-local-panels-39166.html",
+      },
+      {
+        label: "Search Engine Roundtable — Google AI Writing Some Search Knowledge Panels (April 2024)",
+        url: "https://www.seroundtable.com/google-ai-writing-some-knowledge-panels-37294.html",
+      },
+      {
+        label: "Search Engine Journal — Google Adds Post View Counts To Business Profiles (10 September 2026)",
+        url: "https://www.searchenginejournal.com/google-business-profile-post-view-counts/589128/",
+      },
+      {
+        label: "Search Engine Roundtable — Google Business Profiles New Collected Info Actions (June 2026)",
+        url: "https://www.seroundtable.com/google-business-profiles-collected-info-41535.html",
+      },
+    ],
+    faqs: [
+      {
+        q: "What changed in the Google Business Profile panel?",
+        a: "On 17 September 2026, Search Engine Roundtable confirmed that Google is showing an \"AI Overview\" in place of the local knowledge panel for some brand-name searches on mobile. Instead of the standard card — hours, phone, photos, reviews — the searcher sees a model-written summary of the business with a \"Show more\" button that opens an AI Mode conversation. It was first shared by Google Business Profile expert Ben Fisher and reproduced independently. It appears to be a live rollout on mobile, not a lab test.",
+      },
+      {
+        q: "Where does Google's AI get the description of my business?",
+        a: "From what is already published about you: your website, your Business Profile fields, your reviews, and third-party listings. In the confirmed example, the summary was \"mostly correct\" but repeated outdated details that traced back to old copy on the business's own website. The AI is not inventing your description; it is compressing your public footprint. Stale footprint, stale description.",
+      },
+      {
+        q: "Can I turn the AI Overview off for my business?",
+        a: "No. There is no setting in the Business Profile dashboard to opt out of AI-written summaries. What you control is the input: the accuracy of your profile fields, the currency of your website, the substance of your reviews, and — through the Collected Info tab — the details Google's automated assistant has gathered by phone or message. Fix the sources and the summary follows.",
+      },
+    ],
+    body: [
+      {
+        type: "p",
+        text: "For fifteen years, when someone searched your business by name, Google showed them your card: the name you chose, the hours you set, the photos you uploaded, your reviews, a map pin. It was the one place on the internet where the business got to speak in its own fields. Since 17 September, that card is being replaced — for some searches, on mobile — with an \"AI Overview\": a few sentences a model wrote about you, and a \"Show more\" button that opens a chat where the searcher can ask Google anything about your business and get an answer you never wrote.",
+      },
+      {
+        type: "p",
+        text: "Search Engine Roundtable's Barry Schwartz confirmed it on his own company's listing after Google Business Profile expert Ben Fisher shared it. His verdict on the AI's description of his business: \"mostly correct\", with outdated details that came from ageing copy on his own website. His reaction is the one every owner should sit with: \"I am not sure I want AI describing my business, when I can.\"",
+      },
+      { type: "h2", text: "This did not come from nowhere" },
+      {
+        type: "p",
+        text: "Google has been walking towards this for two years. In April 2024 it began labelling AI-written text inside general knowledge panels. In November 2024 it added AI review summaries to Google Maps, and by April 2025 those summaries were on the right-hand panel in Search, with a \"report\" link for when they were wrong. Each step kept the business's own fields underneath. This step puts the AI's paragraph on top and folds the fields behind a button.",
+      },
+      {
+        type: "p",
+        text: "The direction matches everything else Google has done this year: AI Mode now sits inside AI Overviews, follow-up questions are the default, and the model answering them is the same one that answers \"best plumber near me\". The brand-name search was the last place a local business was safe from being summarised. It is not any more.",
+      },
+      { type: "h2", text: "What the AI is actually reading" },
+      {
+        type: "p",
+        text: "The summary is not creative writing. It is compression. The model reads what already exists about your business and writes a paragraph. In practice, that means five sources, in roughly this order of weight:",
+      },
+      {
+        type: "list",
+        items: [
+          "Your Business Profile fields — category, description, services, attributes, hours. If your services list says three things and you do nine, the AI says three.",
+          "Your website — especially the home page and the about page. This is where the confirmed example went wrong: the site still described a niche the company had moved on from, so the AI did too.",
+          "Your reviews — not the star average, the text. The AI quotes themes: \"customers mention friendly staff and long waits\". Whatever your last forty reviewers wrote about is now your description.",
+          "Third-party listings and mentions — directories, local press, Reddit. Where these disagree with your profile, the AI has to pick, and it will not always pick you.",
+          "Collected Info — details Google's own automated assistant gathered by calling, texting or WhatsApping your verified number. Since June there is a tab in the dashboard showing exactly what it recorded and letting you delete anything wrong. Most owners have never opened it.",
+        ],
+      },
+      { type: "h2", text: "The 30-minute check to do this week" },
+      {
+        type: "p",
+        text: "Search your business by name on your phone, in Chrome, signed out. If you get the AI Overview, read it as a customer would and mark every line as right, stale, or missing. Then work backwards to the source of each error:",
+      },
+      {
+        type: "list",
+        items: [
+          "Stale service or specialism → your website's home or about page still says it. Rewrite the page. The AI re-reads it within weeks.",
+          "Wrong hours, phone or address → open Business Profile, Edit profile, Collected info. If the automated assistant recorded it, delete it there and correct the field. Then check the same detail on Apple Maps, Bing, Yelp and your Facebook page; one disagreement is enough to reintroduce it.",
+          "A theme in the summary you would rather not lead with (\"long waits\") → that is your reviews talking. It cannot be edited; it can be outweighed. Ask your next twenty happy customers to mention the specific thing you want to be known for.",
+          "A service you offer that the AI never mentions → it is not on your profile's services list, not a heading on your site, and not in a review. Add it in all three places. The AI needs to see it more than once to say it.",
+          "The description is fine but thin → your profile's description field is probably empty or generic. Write 500 characters that say what you do, for whom, where, and what makes you the obvious choice. That field is one of the first things the model reads.",
+        ],
+      },
+      { type: "h2", text: "Two small things that arrived in the same fortnight" },
+      {
+        type: "p",
+        text: "On 10 September Google restored view counts to Business Profile posts — retired in 2023, now back on every post card, covering the last 18 months across Search and Maps. It is the first time in three years you can see whether anyone reads what you post. And the Collected Info tab, spotted in June, is now widely available. Together they mean the profile is no longer a form you fill in once. It is a feed the AI reads continuously, and Google has just handed you two instruments to see what it is reading.",
+      },
+      {
+        type: "takeaway",
+        text: "Google is now describing your business in its own words, and those words are compressed from your website, your profile fields, your reviews, and what its assistant recorded when it called you. None of that is out of your hands. Search your name on your phone this week, read what the AI says, and fix the source of every line that is wrong.",
+      },
+    ],
+  },
+  {
     slug: "sequoia-kleiner-bet-180m-on-ai-visibility-free-tracking-sheet",
     title:
       "Sequoia and Kleiner Just Paid $1.8 Billion for \"Showing Up in AI Answers\". Here Is the Free Version.",
