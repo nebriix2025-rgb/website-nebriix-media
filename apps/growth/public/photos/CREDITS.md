@@ -26,6 +26,7 @@ None are Unsplash+ / Premium.
 | `insights/voice.jpg` | [unsplash.com/photos/L3qUP8MpExc](https://unsplash.com/photos/L3qUP8MpExc) | Woman talking on an iPhone |
 | `insights/invest.jpg` | [unsplash.com/photos/ncPKby8GvCw](https://unsplash.com/photos/ncPKby8GvCw) | City with high-rise buildings during night time |
 | `insights/panel.jpg` | [unsplash.com/photos/LAmR0Kuutmg](https://unsplash.com/photos/LAmR0Kuutmg) | Neon sign in a shop window reading "Yes, we are open" (cropped to 3:2) |
+| `insights/jev.jpg` | [unsplash.com/photos/C3DfIgig1j8](https://unsplash.com/photos/C3DfIgig1j8) | A large control room with lots of control knobs (cropped to 3:2) |
 
 All are graded per theme via `.photo-plate` in
 `globals.css`, and resized/recompressed from the originals.

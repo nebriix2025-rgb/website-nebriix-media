@@ -36,6 +36,150 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "jev-typesafe-ai-model-that-does-not-talk",
+    title:
+      "Jev Is an AI That Refuses to Talk. For a Local Business, That Is the Point.",
+    description:
+      "TypeSafe AI came out of stealth on 15 September with $40M and a model that cannot write a sentence. Jev answers only three kinds of question — pick one, rate this, yes or no — in under half a second, for about $0.00035 a call. Most of what a small business actually wants automated is a decision, not an essay. Here is what it can do, and the four places it will quietly let you down.",
+    date: "2026-09-24",
+    readTime: "9 min read",
+    category: "AI News",
+    keywords: [
+      "Jev TypeSafe AI model",
+      "System One model small business",
+      "AI decision model automation cost",
+    ],
+    relatedService: "ai-automation-agents",
+    image: "/photos/insights/jev.jpg",
+    imageAlt: "An old control room lined with dials, gauges and switches, with no operator present",
+    sources: [
+      {
+        label: "Wikipedia — Jev (AI model)",
+        url: "https://en.wikipedia.org/wiki/Jev_(AI_model)",
+      },
+      {
+        label: "Forbes — This $200 Million Startup Wants To Fix AI's Overconfidence Problem (15 September 2026)",
+        url: "https://www.forbes.com/sites/the-prompt/2026/09/15/this-200-million-startup-wants-to-fix-ais-overconfidence-problem/",
+      },
+      {
+        label: "DCVC — TypeSafe emerges from stealth with a new way of doing AI",
+        url: "https://www.dcvc.com/news-insights/typesafe-emerges-from-stealth-with-a-new-way-of-doing-ai/",
+      },
+      {
+        label: "Requesty — TypeSafe Jev explained: how it works, LLM differences and API pricing",
+        url: "https://www.requesty.ai/blog/typesafe-jev-explained",
+      },
+      {
+        label: "regolo.ai — Jev and system one models: benchmarks, open-source alternatives, and when to use them",
+        url: "https://regolo.ai/jev-and-system-one-models-benchmarks-open-source-alternatives-and-when-to-use-them/",
+      },
+      {
+        label: "Alex Molas — Jev can't be calibrated (23 September 2026)",
+        url: "https://www.alexmolas.com/2026/09/23/jev-cant-be-calibrated.html",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is Jev?",
+        a: "Jev is an AI model released on 15 September 2026 by TypeSafe AI, a San Francisco lab founded by former OpenAI researcher Diogo Almeida, which came out of stealth the same day with a $40 million seed round led by DCVC at a $200 million valuation. Unlike ChatGPT or Gemini, Jev does not write text. It answers three kinds of question — choose one of these options, score this against a rubric, or yes/no — and returns the answer as a typed value with probabilities and a confidence figure, in roughly 70 to 500 milliseconds.",
+      },
+      {
+        q: "What would a small business actually use it for?",
+        a: "Decisions that happen hundreds of times a month and never need a paragraph: is this contact-form submission a real enquiry or spam, which of your services is this message about, is this review angry enough to alert the owner tonight, is this WhatsApp message a booking request, does this after-hours call need escalating. Each of those is a single yes/no or pick-one. At roughly $0.00035 per call, ten thousand of them cost about $3.50 a month.",
+      },
+      {
+        q: "Should I trust its confidence scores?",
+        a: "Not out of the box. On 23 September, Alex Molas published a direct challenge to TypeSafe's calibration claim: calibration is a property of a model and a dataset together, not of a model alone, so a model calibrated on the lab's data can be badly miscalibrated on yours. His advice — and it is the right advice — is to treat the numbers as rankings rather than probabilities, measure them against your own labelled examples, and recalibrate before you wire any threshold to an action that matters.",
+      },
+    ],
+    body: [
+      {
+        type: "p",
+        text: "On 15 September, a San Francisco lab called TypeSafe AI came out of two years of stealth with $40 million led by DCVC, a $200 million valuation, and a model that cannot write a sentence. It is called Jev. Ask it a question and you get no paragraph, no explanation, no apology — just a typed value, a set of probabilities, and a confidence figure, in less time than it takes a web page to load. Its founder, Diogo Almeida, helped build InstructGPT, ChatGPT and GPT-4 at OpenAI before leaving in 2024. His summary of what went wrong is worth sitting with: \"We've been optimizing for humans and we're super human at pleasing humans.\"",
+      },
+      {
+        type: "p",
+        text: "This matters to a business with one location and four staff more than it might sound. Almost nothing a small business needs automated is an essay. It is a decision — made the same way, hundreds of times a month, by someone who is also trying to serve customers.",
+      },
+      { type: "h2", text: "Three questions, and that is all" },
+      {
+        type: "p",
+        text: "Jev answers exactly three shapes of question, and refuses everything else:",
+      },
+      {
+        type: "list",
+        items: [
+          "Choice — pick one of the options I have defined. Returns the pick plus a probability for every option. \"Is this enquiry about plumbing, heating, or a warranty claim?\"",
+          "Score — rate this against a rubric I have written out. Returns the level plus probabilities. \"How urgent is this message, from routine to same-day emergency?\"",
+          "Noul — yes or no, returned as a probability between 0 and 1. \"Is this person asking to book?\"",
+        ],
+      },
+      {
+        type: "p",
+        text: "That is the whole product. It cannot write your reply, explain its reasoning, or do arithmetic. It was trained entirely on synthetic data using a method TypeSafe calls reinforcement learning for calibrated decisions — optimising for being right and for knowing how right it is, rather than for sounding good.",
+      },
+      { type: "h2", text: "The number that changes the arithmetic" },
+      {
+        type: "p",
+        text: "Jev costs $0.042 per million input tokens, and output is free — because there is no output to speak of. In practice that lands at roughly $0.00035 per decision. A hundred thousand requests of a thousand tokens each comes to about $4.20. Independent testing puts median latency at 350–440 milliseconds, against 10–35 seconds for a frontier model asked to reason its way to the same answer. TypeSafe's own benchmarks claim 40–200x faster and 40–400x cheaper, and to the company's credit it says plainly that those workflows were built in-house and the gains \"likely sit at the high end of real-world results\".",
+      },
+      {
+        type: "p",
+        text: "Take the honest version and it is still a change of category. Routing every enquiry that reaches your business through an AI used to be something you costed carefully. At a third of a cent a decision, cost stops being the constraint. What is left is the harder question of whether the answer is good enough to act on — which is where most of this article goes.",
+      },
+      {
+        type: "p",
+        text: "The name is not decoration, by the way. Jev is named for William Stanley Jevons, the Victorian economist who noticed that making coal cheaper to burn made Britain burn far more of it. TypeSafe is betting the same thing happens to machine judgement.",
+      },
+      { type: "h2", text: "Five decisions in a local business worth automating" },
+      {
+        type: "list",
+        items: [
+          "Spam versus real enquiry on your contact form. A yes/no on every submission, with a confidence figure. Below a threshold you set, it goes to a review folder instead of your inbox — and you stop missing real leads inside a pile of junk.",
+          "Which service this is about. A choice across your service list, attached to the enquiry before a human reads it. This is what makes \"all enquiries go to the right person\" possible without a receptionist.",
+          "Does this review need the owner tonight. A score against a rubric you write: neutral, unhappy, publicly damaging. Most review alerts are noise; this is the filter that makes you read the ones that are not.",
+          "Is this message a booking request. A yes/no on inbound WhatsApp or Instagram messages, so booking-shaped messages get answered first when the queue is forty deep on a Saturday.",
+          "Should this after-hours call be escalated. A score on the transcript of a voice agent's call, deciding whether it waits until morning or rings your mobile at 11pm.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Notice what every one of these has in common. The model is not speaking to your customer. It is sorting, ranking and routing behind the scenes, and a human or a script writes whatever gets sent. That is the safe shape, and it is the shape Jev is built for.",
+      },
+      { type: "h2", text: "Four ways it will let you down" },
+      {
+        type: "p",
+        text: "This is a two-week-old model. The independent work on it is already unflattering in specific, useful ways, and anyone selling it to you without mentioning these is not on your side.",
+      },
+      {
+        type: "list",
+        items: [
+          "The confidence number is not a promise. On 23 September, Alex Molas published a careful argument that Jev cannot be calibrated in general, because calibration depends on the data as much as the model — a model calibrated on the lab's distribution can be wrong about its own certainty on yours. He found the same problem posed through different primitives producing inconsistent calibration. Treat the figures as rankings, label a couple of hundred of your own examples, and recalibrate before you attach a threshold to anything that costs money.",
+          "It cannot tell you why. There is no rationale, ever. When a customer disputes how their enquiry was handled, or a regulator asks how an automated decision was made, \"the model returned 0.87\" is not an answer. Under the EU AI Act and GDPR that is a genuine compliance problem, not a theoretical one. Keep a human decision in front of anything that affects a person's money or their treatment.",
+          "It is sensitive to how you ask. Reversing the order of the options in a choice shifted probabilities from 0.84–0.89 to 0.93–0.96 on identical inputs. Fix your option order and your rubric wording, and re-test when you change them.",
+          "It gets noticeably worse in other languages. Measured accuracy drops of around 11 points in Russian, 6.5 in Korean, and 3 to 6 in Spanish, with calibration usually degrading alongside. For any business in Dubai handling Arabic, Hindi, Urdu, Russian and English in the same inbox, this is the single most important line in this article: test in the languages your customers actually write in, not just English.",
+        ],
+      },
+      {
+        type: "p",
+        text: "One more piece of housekeeping: behaviour changed measurably between releases 1.12 and 1.13. If you build on it, pin the version. A silent model upgrade rewriting how your enquiries get sorted is the kind of problem you discover a month late.",
+      },
+      { type: "h2", text: "Where this is heading" },
+      {
+        type: "p",
+        text: "Jev is not alone. There is an open-weight replication, a rival model that works by swapping a single URL, an open benchmark tracking dozens of these systems, and lighter open-source options that run in tens of milliseconds on ordinary hardware. That tells you the category is real and that no one is locked in. It also means the honest recommendation today is not \"go and buy Jev\". It is: notice that the decision layer of your business just became almost free, and start listing the decisions.",
+      },
+      {
+        type: "p",
+        text: "The chat assistants will keep getting the attention, because they talk and we like being talked to. The models that quietly sort your enquiries, flag your angry reviews and wake you up for the call that matters will not be interesting to read about. They will just mean the business runs when you are asleep.",
+      },
+      {
+        type: "takeaway",
+        text: "Jev is a model that answers only pick-one, rate-this, and yes/no — fast, and for about a third of a cent. Most of what a small business wants automated is exactly that shape. Use it to sort and route behind the scenes, never to speak to a customer, test it in every language your customers use, and check its confidence scores against your own data before you trust a single threshold.",
+      },
+    ],
+  },
+  {
     slug: "google-business-profile-panel-is-now-an-ai-overview",
     title:
       "Google Is Replacing Your Business Profile Panel With an AI Overview. Here Is What It Will Say About You.",
