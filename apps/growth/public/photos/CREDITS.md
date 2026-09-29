@@ -27,6 +27,7 @@ None are Unsplash+ / Premium.
 | `insights/invest.jpg` | [unsplash.com/photos/ncPKby8GvCw](https://unsplash.com/photos/ncPKby8GvCw) | City with high-rise buildings during night time |
 | `insights/panel.jpg` | [unsplash.com/photos/LAmR0Kuutmg](https://unsplash.com/photos/LAmR0Kuutmg) | Neon sign in a shop window reading "Yes, we are open" (cropped to 3:2) |
 | `insights/jev.jpg` | [unsplash.com/photos/C3DfIgig1j8](https://unsplash.com/photos/C3DfIgig1j8) | A large control room with lots of control knobs (cropped to 3:2) |
+| `insights/watch.jpg` | [unsplash.com/photos/J8TxykRZKVU](https://unsplash.com/photos/J8TxykRZKVU) | People gathered outside a brightly lit restaurant at night (cropped to 3:2) |
 
 All are graded per theme via `.photo-plate` in
 `globals.css`, and resized/recompressed from the originals.

@@ -36,6 +36,124 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "google-ai-mode-monitoring-agents-local-business",
+    title:
+      "Google Now Watches the Web for Your Customers While They Sleep. Here Is How to Be What It Finds.",
+    description:
+      "On 28 September Google began rolling out AI Mode's information monitoring to everyone, globally, free — a feature that cost $199.99 a month in June. Customers tell Search what to watch for, and Google pushes them an alert when it appears. Two of Google's four headline examples are a local business's news. This is discovery without a search, and almost nobody is set up for it.",
+    date: "2026-09-29",
+    readTime: "8 min read",
+    category: "Google",
+    keywords: [
+      "Google AI Mode monitoring local business",
+      "Google information agents business visibility",
+      "Google push notification local discovery",
+    ],
+    relatedService: "ai-search-optimization",
+    image: "/photos/insights/watch.jpg",
+    imageAlt: "People gathered outside a small brightly lit restaurant at night",
+    sources: [
+      {
+        label: "Robby Stein (VP Product, Google Search) on X — info monitoring rolling out globally",
+        url: "https://x.com/rmstein/status/2104720139971404016",
+      },
+      {
+        label: "Search Engine Journal — Google Rolls Out AI Mode Info Monitoring To All Users Globally (28 September 2026)",
+        url: "https://www.searchenginejournal.com/google-ai-mode-info-monitoring-global-rollout/591312/",
+      },
+      {
+        label: "Search Engine Roundtable — Google Globally Rolls Out Monitoring Capabilities In AI Mode (28 September 2026)",
+        url: "https://www.seroundtable.com/google-ai-mode-monitoring-capabilities-42179.html",
+      },
+      {
+        label: "The Next Web — Google wants Search to work while you sleep, and its new information agents are the plan",
+        url: "https://thenextweb.com/news/google-wants-search-to-work-while-you-sleep-and-its-new-information-agents-are-the-plan",
+      },
+      {
+        label: "Digital Applied — Google AI Mode Information Agents: A New Referral Surface (June 2026)",
+        url: "https://www.digitalapplied.com/blog/google-ai-mode-information-agents-geo-referral-surface-guide",
+      },
+      {
+        label: "Google Search Status Dashboard — September 2026 spam update",
+        url: "https://status.search.google.com/incidents/XhUDXP7A67iHCD2kmbVu",
+      },
+      {
+        label: "Search Engine Roundtable — Google September 2026 Spam Update Has Big Weekend Impact (28 September 2026)",
+        url: "https://www.seroundtable.com/google-september-2026-spam-update-weekend-impact-42174.html",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is Google's AI Mode information monitoring?",
+        a: "It is a standing request you give Google Search. You tell AI Mode what you want watched — a restaurant opening near you, a product back in stock, holiday activities for kids — and Google continuously checks websites, forums, social posts, real-time data and its Shopping Graph of 60+ billion products, then sends a push notification through the Google app when something matches. It launched to $199.99-a-month Ultra subscribers on 12 June 2026, reached AI Pro over the summer, and on 28 September started rolling out to everyone globally at no cost.",
+      },
+      {
+        q: "Can a local business get in front of these alerts?",
+        a: "Nobody outside Google can say for certain. Google has not published how monitoring agents choose their sources, and there is no report in Search Console that separates agent-driven visits from other Search traffic. What is knowable is what the agents are watching for — changes, dated and verifiable — and that a business which publishes real, dated news has something to be found, while one whose site has not changed in two years does not.",
+      },
+      {
+        q: "Should I publish more content so Google notices me?",
+        a: "Publish more real things, not more words. In the same week this rolled out, Google's September 2026 spam update — live since 24 September, global, all languages, running up to two weeks — was visibly hitting AI-generated and programmatically produced pages. A genuine dated announcement about your business beats fifty generated articles, and the generated articles now carry risk that did not exist a month ago.",
+      },
+    ],
+    body: [
+      {
+        type: "p",
+        text: "On 28 September, Google's VP of Product for Search, Robby Stein, announced that information monitoring in AI Mode is rolling out to everyone, globally, free. In his words, you \"tell AI Mode exactly what to look for & Search will continuously check across changing info on the web like sites, forums and social posts\" — plus real-time data and a Shopping Graph of more than 60 billion products — and it notifies you when something turns up. In June this cost $199.99 a month. Now it is a default part of Search.",
+      },
+      {
+        type: "p",
+        text: "Read Google's own four examples of what people will monitor: new restaurants and pop-ups nearby, local holiday activities with the kids, back-in-stock alerts, price drops. Two of the four are a small local business's news. Google is not describing a research tool. It is describing a machine that waits for your opening, your event, your new arrival, and then taps a nearby stranger on the shoulder about it.",
+      },
+      { type: "h2", text: "This is discovery without a search" },
+      {
+        type: "p",
+        text: "Every visibility conversation a local business has ever had assumes a moment: the customer wants something, types it, and you either appear or you do not. Monitoring removes the moment. The customer set the request weeks ago and forgot about it. When your news appears, Google pushes it to their phone unprompted. The search that found you had already happened, long before you had anything to be found for.",
+      },
+      {
+        type: "p",
+        text: "That inverts which part of your online presence matters. Your service pages answer people who are searching today; they change once a year and that is fine. Monitoring rewards the opposite thing — the part of your presence that changes. A business whose website and profile have not moved in eighteen months is not a bad search result. It is simply invisible to a system whose entire job is noticing change.",
+      },
+      {
+        type: "p",
+        text: "Google has been building to this all year: information agents were announced at I/O in May, launched to Ultra subscribers on 12 June, reached AI Pro over the summer, and went free and global this week. Stein's closing line on the announcement was \"lots more to come\".",
+      },
+      { type: "h2", text: "The honest part: nobody knows how it picks" },
+      {
+        type: "p",
+        text: "Google has not disclosed how monitoring agents select their sources, and anyone telling you they have cracked it is guessing. Worse, there is currently no way to measure it: as Search Engine Journal put it this week, local businesses and retailers cannot yet tell how often monitoring will surface their sites or send them visits. There is no line in Search Console for agent-driven traffic.",
+      },
+      {
+        type: "p",
+        text: "So treat everything below as durable fundamentals that happen to line up with how these systems behave elsewhere — not as a formula. If Google never sends you a single monitored visit, every item on this list still earns its place through ordinary search, AI Overviews and customers who read your profile.",
+      },
+      { type: "h2", text: "Five things that make a business findable by something that is watching" },
+      {
+        type: "list",
+        items: [
+          "Publish dated news in a place you own. Not a blog of tips — a genuinely dated page for openings, new services, seasonal menus, extended hours, events. An agent watching for \"new places in this neighbourhood\" needs a page with a date on it to point at. Most local sites have nowhere for news to live.",
+          "Post to your Google Business Profile, and now check whether anyone sees it. View counts came back to Business Profile posts on 10 September, covering the last 18 months across Search and Maps. For the first time in three years you can tell whether posting is doing anything. Post the news, then read the number.",
+          "Mark up events and offers properly. Event and Offer structured data is how a machine tells \"this happens on 12 October at this address\" apart from a sentence in a paragraph. It costs nothing and it is the difference between parseable and ignorable.",
+          "Get corroborated somewhere that is not your own site. Monitoring pulls from forums and social posts as well as websites. A local paper, a neighbourhood group, a community page mentioning your opening is a second, independent signal that the thing actually happened — and it is the signal you are least likely to have.",
+          "Keep the boring details identical everywhere. Hours, address, phone, name. When a system is comparing sources to decide what changed, contradictions between your site, your profile and a directory read as noise. Consistency is what makes a genuine change legible as a change.",
+        ],
+      },
+      { type: "h2", text: "The trap this week set at the same time" },
+      {
+        type: "p",
+        text: "There is an obvious wrong conclusion here — \"Google rewards fresh content, so generate a lot of it\" — and Google spent the same week punishing exactly that. The September 2026 spam update went live on 24 September at 9:15am Pacific, globally and in all languages, with a rollout of up to two weeks. It is the fourth spam update of the year, after March, June and August, making this the most active year for them since 2021. Over the weekend of 26–27 September the tracking tools lit up, and analyst Glenn Gabe reported big drops across sites, with AI-generated and programmatically produced pages prominent among them.",
+      },
+      {
+        type: "p",
+        text: "Put the two stories side by side and the instruction is unusually clear. Google has built a system that rewards businesses for having real news, and in the same week tightened the screws on businesses that manufacture fake news to feed it. Publish fewer things, make them true, and put a date on them.",
+      },
+      {
+        type: "takeaway",
+        text: "Since 28 September, any customer can ask Google to watch the web for things like your business and get pushed an alert when one appears — free, worldwide. Nobody knows exactly how it picks sources, so do not rebuild around it. Do give your business somewhere for real, dated news to live, post it to your profile, mark up your events, get mentioned somewhere that is not your own website, and resist the urge to manufacture the news.",
+      },
+    ],
+  },
+  {
     slug: "jev-typesafe-ai-model-that-does-not-talk",
     title:
       "Jev Is an AI That Refuses to Talk. For a Local Business, That Is the Point.",
