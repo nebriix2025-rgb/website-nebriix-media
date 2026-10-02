@@ -28,6 +28,7 @@ None are Unsplash+ / Premium.
 | `insights/panel.jpg` | [unsplash.com/photos/LAmR0Kuutmg](https://unsplash.com/photos/LAmR0Kuutmg) | Neon sign in a shop window reading "Yes, we are open" (cropped to 3:2) |
 | `insights/jev.jpg` | [unsplash.com/photos/C3DfIgig1j8](https://unsplash.com/photos/C3DfIgig1j8) | A large control room with lots of control knobs (cropped to 3:2) |
 | `insights/watch.jpg` | [unsplash.com/photos/J8TxykRZKVU](https://unsplash.com/photos/J8TxykRZKVU) | People gathered outside a brightly lit restaurant at night (cropped to 3:2) |
+| `insights/name.jpg` | [unsplash.com/photos/HycE_OfG4Sc](https://unsplash.com/photos/HycE_OfG4Sc) | Park Alleys neon sign at night (cropped to 3:2) |
 
 All are graded per theme via `.photo-plate` in
 `globals.css`, and resized/recompressed from the originals.

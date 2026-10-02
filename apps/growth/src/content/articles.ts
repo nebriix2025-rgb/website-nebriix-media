@@ -36,6 +36,121 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "ai-overviews-on-brand-name-searches-local-business",
+    title:
+      "Searching Your Business Name Now Returns an AI Answer 8 Times out of 10. Here Is Who Google Is Quoting.",
+    description:
+      "Two independent datasets published on 1 and 2 October put AI Overviews on 83% to 90% of brand-name searches, up from 26% at the start of September. The query where you used to be the answer is now answered by Google, out of sources you do not own. Here is what it quotes, and how to make those sources say the right thing.",
+    date: "2026-10-02",
+    readTime: "8 min read",
+    category: "AI Visibility",
+    keywords: [
+      "AI Overviews branded searches",
+      "AI Overview on my business name",
+      "brand name search AI Overview 2026",
+    ],
+    relatedService: "ai-search-optimization",
+    image: "/photos/insights/name.jpg",
+    imageAlt: "A business name in red neon lettering above a shopfront at night",
+    sources: [
+      {
+        label: "Ahrefs — AI Overviews Currently Appear for 83% of Branded Searches (2 October 2026)",
+        url: "https://ahrefs.com/blog/ai-overviews-on-branded-searches/",
+      },
+      {
+        label: "DemandSphere — AI Overviews on branded queries tripled in September (1 October 2026)",
+        url: "https://www.demandsphere.com/blog/branded-ai-overviews-september-2026/",
+      },
+      {
+        label: "Search Engine Land — Google AI Overviews jump from 26% to 80% of branded queries",
+        url: "https://searchengineland.com/google-ai-overviews-jump-branded-queries-september-492962",
+      },
+      {
+        label: "Search Engine Land — AI local visibility is up to 30x harder than ranking in Google (SOCi 2026 Local Visibility Index)",
+        url: "https://searchengineland.com/ai-local-visibility-report-2026-468085",
+      },
+      {
+        label: "Search Engine Roundtable — Google Local Knowledge Panel Now An AI Overview (17 September 2026)",
+        url: "https://www.seroundtable.com/google-local-knowledge-panel-ai-overview-42105.html",
+      },
+    ],
+    faqs: [
+      {
+        q: "Does Google show an AI Overview when someone searches my business name?",
+        a: "Very probably, and that changed in the last two weeks of September 2026. Ahrefs, analysing 232.8 million US desktop search-result crawls including 92.5 million branded-keyword crawls, found AI Overviews on 83% of branded queries by late September, up from 61.3% in July. DemandSphere, tracking branded keywords daily, recorded a rise from 26.12% on 1 September to a peak of 90.48% on 27 September. Google announced nothing.",
+      },
+      {
+        q: "Can I stop Google showing an AI Overview for my own business name?",
+        a: "No. There is no setting, no opt-out, and no appeal. What you can change is the material it is written from — your Business Profile, your website, your reviews and the third-party listings Google trusts. The answer is a summary of your public footprint, so the only available lever is the footprint.",
+      },
+      {
+        q: "What does Google cite in an AI Overview about a business?",
+        a: "For large brands, Ahrefs found the most frequently cited sources were Wikipedia (71.9%), YouTube (38.6%) and LinkedIn (22.8%) — none of which the brand fully controls. For a local business the equivalent set is Google Maps and your Business Profile, Yelp, Facebook, the directories in your trade, local press, and public threads where people discuss businesses like yours. Your own website is one voice among those, not the loudest.",
+      },
+    ],
+    body: [
+      {
+        type: "p",
+        text: "Someone types your business name into Google. They are not comparing, not browsing — they have already chosen you and want your hours or your number. That query was the one piece of search a business could count on owning. In the last two weeks of September, Google took the top of it.",
+      },
+      {
+        type: "p",
+        text: "Two independent measurements published this week agree. Ahrefs analysed 232.8 million US desktop search-result crawls between July and September, 92.5 million of them branded keywords, and found AI Overviews appearing on 83% of branded queries by late September — up from 61.3% in July and 65.1% in August. DemandSphere, tracking branded keywords once a day across markets and devices, recorded 26.12% on 1 September, a sharp climb from 18 September, and a peak of 90.48% on 27 September. Google made no announcement. It simply started answering.",
+      },
+      {
+        type: "p",
+        text: "Ahrefs also measured where the AI Overview sits: for major brands it occupies position one 76.2% of the time, above the brand's own website.",
+      },
+      { type: "h2", text: "The risk is not clicks. It is who gets to describe you." },
+      {
+        type: "p",
+        text: "The reflex worry is traffic, and honestly nobody has measured that yet — neither study tracked clicks, and both say so. Ahrefs' Ryan Law puts the real problem more sharply: competitors and external sources can now control the narrative of your brand directly in the search results.",
+      },
+      {
+        type: "p",
+        text: "Look at what gets quoted. For large brands, the most-cited sources in branded AI Overviews are Wikipedia at 71.9%, YouTube at 38.6% and LinkedIn at 22.8%. A brand owns none of those outright. A YouTube video from an unofficial account describing a product you discontinued is, as far as the summary is concerned, evidence.",
+      },
+      {
+        type: "p",
+        text: "A local business has the same problem with a different cast. Nobody has written your Wikipedia page. What exists instead is your Google Business Profile, your Maps listing, Yelp, Facebook, the trade directories, whatever the local paper wrote in 2022, and a Reddit thread where someone asked for a recommendation. That is the raw material. Your website is one voice in it.",
+      },
+      { type: "h2", text: "What the local data says about being described wrongly" },
+      {
+        type: "p",
+        text: "SOCi's 2026 Local Visibility Index, which analysed nearly 350,000 locations across 2,751 multi-location brands, found business profile information was only about 68% accurate on ChatGPT and Perplexity. On Gemini it was 100% — because Gemini is grounded in Google Maps. The lesson is unglamorous and precise: assistants that read your Maps data get you right, and assistants that assemble you from the wider web get you wrong about a third of the time.",
+      },
+      {
+        type: "p",
+        text: "The same report found reviews working as a filter rather than a ranking signal. Locations recommended by ChatGPT averaged 4.3 stars; on Perplexity 4.1; on Gemini 3.9. Businesses with ratings near 3.4 stars and review response rates below 5% were, in SOCi's finding, effectively invisible in AI recommendations — not ranked low, absent. In ordinary local search a middling rating still ranks on proximity. Here it disqualifies.",
+      },
+      { type: "h2", text: "A timing detail worth noticing" },
+      {
+        type: "p",
+        text: "DemandSphere's climb begins on 18 September. On 17 September, Search Engine Roundtable confirmed Google had started rendering the local knowledge panel — the card that appears when you search a business by name — as an AI Overview. Google has confirmed no connection between the two, and one day's gap is not proof of anything. But both changes point the same way, and they arrived in the same week.",
+      },
+      { type: "h2", text: "The thirty-minute version of fixing this" },
+      {
+        type: "list",
+        items: [
+          "Search your own business name on a phone, signed out, and screenshot what you get. This is now the front page of your business, and most owners have never seen it. Mark every statement as right, stale or missing.",
+          "Read the citations, not just the summary. Whatever Google links under that answer is the set of pages that currently define you. Open each one. Those are your real priorities for the next month, in the order Google listed them.",
+          "Fix Maps first. It is the one source that measurably produces accurate descriptions. Complete every field — category, services, attributes, hours, a real 500-character description — because an empty field is how a summary ends up thin or invented.",
+          "Treat your rating as a gate, not a score. If you are under about 4.2 stars, that is the work. Ask properly, respond to everything, and let the average move; nothing else on this list matters as much if the filter excludes you before the describing starts.",
+          "Publish one plain page that answers \"what is [your business name]\" — who you are, what you do, where, since when, and what makes you the obvious choice. Date it, mark it up with LocalBusiness structured data, and link it from your home page. If you do not write the canonical description of your own business, something else becomes it.",
+          "Get one credible third party to say the same thing. A local paper, a chamber listing, a well-run directory in your trade. Corroboration is what turns a claim on your own website into a fact the model will repeat.",
+        ],
+      },
+      {
+        type: "p",
+        text: "One caution on all of this: Google changes AI Overview triggering constantly, and 90% in late September does not guarantee 90% in December. Ahrefs says as much. But the direction of travel across eighteen months has been one way only, and everything on the list above pays for itself through ordinary search even if the Overview disappears tomorrow.",
+      },
+      {
+        type: "takeaway",
+        text: "Brand-name searches used to be the one query you owned. As of late September, Google writes the answer to roughly eight or nine of every ten of them, assembled from sources you do not control, and it sits above your website three times in four. You cannot switch it off. Search your own name tonight, read what Google quotes, and go fix those sources in the order it listed them.",
+      },
+    ],
+  },
+  {
     slug: "google-ai-mode-monitoring-agents-local-business",
     title:
       "Google Now Watches the Web for Your Customers While They Sleep. Here Is How to Be What It Finds.",
