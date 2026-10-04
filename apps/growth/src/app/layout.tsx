@@ -12,6 +12,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { StickyAuditCta } from "@/components/layout/sticky-audit-cta";
 import { AiReferralTracker } from "@/components/providers/ai-referral-tracker";
+import { PostHogAnalytics } from "@/components/providers/posthog-provider";
 import { Toaster } from "@/components/ui/sonner";
 
 const figtree = Figtree({ variable: "--font-figtree", subsets: ["latin"] });
@@ -111,6 +112,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Analytics />
         <SpeedInsights />
         <AiReferralTracker />
+        {/* Optional product analytics. Off until NEXT_PUBLIC_POSTHOG_KEY is set. */}
+        <PostHogAnalytics />
         {/* Optional GA4. Off until NEXT_PUBLIC_GA_MEASUREMENT_ID is set. */}
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />

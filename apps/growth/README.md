@@ -77,11 +77,30 @@ results would undercut the "we show you the math" positioning.
 
 ## Measuring visits and AI visibility
 
-Three layers, cheapest first.
+Four layers, cheapest first.
 
 **Page views and referrers** — Vercel Analytics (`@vercel/analytics`, already in
 the layout) records every page view and its referrer once the site is on
 Vercel. Optional GA4 loads when `NEXT_PUBLIC_GA_MEASUREMENT_ID` is set.
+
+**What a visitor did once they arrived** — PostHog, off until
+`NEXT_PUBLIC_POSTHOG_KEY` is set. Vercel Analytics counts visits; PostHog
+records the sequence — which pages one person read in order, where they
+stopped scrolling, which CTA they clicked before leaving. Setup:
+
+1. Create a free project at posthog.com (1M events/month, no card). Copy the
+   project API key (`phc_...`) into `NEXT_PUBLIC_POSTHOG_KEY`.
+2. **Enable cookieless mode in the PostHog project settings.** The client is
+   configured with `cookieless_mode: "always"`, so no cookies or local storage
+   are touched and no consent banner is needed — but if the project setting is
+   off, PostHog discards every event on ingest and the dashboard stays empty.
+3. US cloud instead of EU? Set `NEXT_PUBLIC_POSTHOG_HOST` and
+   `NEXT_PUBLIC_POSTHOG_INGEST` to the `us.` equivalents.
+
+Requests are proxied through `/ingest` by a rewrite in `next.config.ts`, so
+blockers that drop `*.posthog.com` don't silently remove the privacy-conscious
+half of the audience. With no key set, the library is never downloaded — the
+import lives inside the effect, not at module scope.
 
 **Visits that came from an AI assistant** — `AiReferralTracker` fires a
 Vercel Analytics custom event `ai_referral` with `{source, path}` whenever a

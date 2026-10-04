@@ -8,6 +8,27 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.join(__dirname, "..", ".."),
   },
+
+  // Proxy PostHog through our own domain. Analytics hostnames sit on every
+  // blocklist, so a direct connection quietly loses the privacy-conscious
+  // visitors — who are exactly the people researching an agency.
+  async rewrites() {
+    const host =
+      process.env.NEXT_PUBLIC_POSTHOG_INGEST ?? "https://eu.i.posthog.com";
+    const assets = host
+      .replace("//eu.i.", "//eu-assets.i.")
+      .replace("//us.i.", "//us-assets.i.");
+    return [
+      {
+        source: "/ingest/static/:path*",
+        destination: `${assets}/static/:path*`,
+      },
+      { source: "/ingest/:path*", destination: `${host}/:path*` },
+    ];
+  },
+
+  // The proxy above needs the trailing-slash-free form to match.
+  skipTrailingSlashRedirect: true,
 };
 
 export default nextConfig;
