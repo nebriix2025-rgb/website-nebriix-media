@@ -36,6 +36,115 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "whatsapp-button-google-business-profile",
+    title:
+      "Google Just Put a WhatsApp Button on Your Business Listing. Check Which Number It Used.",
+    description:
+      "As of 7 October the WhatsApp button sits on the Google local panel next to Call and Directions. Back in June, Google auto-filled WhatsApp numbers into thousands of profiles in bulk — many of them landlines that cannot receive a message. Those numbers are now live buttons. Here is how to check yours in two minutes.",
+    date: "2026-10-07",
+    readTime: "7 min read",
+    category: "Local Search",
+    keywords: [
+      "WhatsApp button Google Business Profile",
+      "add WhatsApp to Google listing",
+      "Google local panel WhatsApp",
+    ],
+    relatedService: "google-business-profile",
+    image: "/photos/insights/whatsapp.jpg",
+    imageAlt: "A worker behind a bar counter reading a message on her phone",
+    sources: [
+      {
+        label: "Search Engine Roundtable — Google Local Panel Gains WhatsApp Button (7 October 2026)",
+        url: "https://www.seroundtable.com/google-local-panel-whatsapp-button-42230.html",
+      },
+      {
+        label: "Search Engine Roundtable — Google Business Profiles Adds WhatsApp Numbers In Bulk (11 June 2026)",
+        url: "https://www.seroundtable.com/google-business-profiles-adds-whatsapp-numbers-in-bulk-41483.html",
+      },
+      {
+        label: "Google Business Profile Help — Chat with customers from your Business Profile",
+        url: "https://support.google.com/business/answer/15013580",
+      },
+      {
+        label: "Search Engine Roundtable — Updated Google Maps Policy: What Merchants Can't Post In Listings Or Posts (6 October 2026)",
+        url: "https://www.seroundtable.com/google-maps-policy-listings-or-posts-42228.html",
+      },
+    ],
+    faqs: [
+      {
+        q: "How do I add a WhatsApp button to my Google Business Profile?",
+        a: "In your Business Profile, go to Edit profile, then Contact, then the Chat section, and choose WhatsApp from the dropdown. Add your WhatsApp click-to-chat URL or a phone number in full international format. You need a claimed and verified profile and an active WhatsApp or WhatsApp Business account on that number. Chat options are available in selected regions only, and the button currently shows on mobile rather than desktop.",
+      },
+      {
+        q: "Why is there a WhatsApp number on my listing that I never added?",
+        a: "Google auto-filled WhatsApp numbers into large numbers of Business Profiles in early June 2026, often copying the main business line. A Google product expert confirmed it was a bug, and many of the numbers were landlines that cannot receive WhatsApp messages. Deletion was briefly impossible and was restored on 10 June. The numbers themselves were not necessarily removed — so if one was added to your profile then, it is probably still there, and as of this week it is a button customers can press.",
+      },
+      {
+        q: "What happens if I enable both WhatsApp and text messaging?",
+        a: "Google's documentation says the text message option takes precedence in what customers see. Pick the one you will actually answer rather than enabling both and hoping.",
+      },
+    ],
+    body: [
+      {
+        type: "p",
+        text: "Since 7 October, the Google local panel — the card that appears when someone searches your business by name — carries a WhatsApp button alongside Call, Directions and Website. It was spotted by Sachin Patel and reproduced independently by Barry Schwartz, which usually means a real rollout rather than a test. For a business in Dubai, where WhatsApp is not a secondary channel but the channel, this is the most consequential thing Google has changed about local listings this year.",
+      },
+      {
+        type: "p",
+        text: "It is also, for some businesses, a live button pointing at a number that cannot receive messages. That part needs explaining.",
+      },
+      { type: "h2", text: "The June bug that just became visible" },
+      {
+        type: "p",
+        text: "In early June 2026, Google automatically added WhatsApp numbers to a large number of Business Profiles without asking. In many cases it copied the main business phone line across. The problem, as one affected owner put it, was that these were landline numbers that do not support text messaging or WhatsApp. Len Raleigh described a huge wave of incorrect numbers being added. Claudia Tomina, a Google product expert, confirmed it was a bug and said Google was working on a fix. For several days there was no way to delete the number at all; deletion was restored on 10 June.",
+      },
+      {
+        type: "p",
+        text: "Here is the part that matters now. The fix restored your ability to remove a wrong number. It did not go back and remove them for you. If a number was auto-filled into your profile in June and you never looked, it has been sitting there quietly for four months. This week Google turned it into a button.",
+      },
+      {
+        type: "p",
+        text: "A customer presses WhatsApp, gets an error or a chat that nobody will ever read, and goes to a competitor. That failure is invisible from your side — no missed call, no bounced email, nothing in your inbox to tell you it happened.",
+      },
+      { type: "h2", text: "The two-minute check" },
+      {
+        type: "list",
+        items: [
+          "Search your business name on a phone, signed out. Look at the row of buttons. Is there a WhatsApp one?",
+          "If there is, press it yourself. Does it open a chat to a number you actually monitor? That is the whole test.",
+          "Then open Business Profile, Edit profile, Contact, Chat. Whatever is in that field is what the button uses. If it is wrong, replace it or clear it.",
+          "If the number is right but nobody watches it, decide now: either put it on someone's phone, or remove the button. A channel that takes a day to answer is worse than no channel, because the customer who used it believes they have made contact.",
+        ],
+      },
+      { type: "h2", text: "If you want the button, set it up properly" },
+      {
+        type: "p",
+        text: "Go to Edit profile, Contact, Chat, pick WhatsApp from the dropdown, and add your click-to-chat URL or your number in full international format — country code and all. You need a verified profile and an active WhatsApp or WhatsApp Business account on that number. Chat options are only live in selected regions, and the button is showing on mobile rather than desktop, which in practice is where the enquiry was coming from anyway.",
+      },
+      {
+        type: "p",
+        text: "One rule from Google's own documentation that catches people out: if you enable both WhatsApp and text messaging, the text message option takes precedence in what the customer is shown. Choose the one you will genuinely answer.",
+      },
+      {
+        type: "p",
+        text: "And think about what happens after the press. A WhatsApp button converts far better than a phone number because it costs the customer nothing socially — no call, no waiting, no talking to a stranger. That same ease is why the volume will be higher than your phone ever was, at hours your phone never rang. Decide who answers before you turn it on, not after.",
+      },
+      { type: "h2", text: "Also changed this week: what you may post" },
+      {
+        type: "p",
+        text: "On 6 October Google updated the Maps merchant policy, spotted by Hiroko Imai. The line it draws is between your listing and your posts. Time-bound promotions, pricing and direct calls to action do not belong in the listing itself — that is meant to describe your permanent identity. Offers and updates are still fine in Posts, but Posts may not carry email addresses, phone numbers, social links or external website links unrelated to the business.",
+      },
+      {
+        type: "p",
+        text: "If your business description currently opens with a discount, that is now a policy problem rather than a style one. Move it to a Post.",
+      },
+      {
+        type: "takeaway",
+        text: "The WhatsApp button is live on Google local panels as of 7 October, and for many businesses it is pointing at a number Google auto-filled in June without asking — often a landline that cannot receive messages. Search your own business name on a phone tonight and press the button. If it does not open a chat you monitor, fix it in Edit profile, Contact, Chat, or remove it.",
+      },
+    ],
+  },
+  {
     slug: "ai-overviews-on-brand-name-searches-local-business",
     title:
       "Searching Your Business Name Now Returns an AI Answer 8 Times out of 10. Here Is Who Google Is Quoting.",
