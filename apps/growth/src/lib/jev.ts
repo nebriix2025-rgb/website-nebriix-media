@@ -21,6 +21,10 @@
  * (10,000 neurons, about 2.9M clef-flash input tokens) covers a lead form with
  * room to spare. TypeSafe needs prepaid credit before it issues a key.
  *
+ * Confirmed working on 12 October 2026 against a real submission through the
+ * live contact form: clef-flash runs on the Workers AI free tier with no
+ * billing configured, which Cloudflare's docs leave ambiguous for some models.
+ *
  * Everything here fails open and returns null. A classifier is a convenience
  * for us; a lead is revenue. Nothing in this file may ever be the reason a
  * form submission does not arrive.
