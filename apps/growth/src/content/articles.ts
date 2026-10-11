@@ -36,6 +36,117 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "google-local-services-ads-missed-call-charges",
+    title:
+      "Google Now Charges You for the Calls You Miss. Twenty Seconds Is the Whole Rule.",
+    description:
+      "Since 1 October, a missed Local Services Ads call is a billable lead if the caller stays on the line more than 20 seconds during your posted hours. The manual dispute button is gone. Here is exactly what triggers a charge, the 15-day follow-up window nobody has explained, and the five settings to change this week.",
+    date: "2026-10-12",
+    readTime: "8 min read",
+    category: "Local Search",
+    keywords: [
+      "Local Services Ads missed call charge",
+      "Google LSA 20 second rule",
+      "LSA lead dispute 2026",
+    ],
+    relatedService: "lead-generation-system",
+    image: "/photos/insights/lsa.jpg",
+    imageAlt: "An electrician wiring a panel with both hands occupied",
+    sources: [
+      {
+        label: "Search Engine Roundtable — Google Local Service Ads To Charge For Missed & Subsequent Calls (25 August 2026)",
+        url: "https://www.seroundtable.com/google-lsa-missed-subsequent-calls-41940.html",
+      },
+      {
+        label: "Search Engine Roundtable — Google Local Service Ads Expands How Leads Work Help Document (8 October 2026)",
+        url: "https://www.seroundtable.com/google-local-service-ads-how-leads-work-42259.html",
+      },
+      {
+        label: "Google Local Services Ads Help — How leads work",
+        url: "https://support.google.com/localservices/answer/7195435",
+      },
+      {
+        label: "PPC Land — Google charges Local Services advertisers for missed calls over 20 seconds (25 August 2026)",
+        url: "https://ppc.land/google-charges-local-services-advertisers-for-missed-calls-over-20-seconds/",
+      },
+    ],
+    faqs: [
+      {
+        q: "Does Google charge for missed calls on Local Services Ads?",
+        a: "Yes, since 1 October 2026. An unanswered call placed during your posted business hours becomes a chargeable lead if the caller stays connected for more than 20 seconds. Google announced it by email on 25 August with the wording \"we are updating how and when you are charged for call leads originating from Local Services Ads\", and documented it in the \"How leads work\" help page on 8 October.",
+      },
+      {
+        q: "How does the 20-second rule work with a phone menu?",
+        a: "If your setup asks callers to press a key to reach a department, the 20-second timer only starts once they press it. A caller who hangs up without pressing a key is not charged. That is a documented carve-out, not a loophole someone discovered — but see the warning below before you add a menu purely to delay the clock.",
+      },
+      {
+        q: "If the same customer calls twice, am I charged twice?",
+        a: "Generally not within 15 days. Google Ads Liaison Ginny Marvin confirmed advertisers are charged only once for follow-up calls within 15 days of the initial interaction. After that window, a further call or message counts as a new lead and is charged if it meets the valid-lead criteria. So a customer who calls in week one and again in week four is two leads, not one.",
+      },
+    ],
+    body: [
+      {
+        type: "p",
+        text: "On 1 October, Google changed what counts as a billable lead in Local Services Ads. A call you did not answer is now chargeable if the caller stayed on the line for more than 20 seconds during the hours you have told Google you are open. Google's email to advertisers on 25 August put it plainly: \"On October 01, 2026, we are updating how and when you are charged for call leads originating from Local Services Ads.\" On 8 October it expanded the \"How leads work\" help document to cover the detail.",
+      },
+      {
+        type: "p",
+        text: "Read that again, because it inverts the deal. LSA was sold as pay per lead. You now pay for a phone ringing out. The trade you signed up for was money for customers; the trade now includes money for the customers you failed to reach.",
+      },
+      { type: "h2", text: "Exactly what triggers a charge" },
+      {
+        type: "list",
+        items: [
+          "More than 20 seconds connected, during your posted business hours, whether or not anyone picks up. Under 20 seconds, no charge.",
+          "Phone menus delay the clock. If callers must press a key to be routed, the 20 seconds starts at the key press. No key press, no charge.",
+          "Follow-up calls are chargeable if the first one was not. If the original call fell short of the criteria, a later call between you and the same person that does meet them gets billed.",
+          "Fifteen days is the repeat window. Within it, one charge covers the follow-ups. Outside it, the same customer calling again is a brand new lead at full price.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Google's stated reasoning is that searchers want to connect quickly with a trusted local professional, and the change rewards businesses that respond promptly. That is not unreasonable on its face — a customer who waits 40 seconds and hangs up really was a lead you lost. The objection is not the logic. It is that the cost of the failure moved from your pipeline to your invoice, and nobody asked you.",
+      },
+      { type: "h2", text: "The part that should worry you more than the charge" },
+      {
+        type: "p",
+        text: "Your ability to argue has narrowed at the same time. The manual lead dispute button was retired in 2024 in favour of an automated credit system that assesses leads itself. In the 8 October help-document update, Google removed its old list of credit-exclusion examples entirely and replaced it with automated lead-quality assessment. Leads now show as Charged, Not charged, In review or Credited, and Google says it may keep evaluating a lead for up to 30 days and issue a credit later.",
+      },
+      {
+        type: "p",
+        text: "In practice that leaves rating a lead \"Dissatisfied\" as the main manual signal you can still send. Credits for out-of-area calls and for services you do not offer were removed earlier in the year. So the volume of chargeable events went up in the same period the mechanism for challenging them went down.",
+      },
+      {
+        type: "p",
+        text: "One more open question worth naming: a 20-second billing trigger with no published anti-abuse detail is an obvious target. Google has said it is adding safeguards against robocalls and spam-call abuse, but has not explained how they work. Until it does, a competitor with a burner phone is a risk nobody has quantified. Treat that as a known unknown, not a reason to panic.",
+      },
+      { type: "h2", text: "Five things to change this week" },
+      {
+        type: "list",
+        items: [
+          "Fix your posted hours first. This is the single highest-value change and it takes two minutes. Every hour you are listed as open but nobody is near a phone is now a billing window. If you do not answer at 7pm, do not be open at 7pm.",
+          "Measure your actual pick-up time. Not whether you answer — how fast. The threshold is 20 seconds, which is roughly four rings. Most businesses have never measured this and assume they are faster than they are.",
+          "Have a real overflow path. An answering service or an AI receptionist that picks up on ring two costs less per month than a handful of charged leads in most home-service categories, and it converts calls you are currently paying to lose.",
+          "Rate every bad lead \"Dissatisfied\". It is the main manual signal left and it feeds the automated assessment. Leads can be credited up to 30 days later, so rating them is not pointless even when nothing happens immediately.",
+          "Diarise the 15-day window. When a customer calls back, check whether it falls inside it. Outside, you are paying again for someone you already paid for — which is worth knowing before you assume your cost per lead has risen.",
+        ],
+      },
+      { type: "h2", text: "A warning about the phone-menu trick" },
+      {
+        type: "p",
+        text: "The key-press carve-out is real and documented, and you will see it recommended as a way to cut your bill. Think hard before you use it that way. A menu in front of an emergency plumbing call costs you jobs from people who will simply ring the next firm — and those are your best customers, the ones with an urgent problem and no patience. Using it to route genuinely different departments is sensible. Using it as a billing shield means paying for fewer leads because you are getting fewer customers, which is a strange definition of saving money.",
+      },
+      {
+        type: "p",
+        text: "The honest summary of this change is that Google has put a price on something that was already costing you more than the price. A missed call during open hours was never free. It was a customer who went elsewhere. The difference is that you can now see the number on an invoice — which, irritating as it is, makes the case for answering the phone easier to argue than it has ever been.",
+      },
+      {
+        type: "takeaway",
+        text: "Since 1 October, an unanswered Local Services Ads call lasting more than 20 seconds in your posted hours is a billable lead, the manual dispute button is gone, and the same customer calling back after 15 days counts as a new charge. Fix your posted hours today, measure how fast you actually pick up, and put something in place that answers on ring two.",
+      },
+    ],
+  },
+  {
     slug: "whatsapp-button-google-business-profile",
     title:
       "Google Just Put a WhatsApp Button on Your Business Listing. Check Which Number It Used.",
