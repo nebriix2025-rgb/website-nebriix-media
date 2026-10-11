@@ -13,13 +13,23 @@ export function Problem() {
           {problem.points.map((point, i) => (
             <li key={point.body} className="bg-background">
               <BlurFade delay={i * 0.08} className="h-full">
-                <div className="group h-full p-8">
+                <div className="group flex h-full flex-col p-8">
                   <p className="font-display text-6xl font-light leading-none">
                     {point.stat}
                   </p>
                   <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
                     {point.body}
                   </p>
+                  {point.source && (
+                    <a
+                      href={point.source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto pt-5 text-xs leading-relaxed text-muted-foreground/70 underline-offset-4 hover:text-foreground hover:underline"
+                    >
+                      {point.source.label}
+                    </a>
+                  )}
                 </div>
               </BlurFade>
             </li>

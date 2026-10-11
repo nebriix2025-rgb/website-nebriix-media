@@ -16,10 +16,11 @@ import {
 /**
  * Single source of truth for site copy, transcribed from the website brief.
  *
- * SOURCING: figures carrying `needsSource: true` are third-party claims taken
- * from the brief. They are rendered as written but must have a citation
- * attached — or be cut — before launch. First-party audit data (the 32-audit
- * set) is ours and is marked `firstParty`.
+ * SOURCING: every third-party figure carries a `source` with a label and a
+ * link, and the link is rendered on the page. The site's whole pitch is "we
+ * show you the math", so an uncited number is a liability — if a claim cannot
+ * be sourced, replace it with one that can or cut it. Figures marked
+ * `firstParty` are our own (the 32-audit set) and are ours to stand behind.
  */
 
 export const site = {
@@ -61,24 +62,33 @@ export const problem = {
   headline: "The way people find local businesses has changed. Has your marketing?",
   points: [
     {
-      stat: "93%",
-      body: "of consumers search online before choosing a local business.",
-      needsSource: true,
+      stat: "45%",
+      body: "of consumers now use ChatGPT and other AI tools to find local businesses — up from 6% a year earlier.",
+      source: {
+        label: "BrightLocal Local Consumer Review Survey 2026 (1,002 US adults)",
+        url: "https://www.brightlocal.com/research/local-consumer-review-survey/",
+      },
     },
     {
       stat: "#3",
-      body: "ChatGPT and Google AI are now the third most popular source of local business recommendations, behind only Google Search and Facebook.",
-      needsSource: true,
+      body: "AI is now the third most popular source of local business recommendations, behind only Google and Facebook.",
+      source: {
+        label: "BrightLocal Local Consumer Review Survey 2026",
+        url: "https://www.brightlocal.com/research/local-consumer-review-survey/",
+      },
     },
     {
       stat: "30x",
-      body: "AI platforms are more selective than Google. High Google rankings alone no longer guarantee visibility.",
-      needsSource: true,
+      body: "AI is that much more selective than Google: ChatGPT recommends 1.2% of locations, against 35.9% appearing in Google's local 3-pack.",
+      source: {
+        label: "SOCi 2026 Local Visibility Index (349,000+ locations), via Search Engine Land",
+        url: "https://searchengineland.com/ai-local-visibility-report-2026-468085",
+      },
     },
     {
       stat: "0",
       body: 'Most local businesses have zero AI visibility. Ask "recommend a dentist in Denver" and they are not in the answer.',
-      needsSource: false,
+      firstParty: true,
     },
   ],
   closing:
