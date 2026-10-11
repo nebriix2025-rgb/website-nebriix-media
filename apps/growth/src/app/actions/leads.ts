@@ -1,5 +1,7 @@
 "use server";
 
+import { triageLead } from "@/lib/lead-triage";
+
 export type LeadState = {
   status: "idle" | "success" | "error";
   message?: string;
@@ -76,6 +78,14 @@ async function handleLead(
     };
   }
 
+  // Advisory classification, attached to the payload so the automation can
+  // route and prioritise. Returns null when JEV_API_KEY is unset or the call
+  // fails for any reason, and the lead is delivered either way — a misfiring
+  // classifier must never cost a customer. Note this deliberately does not
+  // drop anything it scores as junk: a false positive is a lost client, and a
+  // false negative is an email we ignore.
+  const triage = await triageLead(kind, values);
+
   try {
     const res = await fetch(webhook, {
       method: "POST",
@@ -85,6 +95,7 @@ async function handleLead(
         ...values,
         submittedAt: new Date().toISOString(),
         source: `nebriix.com/${kind}`,
+        ...(triage ? { triage } : {}),
       }),
     });
 
