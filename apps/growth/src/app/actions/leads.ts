@@ -1,6 +1,8 @@
 "use server";
 
+import { sendLeadEmail } from "@/lib/lead-email";
 import { triageLead } from "@/lib/lead-triage";
+import { site } from "@/content/site";
 
 export type LeadState = {
   status: "idle" | "success" | "error";
@@ -14,6 +16,14 @@ export type LeadState = {
 };
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+/**
+ * Shown when no delivery channel is configured, or when every one of them
+ * failed. Points at the published address, so it is only as good as that
+ * mailbox — if the domain has no MX records this message sends people into a
+ * bounce, which is worse than silence.
+ */
+const FALLBACK = `Something went wrong sending that. Please email ${site.email} directly.`;
 
 type FieldSpec = {
   name: string;
@@ -69,22 +79,55 @@ async function handleLead(
   }
 
   const webhook = process.env.CONTACT_WEBHOOK_URL;
-  if (!webhook) {
+  const emailConfigured = Boolean(
+    process.env.RESEND_API_KEY && process.env.LEAD_NOTIFY_TO,
+  );
+
+  if (!webhook && !emailConfigured) {
     return {
       status: "error",
-      message:
-        "The form isn't connected yet. Please email Hello@nebriix.com directly.",
+      message: FALLBACK,
       values,
     };
   }
 
-  // Advisory classification, attached to the payload so the automation can
-  // route and prioritise. Returns null when JEV_API_KEY is unset or the call
+  // Advisory classification, attached to both channels so the automation can
+  // route and prioritise. Returns null when no provider key is set or the call
   // fails for any reason, and the lead is delivered either way — a misfiring
   // classifier must never cost a customer. Note this deliberately does not
   // drop anything it scores as junk: a false positive is a lost client, and a
   // false negative is an email we ignore.
   const triage = await triageLead(kind, values);
+
+  // Both channels are attempted; one success is enough. Delivering a lead
+  // twice is an annoyance, losing it is not recoverable.
+  const [webhookOk, emailOk] = await Promise.all([
+    postWebhook(webhook, kind, values, triage),
+    sendLeadEmail(kind, values, triage),
+  ]);
+
+  if (!webhookOk && !emailOk) {
+    console.error(`[${kind}] every delivery channel failed`);
+    return {
+      status: "error",
+      message: FALLBACK,
+      values,
+    };
+  }
+
+  return {
+    status: "success",
+    message: "Thanks — we'll be in touch within 24 hours.",
+  };
+}
+
+async function postWebhook(
+  webhook: string | undefined,
+  kind: string,
+  values: Record<string, string>,
+  triage: Awaited<ReturnType<typeof triageLead>>,
+): Promise<boolean> {
+  if (!webhook) return false;
 
   try {
     const res = await fetch(webhook, {
@@ -100,19 +143,10 @@ async function handleLead(
     });
 
     if (!res.ok) throw new Error(`Webhook responded ${res.status}`);
-
-    return {
-      status: "success",
-      message: "Thanks — we'll be in touch within 24 hours.",
-    };
+    return true;
   } catch (error) {
     console.error(`[${kind}] webhook delivery failed`, error);
-    return {
-      status: "error",
-      message:
-        "Something went wrong sending that. Please email Hello@nebriix.com directly.",
-      values,
-    };
+    return false;
   }
 }
 
