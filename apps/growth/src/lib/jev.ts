@@ -11,13 +11,24 @@
  * endpoint directly. Schema verified against docs.typesafe.ai/api and
  * Cloudflare's Workers AI model page, which agree.
  *
+ * Two providers speak this System One format, and whichever is configured is
+ * used (TypeSafe wins if both are):
+ *
+ *   JEV_API_KEY                                 → TypeSafe, jev-latest
+ *   CLOUDFLARE_ACCOUNT_ID + CLOUDFLARE_AI_TOKEN → Workers AI, clef-flash
+ *
+ * Cloudflare's clef-flash is the free option: Workers AI's daily allocation
+ * (10,000 neurons, about 2.9M clef-flash input tokens) covers a lead form with
+ * room to spare. TypeSafe needs prepaid credit before it issues a key.
+ *
  * Everything here fails open and returns null. A classifier is a convenience
  * for us; a lead is revenue. Nothing in this file may ever be the reason a
  * form submission does not arrive.
  */
 
-const ENDPOINT = "https://api.typesafe.ai/v1/systemone";
-const MODEL = "jev-latest";
+const TYPESAFE_ENDPOINT = "https://api.typesafe.ai/v1/systemone";
+const TYPESAFE_MODEL = "jev-latest";
+const CLOUDFLARE_MODEL = "clef-flash";
 /** Jev answers in well under a second; past this we are better off without it. */
 const TIMEOUT_MS = 4000;
 
@@ -56,37 +67,62 @@ export type JevResponse = {
   usage: { input_tokens: number; output_tokens: number };
 };
 
+type Provider = { url: string; key: string; model: string };
+
+function provider(): Provider | null {
+  const jevKey = process.env.JEV_API_KEY;
+  if (jevKey) {
+    return { url: TYPESAFE_ENDPOINT, key: jevKey, model: TYPESAFE_MODEL };
+  }
+
+  const account = process.env.CLOUDFLARE_ACCOUNT_ID;
+  const token = process.env.CLOUDFLARE_AI_TOKEN;
+  if (account && token) {
+    return {
+      url: `https://api.cloudflare.com/client/v4/accounts/${account}/ai/run/@cf/cloudflare/${CLOUDFLARE_MODEL}`,
+      key: token,
+      model: CLOUDFLARE_MODEL,
+    };
+  }
+
+  return null;
+}
+
 export function jevConfigured(): boolean {
-  return Boolean(process.env.JEV_API_KEY);
+  return provider() !== null;
 }
 
 export async function jevDecide(
   state: string,
   questions: Record<string, Question>,
 ): Promise<JevResponse | null> {
-  const key = process.env.JEV_API_KEY;
-  if (!key) return null;
+  const p = provider();
+  if (!p) return null;
 
   const abort = new AbortController();
   const timer = setTimeout(() => abort.abort(), TIMEOUT_MS);
 
   try {
-    const res = await fetch(ENDPOINT, {
+    const res = await fetch(p.url, {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${key}`,
+        Authorization: `Bearer ${p.key}`,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ model: MODEL, state, questions }),
+      body: JSON.stringify({ model: p.model, state, questions }),
       signal: abort.signal,
     });
 
     if (!res.ok) {
-      console.error(`[jev] ${res.status} ${res.statusText}`);
+      console.error(`[jev] ${p.model} ${res.status} ${res.statusText}`);
       return null;
     }
 
-    return (await res.json()) as JevResponse;
+    // Workers AI wraps every REST reply as { result, success, errors };
+    // TypeSafe returns the response bare. Accept either.
+    const data = (await res.json()) as JevResponse | { result?: JevResponse };
+    const body = "answers" in data ? data : data.result;
+    return body?.answers ? body : null;
   } catch (error) {
     // Includes the timeout abort. Deliberately swallowed.
     console.error("[jev] decide failed", error);
