@@ -36,6 +36,128 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "reverse-engineering-ai-local-recommendations-dubai-marina",
+    title:
+      "We Asked an AI for the Best Dentist, Plumber and Gym in Dubai Marina. Each One Was Won for a Completely Different Reason.",
+    description:
+      "Three identical questions about one square kilometre of Dubai. The dentists were chosen on reviews, the plumbers on claims they make on their own websites, and the gyms by a magazine. If you are optimising for the wrong one of those three, you are invisible in your category — and here is how to find out which one you are in.",
+    date: "2026-10-15",
+    readTime: "9 min read",
+    category: "AI Visibility",
+    keywords: [
+      "how AI picks local businesses",
+      "reverse engineer AI recommendations",
+      "AI visibility Dubai Marina",
+    ],
+    relatedService: "ai-search-optimization",
+    image: "/photos/insights/marina.jpg",
+    imageAlt: "Dubai Marina towers at night reflected in the water",
+    sources: [
+      {
+        label: "First-party research: three Perplexity queries run signed-out on 15 October 2026",
+        url: "https://www.perplexity.ai/",
+      },
+      {
+        label: "BrightLocal Local Consumer Review Survey 2026 (1,002 US adults)",
+        url: "https://www.brightlocal.com/research/local-consumer-review-survey/",
+      },
+      {
+        label: "Search Engine Land — AI local visibility is up to 30x harder than ranking in Google (SOCi 2026 Local Visibility Index)",
+        url: "https://searchengineland.com/ai-local-visibility-report-2026-468085",
+      },
+      {
+        label: "Ahrefs — AI Overviews Currently Appear for 83% of Branded Searches",
+        url: "https://ahrefs.com/blog/ai-overviews-on-branded-searches/",
+      },
+    ],
+    faqs: [
+      {
+        q: "How does AI decide which local businesses to recommend?",
+        a: "It depends on the category, and that is the finding most people miss. In three queries about Dubai Marina run on 15 October 2026, the dentists were selected on star ratings and review counts, the plumbers on claims written on their own websites because almost no review data was cited, and the gyms largely on a Time Out Dubai feature. Same city, same question shape, three different kinds of evidence deciding the answer.",
+      },
+      {
+        q: "How can I find out what my own category runs on?",
+        a: "Ask an assistant for the best business in your trade and city, then read what it cites rather than who it names. If it quotes ratings, you are in a reviews category. If it uses phrases like \"markets itself as\" or \"advertises\", it is reading websites and you are in a claims category. If it leads with a publication, you are in a press category. It takes about ten minutes and tells you where to spend the next three months.",
+      },
+      {
+        q: "Does this mean reviews do not matter?",
+        a: "Reviews matter enormously where review data exists. Every dental clinic named was rated 4.7 or higher, and the smallest had 180 reviews. But in the plumbing answer no ratings appeared at all, and businesses were named purely on what their own sites said about response times and availability. Reviews are necessary in some categories and nearly irrelevant in others.",
+      },
+    ],
+    body: [
+      {
+        type: "p",
+        text: "On 15 October we asked Perplexity three questions: the best dentist, the best plumber and the best gym in Dubai Marina. Signed out, no location shared, one after another. Each time it named about five businesses. What is interesting is not who won — it is that the three answers were decided by three entirely different kinds of evidence.",
+      },
+      { type: "h2", text: "How we did it, and what this is not" },
+      {
+        type: "p",
+        text: "Three queries, one assistant, one city, one afternoon. That is a demonstration of a method, not a study, and the result would differ with a different assistant, a shared location, a signed-in account or a different day. We are publishing it because the method is repeatable in ten minutes by any business reading this, and because the pattern it exposed was sharper than we expected.",
+      },
+      { type: "h2", text: "Dentists were decided by reviews" },
+      {
+        type: "p",
+        text: "Five clinics came back, every one with a rating and a review count attached: Dental Studio Marina Gate at 4.9 from 193 reviews, Sky Clinic Dental Center at 4.9 from 793, Drs. Nicolas & Asp at 4.7 from 1,080, German Dental at 4.9 from 416, Dental Studio JBR at 4.8 from 180.",
+      },
+      {
+        type: "p",
+        text: "Two things stand out. The floor was 4.7 — nothing below it was mentioned at all. And the smallest review count in the list was 180, which is a lot more than most local clinics have. The reasoning was explicit too: the top pick was justified partly because \"recent reviews specifically praise Dr. Enrico for natural-looking composite bonding\". Not the average. The content of individual reviews, and a named practitioner inside them.",
+      },
+      { type: "h2", text: "Plumbers were decided by what they say about themselves" },
+      {
+        type: "p",
+        text: "The plumbing answer contained no star ratings at all. Instead the assistant described each business in the language of a reader summarising a brochure: one \"markets itself as a Dubai Marina plumbing specialist\" and \"says it aims to reach urgent jobs within 30–60 minutes\", another \"advertises 24/7 emergency service\", a third \"positions itself as a Dubai-wide plumbing partner\".",
+      },
+      {
+        type: "p",
+        text: "Every one of those phrases is the model quoting a company's own website back to a customer. Emergency trades tend to have thin, scattered review profiles, so when the usual evidence is missing the model falls back on the only thing available: what businesses claim. And the claims that got repeated were strikingly specific — a response window, a coverage area, an availability promise. Vague copy about quality and experience did not survive the summary.",
+      },
+      {
+        type: "p",
+        text: "This is the single most actionable thing in this article, and it costs nothing. If you are in a claims category, the sentence \"we reach most Dubai Marina callouts within 30 to 60 minutes\" on your own website is doing more work than any amount of brand language.",
+      },
+      { type: "h2", text: "Gyms were decided by a magazine" },
+      {
+        type: "p",
+        text: "The gym answer opened with a single best-overall pick, and the citation was Time Out Dubai. A listicle in a local publication settled the question before any individual gym's own marketing got a look in. Review data appeared further down for one gym, and the winner's own site was cited for its address and floor plan — but the verdict came from the press.",
+      },
+      { type: "h2", text: "What's happening in the world" },
+      {
+        type: "p",
+        text: "None of this is a Dubai quirk. It is the local edge of a shift that is now measurable everywhere, and the numbers arrived fast this year.",
+      },
+      {
+        type: "list",
+        items: [
+          "BrightLocal's 2026 survey of 1,002 US consumers found 45% now use AI tools to find local businesses, up from 6% the year before — putting AI third as a discovery channel, behind only Google and Facebook.",
+          "SOCi's Local Visibility Index, covering nearly 350,000 locations, found ChatGPT recommends 1.2% of them, against 35.9% appearing in Google's local 3-pack. Being named is roughly thirty times harder than ranking.",
+          "Ahrefs, analysing 232.8 million search results, found AI Overviews now appear on 83% of branded searches — so even people typing your name get an answer written about you before they reach you.",
+          "Google has started rendering the local business panel itself as an AI Overview, and has given every user a free agent that watches the web and pushes them alerts about new local businesses.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The common thread is that a list is being replaced by an answer. A list has ten slots and a second page. An answer has three to five names and no second page. Everything above is the same event measured from different angles: the number of places a local business can be seen is collapsing, and the criteria for occupying one of them are not the criteria anyone optimised for over the last decade.",
+      },
+      { type: "h2", text: "How you can use this for your business" },
+      {
+        type: "list",
+        items: [
+          "Run the test on yourself, today. Ask an assistant for the best business in your trade and your area. Do it signed out. Write down the five names it gives you — that is your real competitor list, and it will not match the one in your head.",
+          "Read the citations, not the names. This is the whole trick. Who it names tells you where you stand; what it cites tells you what to fix. Ratings mean a reviews category. \"Markets itself as\" means a claims category. A publication name means a press category.",
+          "If you are in a reviews category, the bar is higher than you think. Every clinic named was 4.7 or above with at least 180 reviews. And because named practitioners got quoted from review text, ask happy customers to mention the person and the specific treatment, not just to leave stars.",
+          "If you are in a claims category, go and write the specifics down. Response time, hours, exact coverage area, what you do out of hours — in plain sentences on your own website, not inside an image or a PDF. The businesses that won here did so on one quotable line each.",
+          "If you are in a press category, one local feature can outrank everything else you do. Pitch the publication that already writes the listicle for your category. That is a single email, and it is worth more than a month of posting.",
+          "Repeat it on the first Monday of every month and keep the answers. Three months of records shows you whether anything you changed actually moved you into the answer — which is the only measurement that matters here.",
+        ],
+      },
+      {
+        type: "takeaway",
+        text: "Three questions about one neighbourhood produced three different rulebooks: dentists won on reviews, plumbers on claims written on their own sites, gyms on a magazine feature. Before you spend another month on review campaigns or website copy, spend ten minutes finding out which of those three your category actually runs on.",
+      },
+    ],
+  },
+  {
     slug: "google-local-services-ads-missed-call-charges",
     title:
       "Google Now Charges You for the Calls You Miss. Twenty Seconds Is the Whole Rule.",

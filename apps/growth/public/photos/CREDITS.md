@@ -31,6 +31,7 @@ None are Unsplash+ / Premium.
 | `insights/name.jpg` | [unsplash.com/photos/HycE_OfG4Sc](https://unsplash.com/photos/HycE_OfG4Sc) | Park Alleys neon sign at night (cropped to 3:2) |
 | `insights/whatsapp.jpg` | [unsplash.com/photos/j5WHL_OYgfw](https://unsplash.com/photos/j5WHL_OYgfw) | A woman uses her phone behind a bar (cropped to 3:2) |
 | `insights/lsa.jpg` | [unsplash.com/photos/_2AlIm-F6pw](https://unsplash.com/photos/_2AlIm-F6pw) | Electrician installing wiring with yellow hardhat (cropped to 3:2) |
+| `insights/marina.jpg` | [unsplash.com/photos/Vm1L3yVjLK8](https://unsplash.com/photos/Vm1L3yVjLK8) | A boat in the water in front of a city at night (cropped to 3:2) |
 
 All are graded per theme via `.photo-plate` in
 `globals.css`, and resized/recompressed from the originals.
