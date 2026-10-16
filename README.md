@@ -36,23 +36,38 @@ component tree. They are not yet sharing code; the motion primitives
 keep diverging that's fine; if they don't, those are the first candidates for a
 shared `packages/ui`.
 
-## Before either site launches
+## Status
 
-Both READMEs carry their own detail. The items that block a public launch:
+`apps/growth` is live at [nebriix.com](https://nebriix.com). `apps/marketing`
+is not deployed.
 
-- **`CONTACT_WEBHOOK_URL` is unset** in both apps, so every form refuses to
-  submit and tells the visitor to email instead. Point it at an n8n/Make/Zapier
-  catch hook — see each app's `.env.example`.
-- **Unsourced statistics** in `apps/growth`. Every third-party claim from the
-  brief is flagged `needsSource: true` in `src/content/site.ts`. They render as
-  written and carry no citation. For a business whose pitch is "we show you the
-  math", these need sources or removal.
-- **Placeholder contact details** — the phone number, WhatsApp link and some
-  social handles are carried over from the live site and were never confirmed.
+What is wired up on the live site:
+
+- **Lead delivery.** Forms post to every channel configured and one success is
+  enough: Resend email (`RESEND_API_KEY` + `LEAD_NOTIFY_TO`) and, optionally, a
+  webhook (`CONTACT_WEBHOOK_URL`). Verified end to end on 12 October 2026.
+- **Lead triage.** Each submission is classified before delivery — service,
+  urgency, fit, junk probability — by Jev or Cloudflare's clef-flash, whichever
+  key is set. Advisory only; it never blocks a lead. See `src/lib/jev.ts`.
+- **Analytics.** Vercel Analytics plus PostHog in cookieless mode, proxied
+  through `/ingest` so blockers don't drop it. Off until
+  `NEXT_PUBLIC_POSTHOG_KEY` is set.
+- **Sourcing.** Every third-party statistic on the home page carries a visible,
+  linked citation. The `needsSource` flag is gone — if a claim cannot be
+  sourced it is replaced or cut. See the note at the top of `src/content/site.ts`.
+- **Contact details.** Email only. The unverified phone number and WhatsApp
+  link inherited from the old site were removed.
 
 Image licensing is settled: `apps/growth/public/photos` is Unsplash-licensed
 (free for commercial use, no permission needed), with sources recorded in
-`apps/growth/public/photos/CREDITS.md`.
+`apps/growth/public/photos/CREDITS.md`. None are Unsplash+ / Premium.
+
+### Known gaps
+
+- The two apps duplicate their motion primitives and form action rather than
+  sharing a `packages/ui`.
+- Leads are delivered but not stored. There is no database, so a lead exists
+  only as the emails it was sent in.
 
 ## History
 
