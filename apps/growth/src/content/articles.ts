@@ -36,6 +36,117 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "one-in-three-local-business-websites-broken",
+    title:
+      "One in Three Local Business Websites Is Broken. Yours Is Where the AI Sends People to Check.",
+    description:
+      "A study of 2,629 local businesses across eight cities found a third have no working web presence — 16.3% throw JavaScript errors on load alone. Meanwhile 75% of people who find a business through AI go and verify it on Google and its website before making contact. Being recommended gets you nothing if the page they land on is broken.",
+    date: "2026-10-21",
+    readTime: "8 min read",
+    category: "Technical",
+    keywords: [
+      "small business website broken",
+      "local business website errors study",
+      "AI recommendation website verification",
+    ],
+    relatedService: "local-seo-website",
+    image: "/photos/insights/broken.jpg",
+    imageAlt: "Shuttered shopfronts on a wet street at night",
+    sources: [
+      {
+        label: "Looops — The State of the Small Business Web 2026 (2,629 businesses, 8 cities, published 20 October 2026). Looops sells website software, so treat as vendor research.",
+        url: "https://looops.ai/",
+      },
+      {
+        label: "eMarketer — Shoppers use AI to find local businesses, then double-check on Google",
+        url: "https://www.emarketer.com/content/shoppers-use-ai-find-local-businesses--then-double-check-on-google",
+      },
+      {
+        label: "BrightLocal — Local AI Visibility research (survey of 673 AI users)",
+        url: "https://www.brightlocal.com/local-seo-tools/local-ai-visibility/",
+      },
+      {
+        label: "BrightLocal — Consumer Search Behavior",
+        url: "https://www.brightlocal.com/research/consumer-search-behavior/",
+      },
+    ],
+    faqs: [
+      {
+        q: "How many small business websites are actually broken?",
+        a: "A study published on 20 October 2026 by Looops loaded the websites of 2,629 established local businesses across eight cities in four countries, each in a real browser at phone size, and found roughly one in three had no functional, healthy web presence — either no site at all or at least one visible defect. The most common single fault was a JavaScript error on load, affecting 16.3% of sites. Looops sells website software, so the finding is vendor research and has not been independently replicated.",
+      },
+      {
+        q: "Does a broken website matter if AI already recommends me?",
+        a: "Yes, and more than before. BrightLocal's survey of 673 people who used AI to find a local business found 75% then checked Google or Google Maps before making contact. The AI recommendation starts the journey; your website and profile finish it. A page that errors, looks abandoned or will not work on a phone fails at exactly the moment someone is deciding to trust you.",
+      },
+      {
+        q: "What should I check on my own site first?",
+        a: "Open it on your phone, not your laptop. Look for anything that does not load, a copyright year that is not this year, images that do not appear, and text you have to pinch to read. Then check that your phone number and address match your Google Business Profile exactly. Those five checks take ten minutes and cover most of what the study counted as a defect.",
+      },
+    ],
+    body: [
+      {
+        type: "p",
+        text: "On 20 October, a study called The State of the Small Business Web loaded the websites of 2,629 established local businesses across eight cities in four countries. Each one was opened in a real browser at phone size and inspected for errors, dead links, broken images and mobile problems. About a third had no functional, healthy web presence at all.",
+      },
+      {
+        type: "p",
+        text: "One caveat up front, because it matters: the study is by Looops, which sells website software to small businesses. That is a vendor with an obvious interest in the answer being alarming, and no one has independently replicated the numbers. We are citing it because the failure modes it lists are specific and checkable on your own site in ten minutes — which is a different thing from asking you to believe the headline.",
+      },
+      { type: "h2", text: "What was actually broken" },
+      {
+        type: "list",
+        items: [
+          "JavaScript errors on load — the single most common fault, on 16.3% of sites.",
+          "Out-of-date copyright years in the footer. Cosmetic, except that it is the fastest signal a visitor has that nobody is minding the business.",
+          "jQuery-era technology, broken images, and pages that are not mobile responsive.",
+          "No website at all: 12.5% of businesses in Montreal, 9.2% in Los Angeles, 8.5% in New York.",
+        ],
+      },
+      {
+        type: "p",
+        text: "The city pattern is interesting. London had very few missing websites but the highest defect rate of anywhere, at 39.7% — so having a site and having a working site are separate problems. Los Angeles came out worst overall at 42.4% bad or missing; Chicago best at 31.9%. By trade, photographers (30.9%) and hair salons (30.2%) had the highest share of bad or missing sites.",
+      },
+      { type: "h2", text: "What's happening in the world" },
+      {
+        type: "p",
+        text: "This would be a mildly embarrassing statistic in isolation. What makes it expensive is what has changed around it.",
+      },
+      {
+        type: "p",
+        text: "AI assistants have become a real discovery channel — BrightLocal puts the share of consumers who have used AI to find or get a recommendation for a local business at 58%, and eMarketer reports 31% now use it monthly. But almost nobody acts on the recommendation directly. In BrightLocal's survey of 673 people who found a local business through AI, 75% went and checked Google or Google Maps before making contact.",
+      },
+      {
+        type: "p",
+        text: "That is the detail everyone selling AI visibility skips. The assistant is not the destination. It is the introduction. The customer hears your name, then goes looking for corroboration — your profile, your reviews, your website — and decides there. Google is still the first channel for 52% of local searches; it is now also the verification step for the ones that started somewhere else.",
+      },
+      {
+        type: "p",
+        text: "So the funnel has quietly grown a new stage. It used to be: search, see, click, contact. It is now: ask, hear a name, verify, contact. Every piece of work we have written about on this site — reviews, listings, structured content, third-party mentions — gets you through the first two stages. The third stage is your website on a phone, and a third of businesses are losing people there, after the AI has already done its job.",
+      },
+      {
+        type: "p",
+        text: "It is worth being blunt about the implication for anyone, us included, who sells AI visibility: getting recommended by an assistant and then sending that person to a page with a 2019 copyright line and a layout that does not fit their screen is money spent to make a worse impression faster.",
+      },
+      { type: "h2", text: "How you can use this for your business" },
+      {
+        type: "list",
+        items: [
+          "Open your own site on your phone, on mobile data, not office Wi-Fi. This single act catches most of what the study counted. You are looking at it the way a customer who just heard your name from ChatGPT will.",
+          "Check the footer year. If it does not say 2026, fix it today. It is thirty seconds of work and it is the clearest visible signal that a business has been abandoned.",
+          "Look for anything that does not appear — missing images, a map that will not load, a form that does nothing. A JavaScript error is invisible to you and fatal to a stranger, because they do not know what was supposed to be there.",
+          "Pinch-test every page. If you have to zoom to read it, it is not mobile responsive, and that is where almost all of this traffic arrives.",
+          "Make your phone number tappable and your address match your Google Business Profile character for character. The verification step is the customer comparing what the AI said, what Google says, and what your site says. Any disagreement is a reason to pick someone else.",
+          "Then do the same on a competitor's site. If theirs is broken and yours is not, that is a genuine advantage in a market where a third of the field is failing a test nobody told them they were taking.",
+        ],
+      },
+      {
+        type: "takeaway",
+        text: "Three quarters of people who find a business through AI go and verify it on Google and its website before contacting anyone, and roughly a third of local business websites fail that check. Being recommended is now the easy half. Open your site on your phone tonight and look at it like someone deciding whether to trust you.",
+      },
+    ],
+  },
+  {
     slug: "reverse-engineering-ai-local-recommendations-dubai-marina",
     title:
       "We Asked an AI for the Best Dentist, Plumber and Gym in Dubai Marina. Each One Was Won for a Completely Different Reason.",
