@@ -1,13 +1,15 @@
 import type { LucideIcon } from "lucide-react";
 import {
   Bot,
+  Activity,
+  Network,
+  Megaphone,
   MapPin,
   Globe,
   Video,
   Share2,
   Target,
   Star,
-  Users,
   Layers,
   Code2,
   Workflow,
@@ -256,6 +258,160 @@ export const services: Service[] = [
       },
     ],
     cta: "Find out if AI recommends you. Get a free AI visibility audit.",
+  },
+  {
+    slug: "ai-visibility-monitoring",
+    name: "AI Visibility Monitoring",
+    oneLiner: "Know every month whether AI names you, and who it names instead",
+    icon: Activity,
+    headline:
+      "If you cannot measure whether AI recommends you, you are guessing with a budget.",
+    metaDescription:
+      "Monthly AI visibility tracking across ChatGPT, Gemini, Perplexity and Google AI Mode. Share of voice, cited sources, competitor benchmarking and sentiment for local businesses.",
+    sections: [
+      {
+        heading: "The Problem",
+        items: [
+          "There is no ranking report for AI answers. Nothing in Search Console tells you whether ChatGPT named you last Tuesday.",
+          "Assistants answer differently by city, by phrasing, by day and by platform, so a single check proves nothing.",
+          "Most businesses paying for AI visibility have no evidence it is working beyond their agency saying so.",
+          "The competitors AI names are usually not the competitors you think you have — they are chosen on different evidence.",
+        ],
+      },
+      {
+        heading: "What We Track",
+        items: [
+          "A defined prompt set for your business — the questions your customers actually ask, not the keywords you wish they typed",
+          "Every prompt run across ChatGPT, Gemini, Perplexity and Google AI Mode on a fixed schedule",
+          "Whether you are named, where in the answer, and which businesses appear instead",
+          "The sources each answer cites, so you know where the evidence that beat you lives",
+          "Sentiment and accuracy — what the assistants say about you, and what they get wrong",
+          "Movement over time, so a change we made in March can be tied to an answer in May",
+        ],
+      },
+      {
+        heading: "What You Get",
+        groups: [
+          {
+            label: "Every month",
+            items: [
+              "A share-of-voice figure: the percentage of your prompt set where you are named",
+              "A ranked competitor table showing who is beating you and on which prompts",
+              "The citation sources feeding those answers, with the gaps you can close",
+              "A single recommended action, prioritised by what the data says will move first",
+            ],
+          },
+          {
+            label: "Every quarter",
+            items: [
+              "A trend line across the full prompt set",
+              "Re-benchmarking against the competitor set, which changes more than people expect",
+              "A review of what we changed, what moved, and what did not",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Why It Matters",
+        items: [
+          "Being named is a rate, not a ranking. You are either in the short list or you are absent, and the only way to know is to ask repeatedly.",
+          "Three months of records is the difference between an agency with a strategy and an agency with opinions.",
+          "It also tells you when to stop — if a tactic has not moved the number in a quarter, the data says so before the invoice does.",
+        ],
+      },
+    ],
+    cta: "Get a baseline reading before you spend anything on visibility.",
+    faqs: [
+      {
+        q: "How do you measure whether AI recommends my business?",
+        a: "We define a prompt set — the real questions your customers would ask an assistant — and run every one across ChatGPT, Gemini, Perplexity and Google AI Mode on a fixed monthly schedule. We record whether you are named, your position in the answer, which businesses appear instead, and which sources each answer cites. The output is a share-of-voice percentage you can track over time.",
+      },
+      {
+        q: "Why not just ask ChatGPT myself?",
+        a: "You should, and we publish the method free. The difference is consistency and scale: answers vary by phrasing, city, platform and day, so one check tells you almost nothing. A fixed prompt set run the same way every month across four assistants is what turns anecdote into a trend line.",
+      },
+      {
+        q: "How quickly does the number move?",
+        a: "Honestly, not fast. Listing and profile corrections can show within weeks. Earned citations and review depth typically take two to three months to appear in answers, and competitive categories take longer. We would rather tell you that upfront than sell a 30-day promise nobody in this industry can keep.",
+      },
+      {
+        q: "What if the monitoring shows nothing is working?",
+        a: "Then you have learned something expensive-sounding for very little money, and you stop paying for the thing that is not working. A measurement product that can only report good news is a sales tool, not a measurement product.",
+      },
+    ],
+  },
+  {
+    slug: "entity-knowledge-graph",
+    name: "Entity & Knowledge Graph",
+    oneLiner: "Make your business a fact machines can verify, not a page they must interpret",
+    icon: Network,
+    headline:
+      "AI does not read your website. It checks whether your business is a known entity.",
+    metaDescription:
+      "Entity and knowledge graph optimisation for local businesses: structured data, consistent identifiers, disambiguation and machine-readable facts that AI assistants can verify.",
+    sections: [
+      {
+        heading: "The Problem",
+        items: [
+          "Assistants work with entities — a business, its location, its services, its people — not with pages of marketing copy.",
+          "If your name, address, phone and category disagree across Google, Apple Maps, directories and your own site, the model cannot resolve which is true and often drops you rather than risk being wrong.",
+          "Businesses with common or ambiguous names get merged with, or mistaken for, someone else entirely.",
+          "SOCi's 2026 index found business profile information was only about 68% accurate on ChatGPT and Perplexity, against 100% on Gemini, which is grounded in Google Maps.",
+        ],
+      },
+      {
+        heading: "What We Do",
+        items: [
+          "Define the canonical facts about your business — legal name, trading name, address, service area, hours, categories, people — and fix one source of truth",
+          "Implement Organization, LocalBusiness, Service, FAQ, Event and Person schema that reflects those facts exactly",
+          "Reconcile every third-party listing to match, character for character, including the ones you forgot existed",
+          "Disambiguate your business from similarly named entities so models stop conflating you",
+          "Add an llms.txt and ensure AI crawlers can actually reach the pages that describe you",
+          "Re-verify quarterly, because listings drift and aggregators overwrite",
+        ],
+      },
+      {
+        heading: "Why It Matters",
+        items: [
+          "Structured data is how you state a fact in a form a machine cannot misread.",
+          "It is also the cheapest work in AI visibility, because it is entirely within your control — unlike reviews and citations, nobody else has a vote.",
+          "But it is a foundation, not a shortcut. Structured data tells a model what you claim; citations and reviews are what make it believe you.",
+        ],
+      },
+    ],
+    factors: [
+      {
+        title: "Consistency beats completeness",
+        body: "One contradiction between your site and your Google profile does more damage than three missing fields. Models resolve conflicts by discarding the uncertain, and an uncertain business is an unnamed business.",
+      },
+      {
+        title: "Schema is a claim, not proof",
+        body: "Marking up a five-star rating does not create trust; the reviews do. Structured data makes your facts legible. Third-party evidence makes them credible. You need both, in that order.",
+      },
+      {
+        title: "Google Maps is the grounding layer",
+        body: "Gemini reads Maps directly, which is why its accuracy on business details is near perfect while assistants assembling you from the open web are wrong about a third of the time. Your Google Business Profile is not one listing among many — it is the reference copy.",
+      },
+    ],
+    cta: "Find out what the machines currently believe about your business.",
+    faqs: [
+      {
+        q: "What is entity optimisation?",
+        a: "It is the work of making your business a clearly defined, verifiable entity rather than a collection of web pages. That means settling the canonical facts about you, expressing them in structured data a machine can parse, and making every listing on the internet agree with them. AI assistants decide what to say about a business by reconciling sources; entity work removes the contradictions that get you dropped.",
+      },
+      {
+        q: "Is this just schema markup?",
+        a: "Schema is part of it, and the easiest part. The harder and more valuable work is reconciliation — finding every place your details appear, fixing the ones that disagree, and disambiguating you from businesses with similar names. Schema on a site that contradicts your Google profile makes the problem worse, not better.",
+      },
+      {
+        q: "Will this alone get me recommended by AI?",
+        a: "No, and anyone who tells you otherwise is selling. Entity work makes your facts legible and verifiable, which is necessary. Being recommended also needs evidence you do not control: reviews with substance and mentions on sources the assistants trust. Structured data on a business with no reviews and no citations is a tidy record nobody cites.",
+      },
+      {
+        q: "How long does it take?",
+        a: "The implementation is typically two to four weeks depending on how many listings exist. The effect on what assistants say about you shows up over the following weeks as crawlers revisit and aggregators propagate. Listing corrections are the fastest-moving work in AI visibility, which is why we do it first.",
+      },
+    ],
   },
   {
     slug: "google-business-profile",
@@ -652,9 +808,9 @@ export const services: Service[] = [
   },
   {
     slug: "community-presence",
-    name: "Community & Third-Party Presence",
-    oneLiner: "Be mentioned where AI actually looks: Reddit, YouTube, directories",
-    icon: Users,
+    name: "Citations & Digital PR",
+    oneLiner: "Earn the third-party mentions AI trusts, because you don't control them",
+    icon: Megaphone,
     headline:
       "60% of AI citations go to sites you don't own. Are you on any of them?",
     metaDescription:
