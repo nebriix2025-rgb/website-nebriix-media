@@ -155,8 +155,42 @@ export type ServiceSection = {
   groups?: { label: string; items: string[] }[];
 };
 
+/**
+ * Services are sold as a sequence, not a menu. `group` drives how they are
+ * presented: a business has to be found before being chosen, and chosen before
+ * any of the build work pays for itself. Ordering the offer this way also stops
+ * a thirteen-item list reading as "we will do anything".
+ */
+export type ServiceGroup = "found" | "chosen" | "built";
+
+export const serviceGroups: {
+  id: ServiceGroup;
+  label: string;
+  blurb: string;
+}[] = [
+  {
+    id: "found",
+    label: "Get found",
+    blurb:
+      "Being named by the assistants and the map pack when someone asks for a business like yours.",
+  },
+  {
+    id: "chosen",
+    label: "Get chosen",
+    blurb:
+      "Turning that visibility into enquiries — the proof, the page and the systems that answer.",
+  },
+  {
+    id: "built",
+    label: "Get built",
+    blurb:
+      "The content and software behind it, when what you need does not exist yet.",
+  },
+];
+
 export type Service = {
   slug: string;
+  group: ServiceGroup;
   name: string;
   oneLiner: string;
   icon: LucideIcon;
@@ -177,6 +211,7 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "ai-search-optimization",
+    group: "found",
     faqs: [
       {
         q: "What is AI search optimization?",
@@ -261,6 +296,7 @@ export const services: Service[] = [
   },
   {
     slug: "ai-visibility-monitoring",
+    group: "found",
     name: "AI Visibility Monitoring",
     oneLiner: "Know every month whether AI names you, and who it names instead",
     icon: Activity,
@@ -342,6 +378,7 @@ export const services: Service[] = [
   },
   {
     slug: "entity-knowledge-graph",
+    group: "found",
     name: "Entity & Knowledge Graph",
     oneLiner: "Make your business a fact machines can verify, not a page they must interpret",
     icon: Network,
@@ -415,6 +452,7 @@ export const services: Service[] = [
   },
   {
     slug: "google-business-profile",
+    group: "found",
     faqs: [
       {
         q: "What is a Google Business Profile?",
@@ -478,6 +516,7 @@ export const services: Service[] = [
   },
   {
     slug: "local-seo-website",
+    group: "found",
     faqs: [
       {
         q: "Why doesn't my website rank on Google?",
@@ -552,6 +591,7 @@ export const services: Service[] = [
   },
   {
     slug: "video-production",
+    group: "built",
     faqs: [
       {
         q: "Why does video matter for a local business?",
@@ -616,6 +656,7 @@ export const services: Service[] = [
   },
   {
     slug: "social-media-management",
+    group: "built",
     faqs: [
       {
         q: "What does social media management include?",
@@ -677,6 +718,7 @@ export const services: Service[] = [
   },
   {
     slug: "lead-generation-system",
+    group: "chosen",
     faqs: [
       {
         q: "What is a local lead generation system?",
@@ -746,6 +788,7 @@ export const services: Service[] = [
   },
   {
     slug: "review-reputation-management",
+    group: "chosen",
     faqs: [
       {
         q: "Why do reviews matter so much for AI recommendations?",
@@ -808,6 +851,7 @@ export const services: Service[] = [
   },
   {
     slug: "community-presence",
+    group: "found",
     name: "Citations & Digital PR",
     oneLiner: "Earn the third-party mentions AI trusts, because you don't control them",
     icon: Megaphone,
@@ -867,6 +911,7 @@ export const services: Service[] = [
   },
   {
     slug: "web-app-development",
+    group: "built",
     name: "Web & App Development",
     oneLiner: "Booking, portals and custom web apps that actually convert",
     icon: Code2,
@@ -926,6 +971,7 @@ export const services: Service[] = [
   },
   {
     slug: "saas-software-development",
+    group: "built",
     name: "SaaS & Custom Software",
     oneLiner: "MVPs, internal tools and integrations, built in weeks not quarters",
     icon: Layers,
@@ -985,6 +1031,7 @@ export const services: Service[] = [
   },
   {
     slug: "ai-automation-agents",
+    group: "chosen",
     name: "AI Automation & Agents",
     oneLiner: "Voice receptionists, chatbots and workflows that run without you",
     icon: Workflow,

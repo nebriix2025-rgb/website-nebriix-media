@@ -46,7 +46,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-14">
-            <ServiceCards />
+            <ServiceCards only="found" />
           </div>
         </div>
       </section>

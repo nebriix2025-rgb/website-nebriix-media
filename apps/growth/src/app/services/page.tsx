@@ -9,7 +9,7 @@ import { PillLink } from "@/components/ui/pill-link";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "AI search optimization, Google Business Profile, local SEO, video, social, lead generation and reviews — every service ties back to one outcome: more clients.",
+    "AI visibility, entity and knowledge graph work, citations and digital PR, monitoring, reviews, lead systems and the build work behind them. Get found, get chosen, get built.",
   alternates: { canonical: `${site.url}/services` },
 };
 
@@ -18,7 +18,7 @@ export default function ServicesPage() {
     <>
       <PageHeader
         title="What We Do"
-        description="From being found, to being chosen, to the systems that run the work. One outcome: more clients."
+        description="Get found. Get chosen. Get built. In that order, because the order is the argument."
         image="/photos/services.jpg"
       />
 

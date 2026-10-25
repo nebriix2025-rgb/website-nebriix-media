@@ -5,7 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 
-import { services } from "@/content/site";
+import { serviceGroups, services, type ServiceGroup } from "@/content/site";
 import { cn } from "@/lib/utils";
 import { ServiceArt } from "@/components/fx/service-art";
 import { SpotlightCard } from "@/components/motion/spotlight-card";
@@ -16,13 +16,63 @@ import { BlurFade } from "@/components/motion/blur-fade";
  * interaction. Expansion is driven by focus/hover on pointer devices and by tap
  * on touch, so the detail is reachable either way — the card is still a link, so
  * nothing is trapped behind the expansion.
+ *
+ * Grouped into found → chosen → built, because the order is the argument: a
+ * flat list of thirteen reads as a menu, and a menu reads as a generalist.
+ * `only` narrows to a single group — the home page leads with "found" rather
+ * than listing all thirteen, so the core offer is not buried in the build work.
  */
-export function ServiceCards() {
+export function ServiceCards({ only }: { only?: ServiceGroup }) {
   const [active, setActive] = useState<string | null>(null);
 
+  if (only) {
+    return (
+      <Grid
+        items={services.filter((s) => s.group === only)}
+        active={active}
+        setActive={setActive}
+      />
+    );
+  }
+
+  return (
+    <div className="space-y-20">
+      {serviceGroups.map((group) => {
+        const items = services.filter((s) => s.group === group.id);
+        if (items.length === 0) return null;
+
+        return (
+          <section key={group.id}>
+            <BlurFade>
+              <div className="mb-10 max-w-2xl">
+                <h2 className="font-display text-3xl leading-tight tracking-tight sm:text-4xl">
+                  {group.label}
+                </h2>
+                <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
+                  {group.blurb}
+                </p>
+              </div>
+            </BlurFade>
+            <Grid items={items} active={active} setActive={setActive} />
+          </section>
+        );
+      })}
+    </div>
+  );
+}
+
+function Grid({
+  items,
+  active,
+  setActive,
+}: {
+  items: typeof services;
+  active: string | null;
+  setActive: (slug: string | null) => void;
+}) {
   return (
     <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {services.map((service, i) => {
+      {items.map((service, i) => {
         const detail =
           service.sections.find((s) => s.heading === "What We Do")?.items ??
           service.factors?.map((f) => f.title) ??
