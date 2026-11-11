@@ -10,6 +10,7 @@ import { formatDate } from "@/lib/utils";
 import { BlurFade } from "@/components/motion/blur-fade";
 import { TextReveal } from "@/components/motion/text-reveal";
 import { PillLink } from "@/components/ui/pill-link";
+import { PreferredSource } from "@/components/layout/preferred-source";
 
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
@@ -211,6 +212,8 @@ export default async function ArticlePage(props: PageProps<"/insights/[slug]">) 
               </div>
             </BlurFade>
           )}
+
+          <PreferredSource framed className="mt-16" />
 
           <BlurFade>
             <Link href={`/insights/${next.slug}`} className="group mt-12 block border-t border-border pt-8">

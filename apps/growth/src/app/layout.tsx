@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Figtree, Source_Serif_4, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "./globals.css";
@@ -89,6 +90,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           JS those blocks would never animate in and the page would read as
           blank, so force them visible when scripting is unavailable.
         */}
+        {/*
+          Google's preferred-sources script. It renders every element carrying
+          the `google-add-preferred-source-btn` attribute, so it must run after
+          those elements exist — hence afterInteractive rather than a raw async
+          tag in the head.
+        */}
+        <Script
+          id="google-preferred-sources"
+          src="https://news.google.com/swg/js/v1/publisher.js"
+          strategy="afterInteractive"
+        />
         <noscript>
           <style>{`[style*="opacity:0"]{opacity:1!important;transform:none!important;filter:none!important}`}</style>
         </noscript>

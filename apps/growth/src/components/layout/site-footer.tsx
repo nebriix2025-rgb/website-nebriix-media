@@ -5,6 +5,7 @@ import { Mail } from "lucide-react";
 import { site, services } from "@/content/site";
 import { BlurFade } from "@/components/motion/blur-fade";
 import { PillLink } from "@/components/ui/pill-link";
+import { PreferredSource } from "@/components/layout/preferred-source";
 
 const socials = [
   { label: "Instagram", href: site.socials.instagram },
@@ -101,7 +102,13 @@ export function SiteFooter() {
           </div>
         </div>
 
+        {/*
+          Sits inside the existing bottom row rather than in a wrapper of its
+          own: Google renders nothing when the domain is not eligible, and a
+          wrapper with its own border would leave a visible empty strip.
+        */}
         <div className="mt-14 flex flex-col gap-3 border-t border-border pt-8 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <PreferredSource />
           <p>
             {new Date().getFullYear()} &copy; {site.name}. All Rights Reserved.
           </p>
