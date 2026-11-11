@@ -36,6 +36,121 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "chatgpt-business-hub-claim-your-profile",
+    title:
+      "ChatGPT Just Became a Business Directory. You Can Now Claim Your Listing — If You Are Eligible.",
+    description:
+      "On 10 November OpenAI opened Business Hub in beta: claim your business, verify it, edit what ChatGPT says about you, and see aggregated mentions and website clicks. It is the first time a business has had any direct control over its presence inside ChatGPT. The eligibility wording is contradictory, so here is what we could and could not confirm.",
+    date: "2026-11-11",
+    readTime: "8 min read",
+    category: "AI News",
+    keywords: [
+      "ChatGPT Business Hub claim profile",
+      "Businesses in ChatGPT beta",
+      "ChatGPT business profile local business",
+    ],
+    relatedService: "ai-search-optimization",
+    image: "/photos/insights/chatgpt-hub.jpg",
+    imageAlt: "Two cafe workers standing behind a counter",
+    sources: [
+      {
+        label: "OpenAI — Introducing Businesses in ChatGPT in beta (10 November 2026), announcement text on OpenAI's developer community",
+        url: "https://community.openai.com/t/introducing-businesses-in-chatgpt-in-beta/1414865",
+      },
+      {
+        label: "Business Hub (requires sign-in)",
+        url: "https://chatgpt.com/business-hub",
+      },
+      {
+        label: "Search Engine Watch — ChatGPT lets you claim your business and track the clicks it sends you",
+        url: "https://searchenginewatch.com/chatgpt-business-hub-claim-profile-mentions-clicks/",
+      },
+      {
+        label: "The Decoder — OpenAI turns ChatGPT into a business directory with AI agents",
+        url: "https://the-decoder.com/openai-turns-chatgpt-into-a-business-directory-with-ai-agents-that-handle-customer-questions/",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is ChatGPT Business Hub?",
+        a: "Business Hub is a dashboard OpenAI opened in beta on 10 November 2026 where a company can claim and verify its business, manage the information ChatGPT holds about it, and see aggregated insights. In OpenAI's own words: \"Claim your business, manage your information, and get insights on how people engage with you.\" Once verified, a business can update its details and add product feeds with current pricing and availability. It is reached at chatgpt.com/business-hub.",
+      },
+      {
+        q: "Can a business outside the United States claim a profile?",
+        a: "OpenAI's announcement says \"Eligible businesses located wherever ChatGPT is available can get started by claiming their business in Business Hub\", which reads as global. The same announcement also says \"Available to eligible ecommerce and online service businesses in the U.S.\", which appears alongside the Business Agent feature. The two statements are not reconciled anywhere we could find, and OpenAI's own product pages were unreachable. The only reliable way to know is to open Business Hub and try.",
+      },
+      {
+        q: "What data does a business get, and can it read customer conversations?",
+        a: "No. OpenAI states plainly: \"We don't share people's conversations or Business Agent chats with businesses.\" What you get is aggregated: OpenAI names \"mentions, website clicks, and common topics in conversations where your business is cited\". That is the first time any measurement of ChatGPT visibility has come from the platform itself rather than from running prompts and recording the answers.",
+      },
+    ],
+    body: [
+      {
+        type: "p",
+        text: "On 10 November, OpenAI opened a beta called Businesses in ChatGPT. The headline is one sentence from its announcement: \"Claim your business, manage your information, and get insights on how people engage with you.\" After verification you can edit your business details, add product feeds with live pricing and availability, and — if eligible — build a Business Agent that answers customer questions inside a clearly labelled conversation, separate from ChatGPT's own answers.",
+      },
+      {
+        type: "p",
+        text: "For eighteen months the honest answer to \"how do I control what ChatGPT says about my business\" was: you cannot, you can only change the evidence it reads. That answer just stopped being completely true.",
+      },
+      { type: "h2", text: "What we could confirm, and what we could not" },
+      {
+        type: "p",
+        text: "OpenAI's own product pages and help article returned 403 to us, so everything quoted here comes from the announcement text published on OpenAI's developer community on 10 November. We verified one thing independently: chatgpt.com/business-hub is a real route — it redirects to a sign-in page that carries you on to the hub afterwards.",
+      },
+      {
+        type: "p",
+        text: "On eligibility, OpenAI's wording contains a contradiction we cannot resolve. One line reads \"Eligible businesses located wherever ChatGPT is available can get started by claiming their business in Business Hub.\" Another reads \"Available to eligible ecommerce and online service businesses in the U.S.\" The second appears next to the Business Agent description, so the most likely reading is that claiming is broad and Business Agents are US-only — but OpenAI has not said that, and secondary coverage goes further, reporting that local stores and restaurants can currently claim only an existing US listing. We could not verify that claim against anything OpenAI published.",
+      },
+      {
+        type: "p",
+        text: "We are saying that plainly because this week a great many agencies will tell Gulf and UK businesses to go and claim their ChatGPT profile, and some of those businesses will find they cannot. Two minutes in Business Hub settles it for your business better than any article can, including this one.",
+      },
+      { type: "h2", text: "The measurement is the quiet headline" },
+      {
+        type: "p",
+        text: "The feature people will talk about is the profile. The one that changes the work is the insights. OpenAI names them as \"mentions, website clicks, and common topics in conversations where your business is cited\", aggregated.",
+      },
+      {
+        type: "p",
+        text: "Until now, measuring whether ChatGPT recommends you meant running prompts yourself and writing down the answers — the method we publish free and sell as a service. That is sampling. This is the platform telling you how often you were actually mentioned and how many people clicked through. The sample becomes a census.",
+      },
+      {
+        type: "p",
+        text: "What you still do not get is the conversations. OpenAI is explicit: \"We don't share people's conversations or Business Agent chats with businesses.\" Good. A world where every shop can read what customers asked an assistant in private is not one worth building, and the aggregate is enough to manage by.",
+      },
+      { type: "h2", text: "What's happening in the world" },
+      {
+        type: "p",
+        text: "Put this next to the rest of the year and the shape is unmistakable. Google turned the local business panel into an AI Overview in September and rolled out free monitoring agents that watch the web on a customer's behalf. It added a WhatsApp button to local listings in October and started charging advertisers for missed calls. Now OpenAI has built the thing it previously refused to build: a directory, with claimed profiles, verification and analytics.",
+      },
+      {
+        type: "p",
+        text: "This is the same pattern Google ran through from 2005 onward, compressed. First an index nobody controls. Then businesses demand a say. Then a claimable profile with verification. Then, inevitably, paid placement — OpenAI's announcement says nothing about advertising, but a directory with verified profiles and click analytics is the infrastructure for it, and the company already tried and retired a commission-based checkout in March.",
+      },
+      {
+        type: "p",
+        text: "The strategic read for a local business: the window where AI visibility was purely earned is closing. For eighteen months being named was decided entirely by evidence you did not control — reviews, citations, listings. A claimable profile adds a lever you do control. It does not remove the first thing. Google Business Profile has existed for years and a complete profile still does not get a mediocre business recommended. Expect the same here: the profile is table stakes, the evidence still decides.",
+      },
+      { type: "h2", text: "How you can use this for your business" },
+      {
+        type: "list",
+        items: [
+          "Go to chatgpt.com/business-hub today and try to claim. Not next week. If claiming is open to you, a competitor who claims first in a two-business category gets the verified version of the story and you get whatever the model assembled.",
+          "Before you claim, ask ChatGPT about your business and screenshot the answer. That is your only before picture, and once you edit the profile it is gone forever. We have watched businesses lose their baseline this way on Google.",
+          "If you can claim, fix the facts first and the marketing second. Name, address, hours, services, what you actually do. Ordinary accurate detail is what gets quoted; adjectives are what gets dropped.",
+          "Add product feeds only if your pricing and availability are genuinely current. A feed that is wrong is worse than no feed — it puts your error inside a confident answer, and the customer blames you rather than the model.",
+          "Treat the insights as a baseline from day one. Record mentions and website clicks in the first week, before you change anything. Without that, in three months you will have no way to tell whether anything you did worked.",
+          "If you cannot claim yet, nothing about your work changes. Reviews, consistent listings, real website content and third-party mentions are what decided being named before this launch and will keep deciding it after. A profile is a lever, not a substitute.",
+        ],
+      },
+      {
+        type: "takeaway",
+        text: "OpenAI opened Business Hub on 10 November: claim your business, verify it, edit what ChatGPT holds about you, and see aggregated mentions and clicks. The eligibility wording is genuinely contradictory and OpenAI has not clarified it, so open chatgpt.com/business-hub and find out for yourself — but screenshot what ChatGPT says about you before you change anything.",
+      },
+    ],
+  },
+  {
     slug: "one-in-three-local-business-websites-broken",
     title:
       "One in Three Local Business Websites Is Broken. Yours Is Where the AI Sends People to Check.",
